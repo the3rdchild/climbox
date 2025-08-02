@@ -10,8 +10,9 @@
     # pkgs.python311
     # pkgs.python311Packages.pip
     # pkgs.nodejs_20
-    pkgs.nodejs
+    pkgs.nodejs_18
     pkgs.corepack
+    pkgs.docker
     # pkgs.nodePackages.nodemon
   ];
 
@@ -26,17 +27,12 @@
     # Enable previews
     previews = {
       enable = true;
-      previews = {
-        # web = {
-        #   # Example: run "npm run dev" with PORT set to IDX's defined port for previews,
-        #   # and show it in IDX's web preview panel
-        #   command = ["npm" "run" "dev"];
-        #   manager = "web";
-        #   env = {
-        #     # Environment variables to set for your server
-        #     PORT = "$PORT";
-        #   };
-        # };
+      previews.web = {
+        command = ["yarn" "workspace" "website" "start"];
+        manager = "web";
+        env = {
+          PORT = "$PORT";  # IDX akan inject port otomatis
+        };
       };
     };
 
