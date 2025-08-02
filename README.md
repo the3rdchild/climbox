@@ -1,69 +1,71 @@
-# React + TypeScript + Vite
+# Aqualink App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the main repository for the Aqualink Coral Monitoring Application.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Aqualink](https://aqualink.org) is a philanthropically funded system to help people manage their local marine ecosystems in the face of increasing Ocean temperatures. The system consists of satellite-connected underwater temperature sensors and photographic surveys to allow for remote collaboration with scientists across the world. If you are concerned about the effect of climate change on your local reef and want to do something about it then please apply to get a smart buoy for free.
 
-## Expanding the ESLint configuration
+![Aqualink Screenshot - Map Page](packages/website/src/assets/img/readme-screenshot-map.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Development
+The app is a monorepo managed by [Lerna](https://github.com/lerna/lerna) using 
+[Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/). Individual packages are found in the `./packages
+` directory. The app has two primary components:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Nest.js API](./packages/api)
+- [React Webapp](./packages/website)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Commands can either be run for a specific package by changing to the package subdirectory and running them directly
+, or for the entire project by running them here in this directory.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Getting Started
+
+To get started, run `yarn install` from this directory. This will install all dependencies for all the packages. You
+will also need to do some package-specific configuration such as setting up a `.env` file for environment variables
+- see the individual package READMEs for details on this process.
+
+### Running Commands
+
+```bash
+# Build all of the packages
+yarn build
+
+# Run tests for all of the packages
+yarn test
+
+# Start up all of the packages locally
+yarn start
+
+# Lint a specific file
+yarn lint ./packages/api/src/path/to/file.ts
+
+# Lint all the files in the app
+yarn lint:all
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Deploying
+We are using Google App Engine to deploy applications. The default project we are using is `ocean-systems`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Install the Gloud CLI using the instructions available [here](https://cloud.google.com/sdk/docs/quickstart-macos)
+- Make sure you are logged in by running `gcloud auth login`
+- The run the following commands:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Set the project to ocean-systems
+gcloud config set project ocean-systems
+
+# Deploy to Google Cloud
+yarn deploy
+
+# Wait and verify that the app is running
+gcloud app browse
 ```
+
+## Contributing
+
+Aqualink is an MIT-licensed open source project. Contributions from developers and scientists are welcome!
+
+## License
+
+  Aqualink is [MIT licensed](LICENSE).

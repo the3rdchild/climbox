@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sites List > should render with given state from Redux store 1`] = `
+<div>
+  <div
+    class="SitesList-root-1"
+  >
+    <mock-list
+      component="nav"
+    >
+      <a
+        href="/sites/1"
+        style="text-decoration: none;"
+      >
+        <div
+          class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-4afvok-MuiButtonBase-root-MuiListItemButton-root"
+          role="button"
+          tabindex="0"
+        >
+          <mock-listitemtext
+            primary=""
+            style="color: white;"
+          />
+        </div>
+      </a>
+    </mock-list>
+  </div>
+</div>
+`;

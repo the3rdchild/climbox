@@ -1,0 +1,36 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "../",
+  "testEnvironment": "node",
+  "testRegex": ["app.spec.ts$", "test.ts$"],
+  "testTimeout": 120000,
+  "verbose": true,
+  "collectCoverage": true,
+  "cacheDirectory": ".jest-cache",
+  "coveragePathIgnorePatterns": [
+    "node_modules",
+    "migration",
+    "entity.ts",
+    "module.ts",
+    "dto.ts",
+    "ormconfig.ts",
+    "spec.ts",
+    "test",
+    "docs",
+    "config"
+  ],
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "transform": {
+    "\\.ts$": "ts-jest"
+  },
+  "globalSetup": "./test/global-setup.js",
+  "moduleNameMapper": {
+    "^csv-stringify/sync":
+      "<rootDir>/../../node_modules/csv-stringify/dist/cjs/sync.cjs",
+      "^typeorm$": "<rootDir>/../../node_modules/typeorm",
+      "^uuid$": "uuid"
+  }
+}
