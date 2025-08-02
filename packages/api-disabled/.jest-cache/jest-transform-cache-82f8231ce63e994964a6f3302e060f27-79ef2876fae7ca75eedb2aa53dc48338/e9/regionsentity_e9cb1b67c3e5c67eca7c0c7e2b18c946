@@ -1,0 +1,65 @@
+7a67709fe54d6868e54c9d743f86cadc
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var Region_1;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Region = void 0;
+const typeorm_1 = require("typeorm");
+const swagger_1 = require("@nestjs/swagger");
+const api_properties_1 = require("../docs/api-properties");
+let Region = Region_1 = class Region {
+};
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1 }),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], Region.prototype, "id", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'United States' }),
+    (0, typeorm_1.Column)({ nullable: false }),
+    __metadata("design:type", String)
+], Region.prototype, "name", void 0);
+__decorate([
+    (0, api_properties_1.ApiPointProperty)(),
+    (0, typeorm_1.Column)({
+        type: 'geometry',
+        spatialFeatureType: 'Point',
+        unique: true,
+        srid: 4326,
+        nullable: false,
+    }),
+    (0, typeorm_1.Index)({ spatial: true }),
+    __metadata("design:type", Object)
+], Region.prototype, "polygon", void 0);
+__decorate([
+    (0, typeorm_1.CreateDateColumn)(),
+    __metadata("design:type", Date)
+], Region.prototype, "createdAt", void 0);
+__decorate([
+    (0, typeorm_1.UpdateDateColumn)(),
+    __metadata("design:type", Date)
+], Region.prototype, "updatedAt", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ type: () => Region_1 }),
+    (0, typeorm_1.ManyToOne)(() => Region_1, { onDelete: 'CASCADE', nullable: true }),
+    (0, typeorm_1.Index)(),
+    __metadata("design:type", Object)
+], Region.prototype, "parent", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1 }),
+    (0, typeorm_1.RelationId)((region) => region.parent),
+    __metadata("design:type", Number)
+], Region.prototype, "parentId", void 0);
+Region = Region_1 = __decorate([
+    (0, typeorm_1.Entity)()
+], Region);
+exports.Region = Region;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvcmVnaW9ucy9yZWdpb25zLmVudGl0eS50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7O0FBQUEscUNBU2lCO0FBRWpCLDZDQUE4QztBQUM5QywyREFBMEQ7QUFHbkQsSUFBTSxNQUFNLGNBQVosTUFBTSxNQUFNO0NBa0NsQixDQUFBO0FBakNDO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsT0FBTyxFQUFFLENBQUMsRUFBRSxDQUFDO0lBQzNCLElBQUEsZ0NBQXNCLEdBQUU7O2tDQUNkO0FBRVg7SUFBQyxJQUFBLHFCQUFXLEVBQUMsRUFBRSxPQUFPLEVBQUUsZUFBZSxFQUFFLENBQUM7SUFDekMsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLEtBQUssRUFBRSxDQUFDOztvQ0FDZjtBQUViO0lBQUMsSUFBQSxpQ0FBZ0IsR0FBRTtJQUNsQixJQUFBLGdCQUFNLEVBQUM7UUFDTixJQUFJLEVBQUUsVUFBVTtRQUNoQixrQkFBa0IsRUFBRSxPQUFPO1FBQzNCLE1BQU0sRUFBRSxJQUFJO1FBQ1osSUFBSSxFQUFFLElBQUk7UUFDVixRQUFRLEVBQUUsS0FBSztLQUNoQixDQUFDO0lBQ0QsSUFBQSxlQUFLLEVBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFLENBQUM7O3VDQUNEO0FBRXhCO0lBQUMsSUFBQSwwQkFBZ0IsR0FBRTs4QkFDUixJQUFJO3lDQUFDO0FBRWhCO0lBQUMsSUFBQSwwQkFBZ0IsR0FBRTs4QkFDUixJQUFJO3lDQUFDO0FBRWhCO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsSUFBSSxFQUFFLEdBQUcsRUFBRSxDQUFDLFFBQU0sRUFBRSxDQUFDO0lBQ25DLElBQUEsbUJBQVMsRUFBQyxHQUFHLEVBQUUsQ0FBQyxRQUFNLEVBQUUsRUFBRSxRQUFRLEVBQUUsU0FBUyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQztJQUNoRSxJQUFBLGVBQUssR0FBRTs7c0NBQ2M7QUFFdEI7SUFBQyxJQUFBLHFCQUFXLEVBQUMsRUFBRSxPQUFPLEVBQUUsQ0FBQyxFQUFFLENBQUM7SUFDM0IsSUFBQSxvQkFBVSxFQUFDLENBQUMsTUFBYyxFQUFFLEVBQUUsQ0FBQyxNQUFNLENBQUMsTUFBTSxDQUFDOzt3Q0FDNUI7QUFqQ1AsTUFBTTtJQURsQixJQUFBLGdCQUFNLEdBQUU7R0FDSSxNQUFNLENBa0NsQjtBQWxDWSx3QkFBTSIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS91c2VyL2NsaW1ib3gvcGFja2FnZXMvYXBpL3NyYy9yZWdpb25zL3JlZ2lvbnMuZW50aXR5LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XHJcbiAgRW50aXR5LFxyXG4gIFByaW1hcnlHZW5lcmF0ZWRDb2x1bW4sXHJcbiAgQ29sdW1uLFxyXG4gIEluZGV4LFxyXG4gIE1hbnlUb09uZSxcclxuICBDcmVhdGVEYXRlQ29sdW1uLFxyXG4gIFVwZGF0ZURhdGVDb2x1bW4sXHJcbiAgUmVsYXRpb25JZCxcclxufSBmcm9tICd0eXBlb3JtJztcclxuaW1wb3J0IHsgR2VvSlNPTiB9IGZyb20gJ2dlb2pzb24nO1xyXG5pbXBvcnQgeyBBcGlQcm9wZXJ0eSB9IGZyb20gJ0BuZXN0anMvc3dhZ2dlcic7XHJcbmltcG9ydCB7IEFwaVBvaW50UHJvcGVydHkgfSBmcm9tICcuLi9kb2NzL2FwaS1wcm9wZXJ0aWVzJztcclxuXHJcbkBFbnRpdHkoKVxyXG5leHBvcnQgY2xhc3MgUmVnaW9uIHtcclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAxIH0pXHJcbiAgQFByaW1hcnlHZW5lcmF0ZWRDb2x1bW4oKVxyXG4gIGlkOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSh7IGV4YW1wbGU6ICdVbml0ZWQgU3RhdGVzJyB9KVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogZmFsc2UgfSlcclxuICBuYW1lOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQb2ludFByb3BlcnR5KClcclxuICBAQ29sdW1uKHtcclxuICAgIHR5cGU6ICdnZW9tZXRyeScsXHJcbiAgICBzcGF0aWFsRmVhdHVyZVR5cGU6ICdQb2ludCcsXHJcbiAgICB1bmlxdWU6IHRydWUsXHJcbiAgICBzcmlkOiA0MzI2LFxyXG4gICAgbnVsbGFibGU6IGZhbHNlLFxyXG4gIH0pXHJcbiAgQEluZGV4KHsgc3BhdGlhbDogdHJ1ZSB9KVxyXG4gIHBvbHlnb246IEdlb0pTT04gfCBudWxsO1xyXG5cclxuICBAQ3JlYXRlRGF0ZUNvbHVtbigpXHJcbiAgY3JlYXRlZEF0OiBEYXRlO1xyXG5cclxuICBAVXBkYXRlRGF0ZUNvbHVtbigpXHJcbiAgdXBkYXRlZEF0OiBEYXRlO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyB0eXBlOiAoKSA9PiBSZWdpb24gfSlcclxuICBATWFueVRvT25lKCgpID0+IFJlZ2lvbiwgeyBvbkRlbGV0ZTogJ0NBU0NBREUnLCBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIEBJbmRleCgpXHJcbiAgcGFyZW50OiBSZWdpb24gfCBudWxsO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAxIH0pXHJcbiAgQFJlbGF0aW9uSWQoKHJlZ2lvbjogUmVnaW9uKSA9PiByZWdpb24ucGFyZW50KVxyXG4gIHBhcmVudElkPzogbnVtYmVyO1xyXG59XHJcbiJdLCJ2ZXJzaW9uIjozfQ==

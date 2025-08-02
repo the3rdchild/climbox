@@ -1,0 +1,526 @@
+557ac36471cd3cd9d4b8c8b468f041aa
+"use strict";
+
+/* istanbul ignore next */
+function cov_254y2fdvxm() {
+  var path = "/home/user/climbox/packages/api/src/utils/bleachingAlert.ts";
+  var hash = "0c569696812487a9db2872dacd942f734bb1ff8f";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/user/climbox/packages/api/src/utils/bleachingAlert.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 37
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 17
+        },
+        end: {
+          line: 4,
+          column: 34
+        }
+      },
+      "3": {
+        start: {
+          line: 12,
+          column: 28
+        },
+        end: {
+          line: 35,
+          column: 1
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 20
+        },
+        end: {
+          line: 15,
+          column: 45
+        }
+      },
+      "5": {
+        start: {
+          line: 16,
+          column: 4
+        },
+        end: {
+          line: 34,
+          column: 5
+        }
+      },
+      "6": {
+        start: {
+          line: 18,
+          column: 12
+        },
+        end: {
+          line: 18,
+          column: 29
+        }
+      },
+      "7": {
+        start: {
+          line: 20,
+          column: 12
+        },
+        end: {
+          line: 20,
+          column: 21
+        }
+      },
+      "8": {
+        start: {
+          line: 22,
+          column: 12
+        },
+        end: {
+          line: 22,
+          column: 21
+        }
+      },
+      "9": {
+        start: {
+          line: 25,
+          column: 12
+        },
+        end: {
+          line: 25,
+          column: 21
+        }
+      },
+      "10": {
+        start: {
+          line: 27,
+          column: 12
+        },
+        end: {
+          line: 27,
+          column: 21
+        }
+      },
+      "11": {
+        start: {
+          line: 29,
+          column: 12
+        },
+        end: {
+          line: 29,
+          column: 21
+        }
+      },
+      "12": {
+        start: {
+          line: 31,
+          column: 12
+        },
+        end: {
+          line: 31,
+          column: 21
+        }
+      },
+      "13": {
+        start: {
+          line: 33,
+          column: 12
+        },
+        end: {
+          line: 33,
+          column: 29
+        }
+      },
+      "14": {
+        start: {
+          line: 36,
+          column: 0
+        },
+        end: {
+          line: 36,
+          column: 50
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 12,
+            column: 28
+          },
+          end: {
+            line: 12,
+            column: 29
+          }
+        },
+        loc: {
+          start: {
+            line: 12,
+            column: 89
+          },
+          end: {
+            line: 35,
+            column: 1
+          }
+        },
+        line: 12
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 13,
+            column: 20
+          },
+          end: {
+            line: 15,
+            column: 45
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 13,
+            column: 20
+          },
+          end: {
+            line: 13,
+            column: 40
+          }
+        }, {
+          start: {
+            line: 14,
+            column: 8
+          },
+          end: {
+            line: 14,
+            column: 22
+          }
+        }, {
+          start: {
+            line: 15,
+            column: 8
+          },
+          end: {
+            line: 15,
+            column: 45
+          }
+        }],
+        line: 13
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 16,
+            column: 4
+          },
+          end: {
+            line: 34,
+            column: 5
+          }
+        },
+        type: "switch",
+        locations: [{
+          start: {
+            line: 17,
+            column: 8
+          },
+          end: {
+            line: 18,
+            column: 29
+          }
+        }, {
+          start: {
+            line: 19,
+            column: 8
+          },
+          end: {
+            line: 20,
+            column: 21
+          }
+        }, {
+          start: {
+            line: 21,
+            column: 8
+          },
+          end: {
+            line: 22,
+            column: 21
+          }
+        }, {
+          start: {
+            line: 24,
+            column: 8
+          },
+          end: {
+            line: 25,
+            column: 21
+          }
+        }, {
+          start: {
+            line: 26,
+            column: 8
+          },
+          end: {
+            line: 27,
+            column: 21
+          }
+        }, {
+          start: {
+            line: 28,
+            column: 8
+          },
+          end: {
+            line: 29,
+            column: 21
+          }
+        }, {
+          start: {
+            line: 30,
+            column: 8
+          },
+          end: {
+            line: 31,
+            column: 21
+          }
+        }, {
+          start: {
+            line: 32,
+            column: 8
+          },
+          end: {
+            line: 33,
+            column: 29
+          }
+        }],
+        line: 16
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 19,
+            column: 13
+          },
+          end: {
+            line: 19,
+            column: 60
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 19,
+            column: 13
+          },
+          end: {
+            line: 19,
+            column: 44
+          }
+        }, {
+          start: {
+            line: 19,
+            column: 48
+          },
+          end: {
+            line: 19,
+            column: 60
+          }
+        }],
+        line: 19
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 21,
+            column: 13
+          },
+          end: {
+            line: 21,
+            column: 59
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 21,
+            column: 13
+          },
+          end: {
+            line: 21,
+            column: 44
+          }
+        }, {
+          start: {
+            line: 21,
+            column: 48
+          },
+          end: {
+            line: 21,
+            column: 59
+          }
+        }],
+        line: 21
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0, 0, 0],
+      "1": [0, 0, 0, 0, 0, 0, 0, 0],
+      "2": [0, 0],
+      "3": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/home/user/climbox/packages/api/src/utils/bleachingAlert.ts",
+      mappings: ";;;AAAA,mCAAkD;AAElD;;;;;;GAMG;AACI,MAAM,mBAAmB,GAAG,CACjC,cAA8B,EAC9B,oBAAoC,EACpC,iBAAiC,EACb,EAAE;IACtB,MAAM,OAAO,GACX,oBAAoB;QACpB,cAAc;QACd,oBAAoB,GAAG,cAAc,CAAC;IAExC,QAAQ,IAAI,EAAE;QACZ,KAAK,IAAA,cAAK,EAAC,OAAO,CAAC;YACjB,OAAO,SAAS,CAAC;QAEnB,KAAK,IAAA,iBAAQ,EAAC,OAAO,CAAC,IAAI,OAAO,IAAI,CAAC;YACpC,OAAO,CAAC,CAAC;QAEX,KAAK,IAAA,iBAAQ,EAAC,OAAO,CAAC,IAAI,OAAO,GAAG,CAAC;YACnC,OAAO,CAAC,CAAC;QAEX,wDAAwD;QACxD,KAAK,IAAA,cAAK,EAAC,iBAAiB,CAAC;YAC3B,OAAO,CAAC,CAAC;QAEX,KAAK,IAAA,gBAAO,EAAC,iBAAkB,EAAE,CAAC,EAAE,CAAC,GAAG,CAAC,CAAC;YACxC,OAAO,CAAC,CAAC;QAEX,KAAK,IAAA,gBAAO,EAAC,iBAAkB,EAAE,CAAC,GAAG,CAAC,EAAE,CAAC,GAAG,CAAC,CAAC;YAC5C,OAAO,CAAC,CAAC;QAEX,KAAK,iBAAkB,IAAI,CAAC,GAAG,CAAC;YAC9B,OAAO,CAAC,CAAC;QAEX;YACE,OAAO,SAAS,CAAC;KACpB;AACH,CAAC,CAAC;AApCW,QAAA,mBAAmB,uBAoC9B",
+      names: [],
+      sources: ["/home/user/climbox/packages/api/src/utils/bleachingAlert.ts"],
+      sourcesContent: ["import { isNil, isNumber, inRange } from 'lodash';\r\n\r\n/**\r\n * Calculating bleaching alert level based on NOAA defintions:\r\n * available at https://coralreefwatch.noaa.gov/subscriptions/vs.php\r\n * @param maxMonthlyMean\r\n * @param satelliteTemperature\r\n * @param degreeHeatingDays\r\n */\r\nexport const calculateAlertLevel = (\r\n  maxMonthlyMean?: number | null,\r\n  satelliteTemperature?: number | null,\r\n  degreeHeatingDays?: number | null,\r\n): number | undefined => {\r\n  const hotSpot =\r\n    satelliteTemperature &&\r\n    maxMonthlyMean &&\r\n    satelliteTemperature - maxMonthlyMean;\r\n\r\n  switch (true) {\r\n    case isNil(hotSpot):\r\n      return undefined;\r\n\r\n    case isNumber(hotSpot) && hotSpot <= 0:\r\n      return 0;\r\n\r\n    case isNumber(hotSpot) && hotSpot < 1:\r\n      return 1;\r\n\r\n    // Hotspot >=1 or nil past this point, start dhw checks.\r\n    case isNil(degreeHeatingDays):\r\n      return 0;\r\n\r\n    case inRange(degreeHeatingDays!, 0, 4 * 7):\r\n      return 2;\r\n\r\n    case inRange(degreeHeatingDays!, 4 * 7, 8 * 7):\r\n      return 3;\r\n\r\n    case degreeHeatingDays! >= 8 * 7:\r\n      return 4;\r\n\r\n    default:\r\n      return undefined;\r\n  }\r\n};\r\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "0c569696812487a9db2872dacd942f734bb1ff8f"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_254y2fdvxm = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_254y2fdvxm();
+cov_254y2fdvxm().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_254y2fdvxm().s[1]++;
+exports.calculateAlertLevel = void 0;
+const lodash_1 =
+/* istanbul ignore next */
+(cov_254y2fdvxm().s[2]++, require("lodash"));
+/**
+ * Calculating bleaching alert level based on NOAA defintions:
+ * available at https://coralreefwatch.noaa.gov/subscriptions/vs.php
+ * @param maxMonthlyMean
+ * @param satelliteTemperature
+ * @param degreeHeatingDays
+ */
+/* istanbul ignore next */
+cov_254y2fdvxm().s[3]++;
+const calculateAlertLevel = (maxMonthlyMean, satelliteTemperature, degreeHeatingDays) => {
+  /* istanbul ignore next */
+  cov_254y2fdvxm().f[0]++;
+  const hotSpot =
+  /* istanbul ignore next */
+  (cov_254y2fdvxm().s[4]++,
+  /* istanbul ignore next */
+  (cov_254y2fdvxm().b[0][0]++, satelliteTemperature) &&
+  /* istanbul ignore next */
+  (cov_254y2fdvxm().b[0][1]++, maxMonthlyMean) &&
+  /* istanbul ignore next */
+  (cov_254y2fdvxm().b[0][2]++, satelliteTemperature - maxMonthlyMean));
+  /* istanbul ignore next */
+  cov_254y2fdvxm().s[5]++;
+  switch (true) {
+    case (0, lodash_1.isNil)(hotSpot):
+      /* istanbul ignore next */
+      cov_254y2fdvxm().b[1][0]++;
+      cov_254y2fdvxm().s[6]++;
+      return undefined;
+    case
+    /* istanbul ignore next */
+    (cov_254y2fdvxm().b[2][0]++, (0, lodash_1.isNumber)(hotSpot)) &&
+    /* istanbul ignore next */
+    (cov_254y2fdvxm().b[2][1]++, hotSpot <= 0):
+      /* istanbul ignore next */
+      cov_254y2fdvxm().b[1][1]++;
+      cov_254y2fdvxm().s[7]++;
+      return 0;
+    case
+    /* istanbul ignore next */
+    (cov_254y2fdvxm().b[3][0]++, (0, lodash_1.isNumber)(hotSpot)) &&
+    /* istanbul ignore next */
+    (cov_254y2fdvxm().b[3][1]++, hotSpot < 1):
+      /* istanbul ignore next */
+      cov_254y2fdvxm().b[1][2]++;
+      cov_254y2fdvxm().s[8]++;
+      return 1;
+    // Hotspot >=1 or nil past this point, start dhw checks.
+    case (0, lodash_1.isNil)(degreeHeatingDays):
+      /* istanbul ignore next */
+      cov_254y2fdvxm().b[1][3]++;
+      cov_254y2fdvxm().s[9]++;
+      return 0;
+    case (0, lodash_1.inRange)(degreeHeatingDays, 0, 4 * 7):
+      /* istanbul ignore next */
+      cov_254y2fdvxm().b[1][4]++;
+      cov_254y2fdvxm().s[10]++;
+      return 2;
+    case (0, lodash_1.inRange)(degreeHeatingDays, 4 * 7, 8 * 7):
+      /* istanbul ignore next */
+      cov_254y2fdvxm().b[1][5]++;
+      cov_254y2fdvxm().s[11]++;
+      return 3;
+    case degreeHeatingDays >= 8 * 7:
+      /* istanbul ignore next */
+      cov_254y2fdvxm().b[1][6]++;
+      cov_254y2fdvxm().s[12]++;
+      return 4;
+    default:
+      /* istanbul ignore next */
+      cov_254y2fdvxm().b[1][7]++;
+      cov_254y2fdvxm().s[13]++;
+      return undefined;
+  }
+};
+/* istanbul ignore next */
+cov_254y2fdvxm().s[14]++;
+exports.calculateAlertLevel = calculateAlertLevel;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMjU0eTJmZHZ4bSIsImFjdHVhbENvdmVyYWdlIiwicyIsImxvZGFzaF8xIiwicmVxdWlyZSIsImNhbGN1bGF0ZUFsZXJ0TGV2ZWwiLCJtYXhNb250aGx5TWVhbiIsInNhdGVsbGl0ZVRlbXBlcmF0dXJlIiwiZGVncmVlSGVhdGluZ0RheXMiLCJmIiwiaG90U3BvdCIsImIiLCJpc05pbCIsInVuZGVmaW5lZCIsImlzTnVtYmVyIiwiaW5SYW5nZSIsImV4cG9ydHMiXSwic291cmNlcyI6WyIvaG9tZS91c2VyL2NsaW1ib3gvcGFja2FnZXMvYXBpL3NyYy91dGlscy9ibGVhY2hpbmdBbGVydC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBpc05pbCwgaXNOdW1iZXIsIGluUmFuZ2UgfSBmcm9tICdsb2Rhc2gnO1xyXG5cclxuLyoqXHJcbiAqIENhbGN1bGF0aW5nIGJsZWFjaGluZyBhbGVydCBsZXZlbCBiYXNlZCBvbiBOT0FBIGRlZmludGlvbnM6XHJcbiAqIGF2YWlsYWJsZSBhdCBodHRwczovL2NvcmFscmVlZndhdGNoLm5vYWEuZ292L3N1YnNjcmlwdGlvbnMvdnMucGhwXHJcbiAqIEBwYXJhbSBtYXhNb250aGx5TWVhblxyXG4gKiBAcGFyYW0gc2F0ZWxsaXRlVGVtcGVyYXR1cmVcclxuICogQHBhcmFtIGRlZ3JlZUhlYXRpbmdEYXlzXHJcbiAqL1xyXG5leHBvcnQgY29uc3QgY2FsY3VsYXRlQWxlcnRMZXZlbCA9IChcclxuICBtYXhNb250aGx5TWVhbj86IG51bWJlciB8IG51bGwsXHJcbiAgc2F0ZWxsaXRlVGVtcGVyYXR1cmU/OiBudW1iZXIgfCBudWxsLFxyXG4gIGRlZ3JlZUhlYXRpbmdEYXlzPzogbnVtYmVyIHwgbnVsbCxcclxuKTogbnVtYmVyIHwgdW5kZWZpbmVkID0+IHtcclxuICBjb25zdCBob3RTcG90ID1cclxuICAgIHNhdGVsbGl0ZVRlbXBlcmF0dXJlICYmXHJcbiAgICBtYXhNb250aGx5TWVhbiAmJlxyXG4gICAgc2F0ZWxsaXRlVGVtcGVyYXR1cmUgLSBtYXhNb250aGx5TWVhbjtcclxuXHJcbiAgc3dpdGNoICh0cnVlKSB7XHJcbiAgICBjYXNlIGlzTmlsKGhvdFNwb3QpOlxyXG4gICAgICByZXR1cm4gdW5kZWZpbmVkO1xyXG5cclxuICAgIGNhc2UgaXNOdW1iZXIoaG90U3BvdCkgJiYgaG90U3BvdCA8PSAwOlxyXG4gICAgICByZXR1cm4gMDtcclxuXHJcbiAgICBjYXNlIGlzTnVtYmVyKGhvdFNwb3QpICYmIGhvdFNwb3QgPCAxOlxyXG4gICAgICByZXR1cm4gMTtcclxuXHJcbiAgICAvLyBIb3RzcG90ID49MSBvciBuaWwgcGFzdCB0aGlzIHBvaW50LCBzdGFydCBkaHcgY2hlY2tzLlxyXG4gICAgY2FzZSBpc05pbChkZWdyZWVIZWF0aW5nRGF5cyk6XHJcbiAgICAgIHJldHVybiAwO1xyXG5cclxuICAgIGNhc2UgaW5SYW5nZShkZWdyZWVIZWF0aW5nRGF5cyEsIDAsIDQgKiA3KTpcclxuICAgICAgcmV0dXJuIDI7XHJcblxyXG4gICAgY2FzZSBpblJhbmdlKGRlZ3JlZUhlYXRpbmdEYXlzISwgNCAqIDcsIDggKiA3KTpcclxuICAgICAgcmV0dXJuIDM7XHJcblxyXG4gICAgY2FzZSBkZWdyZWVIZWF0aW5nRGF5cyEgPj0gOCAqIDc6XHJcbiAgICAgIHJldHVybiA0O1xyXG5cclxuICAgIGRlZmF1bHQ6XHJcbiAgICAgIHJldHVybiB1bmRlZmluZWQ7XHJcbiAgfVxyXG59O1xyXG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7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

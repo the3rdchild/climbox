@@ -1,0 +1,4 @@
+7b6330a79f9d56f0b3ccc72ef230c4c1
+module.exports = async () => {
+  process.env.TZ = 'UTC';
+};

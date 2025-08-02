@@ -1,0 +1,44 @@
+9b2ff76ab096c695168d00b578111993
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const dailyData_1 = require("./dailyData");
+test('It processes Sofar API for daily data.', () => __awaiter(void 0, void 0, void 0, function* () {
+    jest.setTimeout(60000);
+    const date = new Date('2024-08-31');
+    date.setUTCHours(23, 59, 59, 999);
+    const site = {
+        id: 1,
+        name: null,
+        polygon: {
+            type: 'Polygon',
+            coordinates: [-122.699036598, 37.893756314],
+        },
+        sensorId: 'SPOT-300434063450120',
+        depth: null,
+        maxMonthlyMean: 22,
+        status: 0,
+        videoStream: null,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        timezone: 'Etc/GMT+12',
+    };
+    const values = yield (0, dailyData_1.getDailyData)(site, date);
+    const expected = {
+        site: { id: 1 },
+        date,
+        dailyAlertLevel: 0,
+        degreeHeatingDays: 15.397786264922775,
+        satelliteTemperature: 15.419691827607394,
+    };
+    expect(values).toEqual(expected);
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvd29ya2Vycy9kYWlseURhdGEudGVzdC50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUVBLDJDQUEyQztBQUczQyxJQUFJLENBQUMsd0NBQXdDLEVBQUUsR0FBUyxFQUFFO0lBQ3hELElBQUksQ0FBQyxVQUFVLENBQUMsS0FBSyxDQUFDLENBQUM7SUFFdkIsTUFBTSxJQUFJLEdBQUcsSUFBSSxJQUFJLENBQUMsWUFBWSxDQUFDLENBQUM7SUFDcEMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxFQUFFLEVBQUUsRUFBRSxFQUFFLEVBQUUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsQyxNQUFNLElBQUksR0FBRztRQUNYLEVBQUUsRUFBRSxDQUFDO1FBQ0wsSUFBSSxFQUFFLElBQUk7UUFDVixPQUFPLEVBQUU7WUFDUCxJQUFJLEVBQUUsU0FBUztZQUNmLFdBQVcsRUFBRSxDQUFDLENBQUMsYUFBYSxFQUFFLFlBQVksQ0FBQztTQUM1QztRQUNELFFBQVEsRUFBRSxzQkFBc0I7UUFDaEMsS0FBSyxFQUFFLElBQUk7UUFDWCxjQUFjLEVBQUUsRUFBRTtRQUNsQixNQUFNLEVBQUUsQ0FBQztRQUNULFdBQVcsRUFBRSxJQUFJO1FBQ2pCLFNBQVMsRUFBRSxJQUFJLElBQUksRUFBRTtRQUNyQixTQUFTLEVBQUUsSUFBSSxJQUFJLEVBQUU7UUFDckIsUUFBUSxFQUFFLFlBQVk7S0FDdkIsQ0FBQztJQUVGLE1BQU0sTUFBTSxHQUFHLE1BQU0sSUFBQSx3QkFBWSxFQUFDLElBQXVCLEVBQUUsSUFBSSxDQUFDLENBQUM7SUFDakUsTUFBTSxRQUFRLEdBQTJCO1FBQ3ZDLElBQUksRUFBRSxFQUFFLEVBQUUsRUFBRSxDQUFDLEVBQUU7UUFDZixJQUFJO1FBQ0osZUFBZSxFQUFFLENBQUM7UUFDbEIsaUJBQWlCLEVBQUUsa0JBQWtCO1FBQ3JDLG9CQUFvQixFQUFFLGtCQUFrQjtLQUN6QyxDQUFDO0lBRUYsTUFBTSxDQUFDLE1BQU0sQ0FBQyxDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUMsQ0FBQztBQUNuQyxDQUFDLENBQUEsQ0FBQyxDQUFDIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9ob21lL3VzZXIvY2xpbWJveC9wYWNrYWdlcy9hcGkvc3JjL3dvcmtlcnMvZGFpbHlEYXRhLnRlc3QudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgRGFpbHlEYXRhIH0gZnJvbSAnc2l0ZXMvZGFpbHktZGF0YS5lbnRpdHknO1xyXG5pbXBvcnQgeyBEZWVwUGFydGlhbCB9IGZyb20gJ3R5cGVvcm0nO1xyXG5pbXBvcnQgeyBnZXREYWlseURhdGEgfSBmcm9tICcuL2RhaWx5RGF0YSc7XHJcbmltcG9ydCB7IFNpdGUgfSBmcm9tICcuLi9zaXRlcy9zaXRlcy5lbnRpdHknO1xyXG5cclxudGVzdCgnSXQgcHJvY2Vzc2VzIFNvZmFyIEFQSSBmb3IgZGFpbHkgZGF0YS4nLCBhc3luYyAoKSA9PiB7XHJcbiAgamVzdC5zZXRUaW1lb3V0KDYwMDAwKTtcclxuXHJcbiAgY29uc3QgZGF0ZSA9IG5ldyBEYXRlKCcyMDI0LTA4LTMxJyk7XHJcbiAgZGF0ZS5zZXRVVENIb3VycygyMywgNTksIDU5LCA5OTkpO1xyXG4gIGNvbnN0IHNpdGUgPSB7XHJcbiAgICBpZDogMSxcclxuICAgIG5hbWU6IG51bGwsXHJcbiAgICBwb2x5Z29uOiB7XHJcbiAgICAgIHR5cGU6ICdQb2x5Z29uJyxcclxuICAgICAgY29vcmRpbmF0ZXM6IFstMTIyLjY5OTAzNjU5OCwgMzcuODkzNzU2MzE0XSxcclxuICAgIH0sXHJcbiAgICBzZW5zb3JJZDogJ1NQT1QtMzAwNDM0MDYzNDUwMTIwJyxcclxuICAgIGRlcHRoOiBudWxsLFxyXG4gICAgbWF4TW9udGhseU1lYW46IDIyLFxyXG4gICAgc3RhdHVzOiAwLFxyXG4gICAgdmlkZW9TdHJlYW06IG51bGwsXHJcbiAgICBjcmVhdGVkQXQ6IG5ldyBEYXRlKCksXHJcbiAgICB1cGRhdGVkQXQ6IG5ldyBEYXRlKCksXHJcbiAgICB0aW1lem9uZTogJ0V0Yy9HTVQrMTInLFxyXG4gIH07XHJcblxyXG4gIGNvbnN0IHZhbHVlcyA9IGF3YWl0IGdldERhaWx5RGF0YShzaXRlIGFzIHVua25vd24gYXMgU2l0ZSwgZGF0ZSk7XHJcbiAgY29uc3QgZXhwZWN0ZWQ6IERlZXBQYXJ0aWFsPERhaWx5RGF0YT4gPSB7XHJcbiAgICBzaXRlOiB7IGlkOiAxIH0sXHJcbiAgICBkYXRlLFxyXG4gICAgZGFpbHlBbGVydExldmVsOiAwLFxyXG4gICAgZGVncmVlSGVhdGluZ0RheXM6IDE1LjM5Nzc4NjI2NDkyMjc3NSxcclxuICAgIHNhdGVsbGl0ZVRlbXBlcmF0dXJlOiAxNS40MTk2OTE4Mjc2MDczOTQsXHJcbiAgfTtcclxuXHJcbiAgZXhwZWN0KHZhbHVlcykudG9FcXVhbChleHBlY3RlZCk7XHJcbn0pO1xyXG4iXSwidmVyc2lvbiI6M30=

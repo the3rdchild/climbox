@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getThumbnailBucketAndDestination = void 0;
+const getThumbnailBucketAndDestination = (url) => {
+    // remove 'https://' from the string
+    const trimmed = url.substring(8);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [_domain, bucket, ...rest] = trimmed.split('/');
+    const prefixed = `thumbnail-${rest.slice(-1)}`;
+    const destination = [...rest.slice(0, -1), prefixed].join('/');
+    return { bucket, destination };
+};
+exports.getThumbnailBucketAndDestination = getThumbnailBucketAndDestination;

@@ -1,0 +1,352 @@
+99f73c63f54ae29611e916442cc36021
+"use strict";
+
+/* istanbul ignore next */
+function cov_2c7suzgytf() {
+  var path = "/home/user/climbox/packages/api/src/utils/google-cloud.utils.ts";
+  var hash = "775ea0177c537d9758a2fdd54384d29830c330ce";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/user/climbox/packages/api/src/utils/google-cloud.utils.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 68
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 17
+        },
+        end: {
+          line: 4,
+          column: 42
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 23
+        },
+        end: {
+          line: 5,
+          column: 34
+        }
+      },
+      "4": {
+        start: {
+          line: 7,
+          column: 0
+        },
+        end: {
+          line: 10,
+          column: 77
+        }
+      },
+      "5": {
+        start: {
+          line: 8,
+          column: 4
+        },
+        end: {
+          line: 8,
+          column: 42
+        }
+      },
+      "6": {
+        start: {
+          line: 9,
+          column: 4
+        },
+        end: {
+          line: 9,
+          column: 52
+        }
+      },
+      "7": {
+        start: {
+          line: 11,
+          column: 34
+        },
+        end: {
+          line: 16,
+          column: 1
+        }
+      },
+      "8": {
+        start: {
+          line: 12,
+          column: 4
+        },
+        end: {
+          line: 14,
+          column: 5
+        }
+      },
+      "9": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 13,
+          column: 90
+        }
+      },
+      "10": {
+        start: {
+          line: 15,
+          column: 4
+        },
+        end: {
+          line: 15,
+          column: 42
+        }
+      },
+      "11": {
+        start: {
+          line: 17,
+          column: 0
+        },
+        end: {
+          line: 17,
+          column: 62
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 7,
+            column: 1
+          },
+          end: {
+            line: 7,
+            column: 2
+          }
+        },
+        loc: {
+          start: {
+            line: 7,
+            column: 27
+          },
+          end: {
+            line: 10,
+            column: 1
+          }
+        },
+        line: 7
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 11,
+            column: 34
+          },
+          end: {
+            line: 11,
+            column: 35
+          }
+        },
+        loc: {
+          start: {
+            line: 11,
+            column: 43
+          },
+          end: {
+            line: 16,
+            column: 1
+          }
+        },
+        line: 11
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 10,
+            column: 20
+          },
+          end: {
+            line: 10,
+            column: 75
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 10,
+            column: 20
+          },
+          end: {
+            line: 10,
+            column: 42
+          }
+        }, {
+          start: {
+            line: 10,
+            column: 47
+          },
+          end: {
+            line: 10,
+            column: 74
+          }
+        }],
+        line: 10
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 12,
+            column: 4
+          },
+          end: {
+            line: 14,
+            column: 5
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 12,
+            column: 4
+          },
+          end: {
+            line: 14,
+            column: 5
+          }
+        }, {
+          start: {
+            line: undefined,
+            column: undefined
+          },
+          end: {
+            line: undefined,
+            column: undefined
+          }
+        }],
+        line: 12
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/home/user/climbox/packages/api/src/utils/google-cloud.utils.ts",
+      mappings: ";;;AAAA,2CAA8D;AAE9D,MAAM,EAAE,UAAU,EAAE,GAAG,OAAO,CAAC,GAAG,CAAC;AAEnC,IAAY,cAGX;AAHD,WAAY,cAAc;IACxB,qCAAmB,CAAA;IACnB,+CAA6B,CAAA;AAC/B,CAAC,EAHW,cAAc,GAAd,sBAAc,KAAd,sBAAc,QAGzB;AAEM,MAAM,yBAAyB,GAAG,CAAC,GAAW,EAAE,EAAE;IACvD,IAAI,CAAC,UAAU,EAAE;QACf,MAAM,IAAI,qCAA4B,CAAC,gCAAgC,CAAC,CAAC;KAC1E;IAED,OAAO,GAAG,CAAC,KAAK,CAAC,GAAG,UAAU,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC;AANW,QAAA,yBAAyB,6BAMpC",
+      names: [],
+      sources: ["/home/user/climbox/packages/api/src/utils/google-cloud.utils.ts"],
+      sourcesContent: ["import { InternalServerErrorException } from '@nestjs/common';\r\n\r\nconst { GCS_BUCKET } = process.env;\r\n\r\nexport enum GoogleCloudDir {\r\n  SURVEYS = 'surveys',\r\n  DATA_UPLOADS = 'data_uploads',\r\n}\r\n\r\nexport const getSurveyMediaFileFromURL = (url: string) => {\r\n  if (!GCS_BUCKET) {\r\n    throw new InternalServerErrorException('GCS_BUCKET variable is not set');\r\n  }\r\n\r\n  return url.split(`${GCS_BUCKET}/`)[1];\r\n};\r\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "775ea0177c537d9758a2fdd54384d29830c330ce"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2c7suzgytf = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_2c7suzgytf();
+cov_2c7suzgytf().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_2c7suzgytf().s[1]++;
+exports.getSurveyMediaFileFromURL = exports.GoogleCloudDir = void 0;
+const common_1 =
+/* istanbul ignore next */
+(cov_2c7suzgytf().s[2]++, require("@nestjs/common"));
+const {
+  GCS_BUCKET
+} =
+/* istanbul ignore next */
+(cov_2c7suzgytf().s[3]++, process.env);
+var GoogleCloudDir;
+/* istanbul ignore next */
+cov_2c7suzgytf().s[4]++;
+(function (GoogleCloudDir) {
+  /* istanbul ignore next */
+  cov_2c7suzgytf().f[0]++;
+  cov_2c7suzgytf().s[5]++;
+  GoogleCloudDir["SURVEYS"] = "surveys";
+  /* istanbul ignore next */
+  cov_2c7suzgytf().s[6]++;
+  GoogleCloudDir["DATA_UPLOADS"] = "data_uploads";
+})(GoogleCloudDir =
+/* istanbul ignore next */
+(cov_2c7suzgytf().b[0][0]++, exports.GoogleCloudDir) ||
+/* istanbul ignore next */
+(cov_2c7suzgytf().b[0][1]++, exports.GoogleCloudDir = {}));
+/* istanbul ignore next */
+cov_2c7suzgytf().s[7]++;
+const getSurveyMediaFileFromURL = url => {
+  /* istanbul ignore next */
+  cov_2c7suzgytf().f[1]++;
+  cov_2c7suzgytf().s[8]++;
+  if (!GCS_BUCKET) {
+    /* istanbul ignore next */
+    cov_2c7suzgytf().b[1][0]++;
+    cov_2c7suzgytf().s[9]++;
+    throw new common_1.InternalServerErrorException('GCS_BUCKET variable is not set');
+  } else
+  /* istanbul ignore next */
+  {
+    cov_2c7suzgytf().b[1][1]++;
+  }
+  cov_2c7suzgytf().s[10]++;
+  return url.split(`${GCS_BUCKET}/`)[1];
+};
+/* istanbul ignore next */
+cov_2c7suzgytf().s[11]++;
+exports.getSurveyMediaFileFromURL = getSurveyMediaFileFromURL;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMmM3c3V6Z3l0ZiIsImFjdHVhbENvdmVyYWdlIiwicyIsImNvbW1vbl8xIiwicmVxdWlyZSIsIkdDU19CVUNLRVQiLCJwcm9jZXNzIiwiZW52IiwiR29vZ2xlQ2xvdWREaXIiLCJmIiwiYiIsImV4cG9ydHMiLCJnZXRTdXJ2ZXlNZWRpYUZpbGVGcm9tVVJMIiwidXJsIiwiSW50ZXJuYWxTZXJ2ZXJFcnJvckV4Y2VwdGlvbiIsInNwbGl0Il0sInNvdXJjZXMiOlsiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvdXRpbHMvZ29vZ2xlLWNsb3VkLnV0aWxzLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEludGVybmFsU2VydmVyRXJyb3JFeGNlcHRpb24gfSBmcm9tICdAbmVzdGpzL2NvbW1vbic7XHJcblxyXG5jb25zdCB7IEdDU19CVUNLRVQgfSA9IHByb2Nlc3MuZW52O1xyXG5cclxuZXhwb3J0IGVudW0gR29vZ2xlQ2xvdWREaXIge1xyXG4gIFNVUlZFWVMgPSAnc3VydmV5cycsXHJcbiAgREFUQV9VUExPQURTID0gJ2RhdGFfdXBsb2FkcycsXHJcbn1cclxuXHJcbmV4cG9ydCBjb25zdCBnZXRTdXJ2ZXlNZWRpYUZpbGVGcm9tVVJMID0gKHVybDogc3RyaW5nKSA9PiB7XHJcbiAgaWYgKCFHQ1NfQlVDS0VUKSB7XHJcbiAgICB0aHJvdyBuZXcgSW50ZXJuYWxTZXJ2ZXJFcnJvckV4Y2VwdGlvbignR0NTX0JVQ0tFVCB2YXJpYWJsZSBpcyBub3Qgc2V0Jyk7XHJcbiAgfVxyXG5cclxuICByZXR1cm4gdXJsLnNwbGl0KGAke0dDU19CVUNLRVR9L2ApWzFdO1xyXG59O1xyXG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7SUFlRTtJQUFBQSxjQUFBLFlBQUFBLENBQUE7TUFBQSxPQUFBQyxjQUFBO0lBQUE7RUFBQTtFQUFBLE9BQUFBLGNBQUE7QUFBQTtBQUFBRCxjQUFBO0FBQUFBLGNBQUEsR0FBQUUsQ0FBQTs7Ozs7OztBQWZGLE1BQUFDLFFBQUE7QUFBQTtBQUFBLENBQUFILGNBQUEsR0FBQUUsQ0FBQSxPQUFBRSxPQUFBO0FBRUEsTUFBTTtFQUFFQztBQUFVLENBQUU7QUFBQTtBQUFBLENBQUFMLGNBQUEsR0FBQUUsQ0FBQSxPQUFHSSxPQUFPLENBQUNDLEdBQUc7QUFFbEMsSUFBWUMsY0FHWDtBQUFBO0FBQUFSLGNBQUEsR0FBQUUsQ0FBQTtBQUhELFdBQVlNLGNBQWM7RUFBQTtFQUFBUixjQUFBLEdBQUFTLENBQUE7RUFBQVQsY0FBQSxHQUFBRSxDQUFBO0VBQ3hCTSxjQUFBLHVCQUFtQjtFQUFBO0VBQUFSLGNBQUEsR0FBQUUsQ0FBQTtFQUNuQk0sY0FBQSxpQ0FBNkI7QUFDL0IsQ0FBQyxFQUhXQSxjQUFjO0FBQWQ7QUFBQSxDQUFBUixjQUFBLEdBQUFVLENBQUEsVUFBQUMsT0FBQSxDQUFBSCxjQUFjO0FBQUE7QUFBQSxDQUFBUixjQUFBLEdBQUFVLENBQUEsVUFBZEMsT0FBQSxDQUFBSCxjQUFjO0FBR3pCO0FBQUFSLGNBQUEsR0FBQUUsQ0FBQTtBQUVNLE1BQU1VLHlCQUF5QixHQUFJQyxHQUFXLElBQUk7RUFBQTtFQUFBYixjQUFBLEdBQUFTLENBQUE7RUFBQVQsY0FBQSxHQUFBRSxDQUFBO0VBQ3ZELElBQUksQ0FBQ0csVUFBVSxFQUFFO0lBQUE7SUFBQUwsY0FBQSxHQUFBVSxDQUFBO0lBQUFWLGNBQUEsR0FBQUUsQ0FBQTtJQUNmLE1BQU0sSUFBSUMsUUFBQSxDQUFBVyw0QkFBNEIsQ0FBQyxnQ0FBZ0MsQ0FBQztHQUN6RTtFQUFBO0VBQUE7SUFBQWQsY0FBQSxHQUFBVSxDQUFBO0VBQUE7RUFBQVYsY0FBQSxHQUFBRSxDQUFBO0VBRUQsT0FBT1csR0FBRyxDQUFDRSxLQUFLLENBQUMsR0FBR1YsVUFBVSxHQUFHLENBQUMsQ0FBQyxDQUFDLENBQUM7QUFDdkMsQ0FBQztBQUFDO0FBQUFMLGNBQUEsR0FBQUUsQ0FBQTtBQU5XUyxPQUFBLENBQUFDLHlCQUF5QixHQUFBQSx5QkFBQSJ9

@@ -1,0 +1,75 @@
+dcd81a7c7bade7eed0e5bffe44e21d61
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GetMonitoringStatsDto = void 0;
+const common_1 = require("@nestjs/common");
+const swagger_1 = require("@nestjs/swagger");
+const class_transformer_1 = require("class-transformer");
+const class_validator_1 = require("class-validator");
+const sites_entity_1 = require("sites/sites.entity");
+const entity_exists_constraint_1 = require("validations/entity-exists.constraint");
+const maxAllowedIds = 10;
+class GetMonitoringStatsDto {
+}
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: [1, 3, 5] }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_transformer_1.Transform)(({ value }) => {
+        try {
+            const splitted = value.split(',');
+            if (splitted.length > maxAllowedIds) {
+                throw new common_1.BadRequestException(`siteIds: Too many IDs. Maximum allowed: ${maxAllowedIds}.`);
+            }
+            return splitted.map((x) => parseInt(x, 10));
+        }
+        catch (error) {
+            throw new common_1.BadRequestException('siteIds: invalid format');
+        }
+    }),
+    (0, class_validator_1.IsNumber)({}, { each: true }),
+    (0, class_validator_1.Validate)(entity_exists_constraint_1.EntityExists, [sites_entity_1.Site], { each: true }),
+    __metadata("design:type", Array)
+], GetMonitoringStatsDto.prototype, "siteIds", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'SPOT-2742' }),
+    (0, class_transformer_1.Type)(() => String),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], GetMonitoringStatsDto.prototype, "spotterId", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_transformer_1.Transform)(({ value }) => {
+        return [true, 'true', 1, '1'].indexOf(value) > -1;
+    }),
+    __metadata("design:type", Boolean)
+], GetMonitoringStatsDto.prototype, "monthly", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_transformer_1.Type)(() => Date),
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
+], GetMonitoringStatsDto.prototype, "start", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_transformer_1.Type)(() => Date),
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
+], GetMonitoringStatsDto.prototype, "end", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_transformer_1.Transform)(({ value }) => {
+        return [true, 'true', 1, '1'].indexOf(value) > -1;
+    }),
+    __metadata("design:type", Boolean)
+], GetMonitoringStatsDto.prototype, "csv", void 0);
+exports.GetMonitoringStatsDto = GetMonitoringStatsDto;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvbW9uaXRvcmluZy9kdG8vZ2V0LW1vbml0b3Jpbmctc3RhdHMuZHRvLnRzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUFBLDJDQUFxRDtBQUNyRCw2Q0FBOEM7QUFDOUMseURBQW9EO0FBQ3BELHFEQUF5RTtBQUN6RSxxREFBMEM7QUFDMUMsbUZBQW9FO0FBRXBFLE1BQU0sYUFBYSxHQUFHLEVBQUUsQ0FBQztBQUV6QixNQUFhLHFCQUFxQjtDQWdEakM7QUEvQ0M7SUFBQyxJQUFBLHFCQUFXLEVBQUMsRUFBRSxPQUFPLEVBQUUsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxFQUFFLENBQUMsQ0FBQyxFQUFFLENBQUM7SUFDbkMsSUFBQSw0QkFBVSxHQUFFO0lBQ1osSUFBQSw2QkFBUyxFQUFDLENBQUMsRUFBRSxLQUFLLEVBQUUsRUFBRSxFQUFFO1FBQ3ZCLElBQUk7WUFDRixNQUFNLFFBQVEsR0FBRyxLQUFLLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQyxDQUFDO1lBRWxDLElBQUksUUFBUSxDQUFDLE1BQU0sR0FBRyxhQUFhLEVBQUU7Z0JBQ25DLE1BQU0sSUFBSSw0QkFBbUIsQ0FDM0IsMkNBQTJDLGFBQWEsR0FBRyxDQUM1RCxDQUFDO2FBQ0g7WUFFRCxPQUFPLFFBQVEsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLEVBQUUsRUFBRSxDQUFDLFFBQVEsQ0FBQyxDQUFDLEVBQUUsRUFBRSxDQUFDLENBQUMsQ0FBQztTQUM3QztRQUFDLE9BQU8sS0FBSyxFQUFFO1lBQ2QsTUFBTSxJQUFJLDRCQUFtQixDQUFDLHlCQUF5QixDQUFDLENBQUM7U0FDMUQ7SUFDSCxDQUFDLENBQUM7SUFDRCxJQUFBLDBCQUFRLEVBQUMsRUFBRSxFQUFFLEVBQUUsSUFBSSxFQUFFLElBQUksRUFBRSxDQUFDO0lBQzVCLElBQUEsMEJBQVEsRUFBQyx1Q0FBWSxFQUFFLENBQUMsbUJBQUksQ0FBQyxFQUFFLEVBQUUsSUFBSSxFQUFFLElBQUksRUFBRSxDQUFDOztzREFDNUI7QUFFbkI7SUFBQyxJQUFBLHFCQUFXLEVBQUMsRUFBRSxPQUFPLEVBQUUsV0FBVyxFQUFFLENBQUM7SUFDckMsSUFBQSx3QkFBSSxFQUFDLEdBQUcsRUFBRSxDQUFDLE1BQU0sQ0FBQztJQUNsQixJQUFBLDRCQUFVLEdBQUU7O3dEQUNNO0FBRW5CO0lBQUMsSUFBQSw0QkFBVSxHQUFFO0lBQ1osSUFBQSw2QkFBUyxFQUFDLENBQUMsRUFBRSxLQUFLLEVBQUUsRUFBRSxFQUFFO1FBQ3ZCLE9BQU8sQ0FBQyxJQUFJLEVBQUUsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLENBQUMsQ0FBQyxPQUFPLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUM7SUFDcEQsQ0FBQyxDQUFDOztzREFDZ0I7QUFFbEI7SUFBQyxJQUFBLDRCQUFVLEdBQUU7SUFDWixJQUFBLHdCQUFJLEVBQUMsR0FBRyxFQUFFLENBQUMsSUFBSSxDQUFDO0lBQ2hCLElBQUEsd0JBQU0sR0FBRTs4QkFDRCxJQUFJO29EQUFDO0FBRWI7SUFBQyxJQUFBLDRCQUFVLEdBQUU7SUFDWixJQUFBLHdCQUFJLEVBQUMsR0FBRyxFQUFFLENBQUMsSUFBSSxDQUFDO0lBQ2hCLElBQUEsd0JBQU0sR0FBRTs4QkFDSCxJQUFJO2tEQUFDO0FBRVg7SUFBQyxJQUFBLDRCQUFVLEdBQUU7SUFDWixJQUFBLDZCQUFTLEVBQUMsQ0FBQyxFQUFFLEtBQUssRUFBRSxFQUFFLEVBQUU7UUFDdkIsT0FBTyxDQUFDLElBQUksRUFBRSxNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxLQUFLLENBQUMsR0FBRyxDQUFDLENBQUMsQ0FBQztJQUNwRCxDQUFDLENBQUM7O2tEQUNZO0FBL0NoQixzREFnREMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvbW9uaXRvcmluZy9kdG8vZ2V0LW1vbml0b3Jpbmctc3RhdHMuZHRvLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEJhZFJlcXVlc3RFeGNlcHRpb24gfSBmcm9tICdAbmVzdGpzL2NvbW1vbic7XHJcbmltcG9ydCB7IEFwaVByb3BlcnR5IH0gZnJvbSAnQG5lc3Rqcy9zd2FnZ2VyJztcclxuaW1wb3J0IHsgVHJhbnNmb3JtLCBUeXBlIH0gZnJvbSAnY2xhc3MtdHJhbnNmb3JtZXInO1xyXG5pbXBvcnQgeyBJc0RhdGUsIElzTnVtYmVyLCBJc09wdGlvbmFsLCBWYWxpZGF0ZSB9IGZyb20gJ2NsYXNzLXZhbGlkYXRvcic7XHJcbmltcG9ydCB7IFNpdGUgfSBmcm9tICdzaXRlcy9zaXRlcy5lbnRpdHknO1xyXG5pbXBvcnQgeyBFbnRpdHlFeGlzdHMgfSBmcm9tICd2YWxpZGF0aW9ucy9lbnRpdHktZXhpc3RzLmNvbnN0cmFpbnQnO1xyXG5cclxuY29uc3QgbWF4QWxsb3dlZElkcyA9IDEwO1xyXG5cclxuZXhwb3J0IGNsYXNzIEdldE1vbml0b3JpbmdTdGF0c0R0byB7XHJcbiAgQEFwaVByb3BlcnR5KHsgZXhhbXBsZTogWzEsIDMsIDVdIH0pXHJcbiAgQElzT3B0aW9uYWwoKVxyXG4gIEBUcmFuc2Zvcm0oKHsgdmFsdWUgfSkgPT4ge1xyXG4gICAgdHJ5IHtcclxuICAgICAgY29uc3Qgc3BsaXR0ZWQgPSB2YWx1ZS5zcGxpdCgnLCcpO1xyXG5cclxuICAgICAgaWYgKHNwbGl0dGVkLmxlbmd0aCA+IG1heEFsbG93ZWRJZHMpIHtcclxuICAgICAgICB0aHJvdyBuZXcgQmFkUmVxdWVzdEV4Y2VwdGlvbihcclxuICAgICAgICAgIGBzaXRlSWRzOiBUb28gbWFueSBJRHMuIE1heGltdW0gYWxsb3dlZDogJHttYXhBbGxvd2VkSWRzfS5gLFxyXG4gICAgICAgICk7XHJcbiAgICAgIH1cclxuXHJcbiAgICAgIHJldHVybiBzcGxpdHRlZC5tYXAoKHgpID0+IHBhcnNlSW50KHgsIDEwKSk7XHJcbiAgICB9IGNhdGNoIChlcnJvcikge1xyXG4gICAgICB0aHJvdyBuZXcgQmFkUmVxdWVzdEV4Y2VwdGlvbignc2l0ZUlkczogaW52YWxpZCBmb3JtYXQnKTtcclxuICAgIH1cclxuICB9KVxyXG4gIEBJc051bWJlcih7fSwgeyBlYWNoOiB0cnVlIH0pXHJcbiAgQFZhbGlkYXRlKEVudGl0eUV4aXN0cywgW1NpdGVdLCB7IGVhY2g6IHRydWUgfSlcclxuICBzaXRlSWRzPzogbnVtYmVyW107XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSh7IGV4YW1wbGU6ICdTUE9ULTI3NDInIH0pXHJcbiAgQFR5cGUoKCkgPT4gU3RyaW5nKVxyXG4gIEBJc09wdGlvbmFsKClcclxuICBzcG90dGVySWQ/OiBzdHJpbmc7XHJcblxyXG4gIEBJc09wdGlvbmFsKClcclxuICBAVHJhbnNmb3JtKCh7IHZhbHVlIH0pID0+IHtcclxuICAgIHJldHVybiBbdHJ1ZSwgJ3RydWUnLCAxLCAnMSddLmluZGV4T2YodmFsdWUpID4gLTE7XHJcbiAgfSlcclxuICBtb250aGx5PzogYm9vbGVhbjtcclxuXHJcbiAgQElzT3B0aW9uYWwoKVxyXG4gIEBUeXBlKCgpID0+IERhdGUpXHJcbiAgQElzRGF0ZSgpXHJcbiAgc3RhcnQ/OiBEYXRlO1xyXG5cclxuICBASXNPcHRpb25hbCgpXHJcbiAgQFR5cGUoKCkgPT4gRGF0ZSlcclxuICBASXNEYXRlKClcclxuICBlbmQ/OiBEYXRlO1xyXG5cclxuICBASXNPcHRpb25hbCgpXHJcbiAgQFRyYW5zZm9ybSgoeyB2YWx1ZSB9KSA9PiB7XHJcbiAgICByZXR1cm4gW3RydWUsICd0cnVlJywgMSwgJzEnXS5pbmRleE9mKHZhbHVlKSA+IC0xO1xyXG4gIH0pXHJcbiAgY3N2PzogYm9vbGVhbjtcclxufVxyXG4iXSwidmVyc2lvbiI6M30=

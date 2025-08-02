@@ -1,0 +1,72 @@
+7a4807685a22b103af743da5699fbf56
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreateSiteApplicationDto = exports.CreateSiteDto = void 0;
+const swagger_1 = require("@nestjs/swagger");
+const class_transformer_1 = require("class-transformer");
+const class_validator_1 = require("class-validator");
+class CreateSiteDto {
+}
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'Duxbury Site' }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateSiteDto.prototype, "name", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 13.21651 }),
+    (0, class_validator_1.IsLatitude)(),
+    __metadata("design:type", Number)
+], CreateSiteDto.prototype, "latitude", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 132.51651 }),
+    (0, class_validator_1.IsLongitude)(),
+    __metadata("design:type", Number)
+], CreateSiteDto.prototype, "longitude", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 15 }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsInt)(),
+    __metadata("design:type", Number)
+], CreateSiteDto.prototype, "depth", void 0);
+exports.CreateSiteDto = CreateSiteDto;
+class CreateSiteApplicationDto {
+}
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'Some permit requirements' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateSiteApplicationDto.prototype, "permitRequirements", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'Some funding source' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateSiteApplicationDto.prototype, "fundingSource", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_transformer_1.Type)(() => Date),
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
+], CreateSiteApplicationDto.prototype, "installationSchedule", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'Some installation resources' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateSiteApplicationDto.prototype, "installationResources", void 0);
+exports.CreateSiteApplicationDto = CreateSiteApplicationDto;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvc2l0ZXMvZHRvL2NyZWF0ZS1zaXRlLmR0by50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFBQSw2Q0FBOEM7QUFDOUMseURBQXlDO0FBQ3pDLHFEQVF5QjtBQUV6QixNQUFhLGFBQWE7Q0FrQnpCO0FBakJDO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsT0FBTyxFQUFFLGNBQWMsRUFBRSxDQUFDO0lBQ3hDLElBQUEsMEJBQVEsR0FBRTtJQUNWLElBQUEsNEJBQVUsR0FBRTs7MkNBQ1M7QUFFdEI7SUFBQyxJQUFBLHFCQUFXLEVBQUMsRUFBRSxPQUFPLEVBQUUsUUFBUSxFQUFFLENBQUM7SUFDbEMsSUFBQSw0QkFBVSxHQUFFOzsrQ0FDYTtBQUUxQjtJQUFDLElBQUEscUJBQVcsRUFBQyxFQUFFLE9BQU8sRUFBRSxTQUFTLEVBQUUsQ0FBQztJQUNuQyxJQUFBLDZCQUFXLEdBQUU7O2dEQUNhO0FBRTNCO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsT0FBTyxFQUFFLEVBQUUsRUFBRSxDQUFDO0lBQzVCLElBQUEsNEJBQVUsR0FBRTtJQUNaLElBQUEsdUJBQUssR0FBRTs7NENBQ2U7QUFqQnpCLHNDQWtCQztBQUVELE1BQWEsd0JBQXdCO0NBdUJwQztBQXRCQztJQUFDLElBQUEscUJBQVcsRUFBQyxFQUFFLE9BQU8sRUFBRSwwQkFBMEIsRUFBRSxDQUFDO0lBQ3BELElBQUEsNEJBQVUsR0FBRTtJQUNaLElBQUEsMEJBQVEsR0FBRTtJQUNWLElBQUEsNEJBQVUsR0FBRTs7b0VBQ3dCO0FBRXJDO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsT0FBTyxFQUFFLHFCQUFxQixFQUFFLENBQUM7SUFDL0MsSUFBQSw0QkFBVSxHQUFFO0lBQ1osSUFBQSwwQkFBUSxHQUFFO0lBQ1YsSUFBQSw0QkFBVSxHQUFFOzsrREFDbUI7QUFFaEM7SUFBQyxJQUFBLDRCQUFVLEdBQUU7SUFDWixJQUFBLHdCQUFJLEVBQUMsR0FBRyxFQUFFLENBQUMsSUFBSSxDQUFDO0lBQ2hCLElBQUEsd0JBQU0sR0FBRTs4QkFDdUIsSUFBSTtzRUFBQztBQUVyQztJQUFDLElBQUEscUJBQVcsRUFBQyxFQUFFLE9BQU8sRUFBRSw2QkFBNkIsRUFBRSxDQUFDO0lBQ3ZELElBQUEsNEJBQVUsR0FBRTtJQUNaLElBQUEsMEJBQVEsR0FBRTtJQUNWLElBQUEsNEJBQVUsR0FBRTs7dUVBQzJCO0FBdEIxQyw0REF1QkMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvc2l0ZXMvZHRvL2NyZWF0ZS1zaXRlLmR0by50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBBcGlQcm9wZXJ0eSB9IGZyb20gJ0BuZXN0anMvc3dhZ2dlcic7XHJcbmltcG9ydCB7IFR5cGUgfSBmcm9tICdjbGFzcy10cmFuc2Zvcm1lcic7XHJcbmltcG9ydCB7XHJcbiAgSXNOb3RFbXB0eSxcclxuICBJc1N0cmluZyxcclxuICBJc09wdGlvbmFsLFxyXG4gIElzSW50LFxyXG4gIElzTGF0aXR1ZGUsXHJcbiAgSXNMb25naXR1ZGUsXHJcbiAgSXNEYXRlLFxyXG59IGZyb20gJ2NsYXNzLXZhbGlkYXRvcic7XHJcblxyXG5leHBvcnQgY2xhc3MgQ3JlYXRlU2l0ZUR0byB7XHJcbiAgQEFwaVByb3BlcnR5KHsgZXhhbXBsZTogJ0R1eGJ1cnkgU2l0ZScgfSlcclxuICBASXNTdHJpbmcoKVxyXG4gIEBJc05vdEVtcHR5KClcclxuICByZWFkb25seSBuYW1lOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSh7IGV4YW1wbGU6IDEzLjIxNjUxIH0pXHJcbiAgQElzTGF0aXR1ZGUoKVxyXG4gIHJlYWRvbmx5IGxhdGl0dWRlOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSh7IGV4YW1wbGU6IDEzMi41MTY1MSB9KVxyXG4gIEBJc0xvbmdpdHVkZSgpXHJcbiAgcmVhZG9ubHkgbG9uZ2l0dWRlOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSh7IGV4YW1wbGU6IDE1IH0pXHJcbiAgQElzT3B0aW9uYWwoKVxyXG4gIEBJc0ludCgpXHJcbiAgcmVhZG9ubHkgZGVwdGg6IG51bWJlcjtcclxufVxyXG5cclxuZXhwb3J0IGNsYXNzIENyZWF0ZVNpdGVBcHBsaWNhdGlvbkR0byB7XHJcbiAgQEFwaVByb3BlcnR5KHsgZXhhbXBsZTogJ1NvbWUgcGVybWl0IHJlcXVpcmVtZW50cycgfSlcclxuICBASXNPcHRpb25hbCgpXHJcbiAgQElzU3RyaW5nKClcclxuICBASXNOb3RFbXB0eSgpXHJcbiAgcmVhZG9ubHkgcGVybWl0UmVxdWlyZW1lbnRzPzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAnU29tZSBmdW5kaW5nIHNvdXJjZScgfSlcclxuICBASXNPcHRpb25hbCgpXHJcbiAgQElzU3RyaW5nKClcclxuICBASXNOb3RFbXB0eSgpXHJcbiAgcmVhZG9ubHkgZnVuZGluZ1NvdXJjZT86IHN0cmluZztcclxuXHJcbiAgQElzT3B0aW9uYWwoKVxyXG4gIEBUeXBlKCgpID0+IERhdGUpXHJcbiAgQElzRGF0ZSgpXHJcbiAgcmVhZG9ubHkgaW5zdGFsbGF0aW9uU2NoZWR1bGU/OiBEYXRlO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAnU29tZSBpbnN0YWxsYXRpb24gcmVzb3VyY2VzJyB9KVxyXG4gIEBJc09wdGlvbmFsKClcclxuICBASXNTdHJpbmcoKVxyXG4gIEBJc05vdEVtcHR5KClcclxuICByZWFkb25seSBpbnN0YWxsYXRpb25SZXNvdXJjZXM/OiBzdHJpbmc7XHJcbn1cclxuIl0sInZlcnNpb24iOjN9

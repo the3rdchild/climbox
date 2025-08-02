@@ -1,0 +1,418 @@
+b6b1b77d6c46352cfec8cbfa03f8fab8
+"use strict";
+
+/* istanbul ignore next */
+function cov_1ecbsdtstd() {
+  var path = "/home/user/climbox/packages/api/src/utils/constants.ts";
+  var hash = "8cd4b87d8ee7bbb599801f2192701edf18435f05";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/user/climbox/packages/api/src/utils/constants.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 246
+        }
+      },
+      "2": {
+        start: {
+          line: 5,
+          column: 0
+        },
+        end: {
+          line: 11,
+          column: 1
+        }
+      },
+      "3": {
+        start: {
+          line: 7,
+          column: 4
+        },
+        end: {
+          line: 7,
+          column: 31
+        }
+      },
+      "4": {
+        start: {
+          line: 12,
+          column: 0
+        },
+        end: {
+          line: 12,
+          column: 56
+        }
+      },
+      "5": {
+        start: {
+          line: 13,
+          column: 0
+        },
+        end: {
+          line: 13,
+          column: 47
+        }
+      },
+      "6": {
+        start: {
+          line: 19,
+          column: 0
+        },
+        end: {
+          line: 19,
+          column: 82
+        }
+      },
+      "7": {
+        start: {
+          line: 20,
+          column: 0
+        },
+        end: {
+          line: 20,
+          column: 73
+        }
+      },
+      "8": {
+        start: {
+          line: 21,
+          column: 0
+        },
+        end: {
+          line: 21,
+          column: 77
+        }
+      },
+      "9": {
+        start: {
+          line: 22,
+          column: 0
+        },
+        end: {
+          line: 22,
+          column: 77
+        }
+      },
+      "10": {
+        start: {
+          line: 24,
+          column: 0
+        },
+        end: {
+          line: 28,
+          column: 68
+        }
+      },
+      "11": {
+        start: {
+          line: 25,
+          column: 4
+        },
+        end: {
+          line: 25,
+          column: 61
+        }
+      },
+      "12": {
+        start: {
+          line: 26,
+          column: 4
+        },
+        end: {
+          line: 26,
+          column: 33
+        }
+      },
+      "13": {
+        start: {
+          line: 27,
+          column: 4
+        },
+        end: {
+          line: 27,
+          column: 45
+        }
+      },
+      "14": {
+        start: {
+          line: 30,
+          column: 0
+        },
+        end: {
+          line: 59,
+          column: 2
+        }
+      },
+      "15": {
+        start: {
+          line: 60,
+          column: 0
+        },
+        end: {
+          line: 60,
+          column: 62
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 24,
+            column: 1
+          },
+          end: {
+            line: 24,
+            column: 2
+          }
+        },
+        loc: {
+          start: {
+            line: 24,
+            column: 24
+          },
+          end: {
+            line: 28,
+            column: 1
+          }
+        },
+        line: 24
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 12,
+            column: 18
+          },
+          end: {
+            line: 12,
+            column: 55
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 12,
+            column: 18
+          },
+          end: {
+            line: 12,
+            column: 38
+          }
+        }, {
+          start: {
+            line: 12,
+            column: 42
+          },
+          end: {
+            line: 12,
+            column: 55
+          }
+        }],
+        line: 12
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 28,
+            column: 17
+          },
+          end: {
+            line: 28,
+            column: 66
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 28,
+            column: 17
+          },
+          end: {
+            line: 28,
+            column: 36
+          }
+        }, {
+          start: {
+            line: 28,
+            column: 41
+          },
+          end: {
+            line: 28,
+            column: 65
+          }
+        }],
+        line: 28
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/home/user/climbox/packages/api/src/utils/constants.ts",
+      mappings: ";;;AAAA,kFAAkF;AAClF,IAAI;IACF,6EAA6E;IAC7E,OAAO,CAAC,QAAQ,CAAC,CAAC,MAAM,EAAE,CAAC;CAC5B;AAAC,WAAM;IACN,OAAO;CACR;AACY,QAAA,OAAO,GAAG,OAAO,CAAC,GAAG,CAAC,QAAQ,IAAI,aAAa,CAAC;AAChD,QAAA,SAAS,GAAG,eAAO,KAAK,MAAM,CAAC;AAE5C,mEAAmE;AACnE,2FAA2F;AAC3F,wEAAwE;AACxE,gCAAgC;AAEhC,iBAAiB;AACJ,QAAA,gBAAgB,GAC3B,sDAAsD,CAAC;AAC5C,QAAA,mBAAmB,GAAG,0CAA0C,CAAC;AACjE,QAAA,qBAAqB,GAChC,4CAA4C,CAAC;AAClC,QAAA,qBAAqB,GAChC,4CAA4C,CAAC;AAE/C,IAAY,WAIX;AAJD,WAAY,WAAW;IACrB,wDAAyC,CAAA;IACzC,4BAAa,CAAA;IACb,wCAAyB,CAAA;AAC3B,CAAC,EAJW,WAAW,GAAX,mBAAW,KAAX,mBAAW,QAItB;AAED,kBAAkB;AACL,QAAA,gBAAgB,GAAG;IAC9B,CAAC,WAAW,CAAC,IAAI,CAAC,EAAE;QAClB,qBAAqB,EAAE,uBAAuB;QAC9C,aAAa,EAAE,eAAe;QAC9B,qBAAqB,EAAE,uBAAuB;QAC9C,UAAU,EAAE,YAAY;QACxB,aAAa,EAAE,eAAe;QAC9B,aAAa,EAAE,eAAe;QAC9B,8BAA8B,EAAE,gCAAgC;QAChE,sBAAsB,EAAE,wBAAwB;QAChD,8BAA8B,EAAE,gCAAgC;QAChE,mBAAmB,EAAE,qBAAqB;QAC1C,+BAA+B,EAAE,iCAAiC;QAClE,uBAAuB,EAAE,yBAAyB;QAClD,+BAA+B,EAAE,iCAAiC;QAClE,oBAAoB,EAAE,sBAAsB;QAC5C,gCAAgC,EAAE,kCAAkC;QACpE,wBAAwB,EAAE,0BAA0B;QACpD,gCAAgC,EAAE,kCAAkC;QACpE,qBAAqB,EAAE,uBAAuB;KAC/C;IACD,CAAC,WAAW,CAAC,kBAAkB,CAAC,EAAE;QAChC,iBAAiB,EAAE,mBAAmB;QACtC,6BAA6B,EAAE,+BAA+B;KAC/D;IACD,CAAC,WAAW,CAAC,UAAU,CAAC,EAAE;QACxB,2BAA2B,EAAE,6BAA6B;QAC1D,4BAA4B,EAAE,8BAA8B;KAC7D;CACF,CAAC;AAEW,QAAA,oBAAoB,GAAG,8BAA8B,CAAC",
+      names: [],
+      sources: ["/home/user/climbox/packages/api/src/utils/constants.ts"],
+      sourcesContent: ["// dotenv is a dev dependency, so conditionally import it (don't need it in Prod).\r\ntry {\r\n  // eslint-disable-next-line import/no-extraneous-dependencies, global-require\r\n  require('dotenv').config();\r\n} catch {\r\n  // Pass\r\n}\r\nexport const envName = process.env.NODE_ENV || 'development';\r\nexport const isTestEnv = envName === 'test';\r\n\r\n// Environment variables (especially those used by cloud-functions)\r\n// should NOT be exported from here (eg. \"export const { SOFAR_API_TOKEN } = process.env\"),\r\n// since it will interfere with the way they are set in cloud-functions,\r\n// causing them to be undefined.\r\n\r\n// Sofar API urls\r\nexport const SOFAR_MARINE_URL =\r\n  'https://api.sofarocean.com/marine-weather/v1/models/';\r\nexport const SOFAR_WAVE_DATA_URL = 'https://api.sofarocean.com/api/wave-data';\r\nexport const SOFAR_SENSOR_DATA_URL =\r\n  'https://api.sofarocean.com/api/sensor-data';\r\nexport const SOFAR_LATEST_DATA_URL =\r\n  'https://api.sofarocean.com/api/latest-data';\r\n\r\nexport enum SofarModels {\r\n  NOAACoralReefWatch = 'NOAACoralReefWatch',\r\n  Wave = 'Wave',\r\n  Atmosphere = 'Atmosphere',\r\n}\r\n\r\n// Sofar variables\r\nexport const sofarVariableIDs = {\r\n  [SofarModels.Wave]: {\r\n    significantWaveHeight: 'significantWaveHeight',\r\n    meanDirection: 'meanDirection',\r\n    meanDirectionalSpread: 'meanDirectionalSpread',\r\n    meanPeriod: 'meanPeriod',\r\n    peakFrequency: 'peakFrequency',\r\n    peakDirection: 'peakDirection',\r\n    significantWaveHeightWindWaves: 'significantWaveHeightWindWaves',\r\n    meanDirectionWindWaves: 'meanDirectionWindWaves',\r\n    meanDirectionalSpreadWindWaves: 'meanDirectionalSpreadWindWaves',\r\n    peakPeriodWindWaves: 'peakPeriodWindWaves',\r\n    significantWaveHeightFirstSwell: 'significantWaveHeightFirstSwell',\r\n    meanDirectionFirstSwell: 'meanDirectionFirstSwell',\r\n    meanDirectionalSpreadFirstSwell: 'meanDirectionalSpreadFirstSwell',\r\n    peakPeriodFirstSwell: 'peakPeriodFirstSwell',\r\n    significantWaveHeightSecondSwell: 'significantWaveHeightSecondSwell',\r\n    meanDirectionSecondSwell: 'meanDirectionSecondSwell',\r\n    meanDirectionalSpreadSecondSwell: 'meanDirectionalSpreadSecondSwell',\r\n    peakPeriodSecondSwell: 'peakPeriodSecondSwell',\r\n  },\r\n  [SofarModels.NOAACoralReefWatch]: {\r\n    degreeHeatingWeek: 'degreeHeatingWeek',\r\n    analysedSeaSurfaceTemperature: 'analysedSeaSurfaceTemperature',\r\n  },\r\n  [SofarModels.Atmosphere]: {\r\n    windVelocity10MeterEastward: 'windVelocity10MeterEastward',\r\n    windVelocity10MeterNorthward: 'windVelocity10MeterNorthward',\r\n  },\r\n};\r\n\r\nexport const STORM_GLASS_BASE_URL = 'https://api.stormglass.io/v2';\r\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "8cd4b87d8ee7bbb599801f2192701edf18435f05"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1ecbsdtstd = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_1ecbsdtstd();
+cov_1ecbsdtstd().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[1]++;
+exports.STORM_GLASS_BASE_URL = exports.sofarVariableIDs = exports.SofarModels = exports.SOFAR_LATEST_DATA_URL = exports.SOFAR_SENSOR_DATA_URL = exports.SOFAR_WAVE_DATA_URL = exports.SOFAR_MARINE_URL = exports.isTestEnv = exports.envName = void 0;
+// dotenv is a dev dependency, so conditionally import it (don't need it in Prod).
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[2]++;
+try {
+  /* istanbul ignore next */
+  cov_1ecbsdtstd().s[3]++;
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+  require('dotenv').config();
+} catch (_a) {
+  // Pass
+}
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[4]++;
+exports.envName =
+/* istanbul ignore next */
+(cov_1ecbsdtstd().b[0][0]++, process.env.NODE_ENV) ||
+/* istanbul ignore next */
+(cov_1ecbsdtstd().b[0][1]++, 'development');
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[5]++;
+exports.isTestEnv = exports.envName === 'test';
+// Environment variables (especially those used by cloud-functions)
+// should NOT be exported from here (eg. "export const { SOFAR_API_TOKEN } = process.env"),
+// since it will interfere with the way they are set in cloud-functions,
+// causing them to be undefined.
+// Sofar API urls
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[6]++;
+exports.SOFAR_MARINE_URL = 'https://api.sofarocean.com/marine-weather/v1/models/';
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[7]++;
+exports.SOFAR_WAVE_DATA_URL = 'https://api.sofarocean.com/api/wave-data';
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[8]++;
+exports.SOFAR_SENSOR_DATA_URL = 'https://api.sofarocean.com/api/sensor-data';
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[9]++;
+exports.SOFAR_LATEST_DATA_URL = 'https://api.sofarocean.com/api/latest-data';
+var SofarModels;
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[10]++;
+(function (SofarModels) {
+  /* istanbul ignore next */
+  cov_1ecbsdtstd().f[0]++;
+  cov_1ecbsdtstd().s[11]++;
+  SofarModels["NOAACoralReefWatch"] = "NOAACoralReefWatch";
+  /* istanbul ignore next */
+  cov_1ecbsdtstd().s[12]++;
+  SofarModels["Wave"] = "Wave";
+  /* istanbul ignore next */
+  cov_1ecbsdtstd().s[13]++;
+  SofarModels["Atmosphere"] = "Atmosphere";
+})(SofarModels =
+/* istanbul ignore next */
+(cov_1ecbsdtstd().b[1][0]++, exports.SofarModels) ||
+/* istanbul ignore next */
+(cov_1ecbsdtstd().b[1][1]++, exports.SofarModels = {}));
+// Sofar variables
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[14]++;
+exports.sofarVariableIDs = {
+  [SofarModels.Wave]: {
+    significantWaveHeight: 'significantWaveHeight',
+    meanDirection: 'meanDirection',
+    meanDirectionalSpread: 'meanDirectionalSpread',
+    meanPeriod: 'meanPeriod',
+    peakFrequency: 'peakFrequency',
+    peakDirection: 'peakDirection',
+    significantWaveHeightWindWaves: 'significantWaveHeightWindWaves',
+    meanDirectionWindWaves: 'meanDirectionWindWaves',
+    meanDirectionalSpreadWindWaves: 'meanDirectionalSpreadWindWaves',
+    peakPeriodWindWaves: 'peakPeriodWindWaves',
+    significantWaveHeightFirstSwell: 'significantWaveHeightFirstSwell',
+    meanDirectionFirstSwell: 'meanDirectionFirstSwell',
+    meanDirectionalSpreadFirstSwell: 'meanDirectionalSpreadFirstSwell',
+    peakPeriodFirstSwell: 'peakPeriodFirstSwell',
+    significantWaveHeightSecondSwell: 'significantWaveHeightSecondSwell',
+    meanDirectionSecondSwell: 'meanDirectionSecondSwell',
+    meanDirectionalSpreadSecondSwell: 'meanDirectionalSpreadSecondSwell',
+    peakPeriodSecondSwell: 'peakPeriodSecondSwell'
+  },
+  [SofarModels.NOAACoralReefWatch]: {
+    degreeHeatingWeek: 'degreeHeatingWeek',
+    analysedSeaSurfaceTemperature: 'analysedSeaSurfaceTemperature'
+  },
+  [SofarModels.Atmosphere]: {
+    windVelocity10MeterEastward: 'windVelocity10MeterEastward',
+    windVelocity10MeterNorthward: 'windVelocity10MeterNorthward'
+  }
+};
+/* istanbul ignore next */
+cov_1ecbsdtstd().s[15]++;
+exports.STORM_GLASS_BASE_URL = 'https://api.stormglass.io/v2';
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMWVjYnNkdHN0ZCIsImFjdHVhbENvdmVyYWdlIiwicyIsInJlcXVpcmUiLCJjb25maWciLCJfYSIsImV4cG9ydHMiLCJlbnZOYW1lIiwiYiIsInByb2Nlc3MiLCJlbnYiLCJOT0RFX0VOViIsImlzVGVzdEVudiIsIlNPRkFSX01BUklORV9VUkwiLCJTT0ZBUl9XQVZFX0RBVEFfVVJMIiwiU09GQVJfU0VOU09SX0RBVEFfVVJMIiwiU09GQVJfTEFURVNUX0RBVEFfVVJMIiwiU29mYXJNb2RlbHMiLCJmIiwic29mYXJWYXJpYWJsZUlEcyIsIldhdmUiLCJzaWduaWZpY2FudFdhdmVIZWlnaHQiLCJtZWFuRGlyZWN0aW9uIiwibWVhbkRpcmVjdGlvbmFsU3ByZWFkIiwibWVhblBlcmlvZCIsInBlYWtGcmVxdWVuY3kiLCJwZWFrRGlyZWN0aW9uIiwic2lnbmlmaWNhbnRXYXZlSGVpZ2h0V2luZFdhdmVzIiwibWVhbkRpcmVjdGlvbldpbmRXYXZlcyIsIm1lYW5EaXJlY3Rpb25hbFNwcmVhZFdpbmRXYXZlcyIsInBlYWtQZXJpb2RXaW5kV2F2ZXMiLCJzaWduaWZpY2FudFdhdmVIZWlnaHRGaXJzdFN3ZWxsIiwibWVhbkRpcmVjdGlvbkZpcnN0U3dlbGwiLCJtZWFuRGlyZWN0aW9uYWxTcHJlYWRGaXJzdFN3ZWxsIiwicGVha1BlcmlvZEZpcnN0U3dlbGwiLCJzaWduaWZpY2FudFdhdmVIZWlnaHRTZWNvbmRTd2VsbCIsIm1lYW5EaXJlY3Rpb25TZWNvbmRTd2VsbCIsIm1lYW5EaXJlY3Rpb25hbFNwcmVhZFNlY29uZFN3ZWxsIiwicGVha1BlcmlvZFNlY29uZFN3ZWxsIiwiTk9BQUNvcmFsUmVlZldhdGNoIiwiZGVncmVlSGVhdGluZ1dlZWsiLCJhbmFseXNlZFNlYVN1cmZhY2VUZW1wZXJhdHVyZSIsIkF0bW9zcGhlcmUiLCJ3aW5kVmVsb2NpdHkxME1ldGVyRWFzdHdhcmQiLCJ3aW5kVmVsb2NpdHkxME1ldGVyTm9ydGh3YXJkIiwiU1RPUk1fR0xBU1NfQkFTRV9VUkwiXSwic291cmNlcyI6WyIvaG9tZS91c2VyL2NsaW1ib3gvcGFja2FnZXMvYXBpL3NyYy91dGlscy9jb25zdGFudHMudHMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZG90ZW52IGlzIGEgZGV2IGRlcGVuZGVuY3ksIHNvIGNvbmRpdGlvbmFsbHkgaW1wb3J0IGl0IChkb24ndCBuZWVkIGl0IGluIFByb2QpLlxyXG50cnkge1xyXG4gIC8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBpbXBvcnQvbm8tZXh0cmFuZW91cy1kZXBlbmRlbmNpZXMsIGdsb2JhbC1yZXF1aXJlXHJcbiAgcmVxdWlyZSgnZG90ZW52JykuY29uZmlnKCk7XHJcbn0gY2F0Y2gge1xyXG4gIC8vIFBhc3NcclxufVxyXG5leHBvcnQgY29uc3QgZW52TmFtZSA9IHByb2Nlc3MuZW52Lk5PREVfRU5WIHx8ICdkZXZlbG9wbWVudCc7XHJcbmV4cG9ydCBjb25zdCBpc1Rlc3RFbnYgPSBlbnZOYW1lID09PSAndGVzdCc7XHJcblxyXG4vLyBFbnZpcm9ubWVudCB2YXJpYWJsZXMgKGVzcGVjaWFsbHkgdGhvc2UgdXNlZCBieSBjbG91ZC1mdW5jdGlvbnMpXHJcbi8vIHNob3VsZCBOT1QgYmUgZXhwb3J0ZWQgZnJvbSBoZXJlIChlZy4gXCJleHBvcnQgY29uc3QgeyBTT0ZBUl9BUElfVE9LRU4gfSA9IHByb2Nlc3MuZW52XCIpLFxyXG4vLyBzaW5jZSBpdCB3aWxsIGludGVyZmVyZSB3aXRoIHRoZSB3YXkgdGhleSBhcmUgc2V0IGluIGNsb3VkLWZ1bmN0aW9ucyxcclxuLy8gY2F1c2luZyB0aGVtIHRvIGJlIHVuZGVmaW5lZC5cclxuXHJcbi8vIFNvZmFyIEFQSSB1cmxzXHJcbmV4cG9ydCBjb25zdCBTT0ZBUl9NQVJJTkVfVVJMID1cclxuICAnaHR0cHM6Ly9hcGkuc29mYXJvY2Vhbi5jb20vbWFyaW5lLXdlYXRoZXIvdjEvbW9kZWxzLyc7XHJcbmV4cG9ydCBjb25zdCBTT0ZBUl9XQVZFX0RBVEFfVVJMID0gJ2h0dHBzOi8vYXBpLnNvZmFyb2NlYW4uY29tL2FwaS93YXZlLWRhdGEnO1xyXG5leHBvcnQgY29uc3QgU09GQVJfU0VOU09SX0RBVEFfVVJMID1cclxuICAnaHR0cHM6Ly9hcGkuc29mYXJvY2Vhbi5jb20vYXBpL3NlbnNvci1kYXRhJztcclxuZXhwb3J0IGNvbnN0IFNPRkFSX0xBVEVTVF9EQVRBX1VSTCA9XHJcbiAgJ2h0dHBzOi8vYXBpLnNvZmFyb2NlYW4uY29tL2FwaS9sYXRlc3QtZGF0YSc7XHJcblxyXG5leHBvcnQgZW51bSBTb2Zhck1vZGVscyB7XHJcbiAgTk9BQUNvcmFsUmVlZldhdGNoID0gJ05PQUFDb3JhbFJlZWZXYXRjaCcsXHJcbiAgV2F2ZSA9ICdXYXZlJyxcclxuICBBdG1vc3BoZXJlID0gJ0F0bW9zcGhlcmUnLFxyXG59XHJcblxyXG4vLyBTb2ZhciB2YXJpYWJsZXNcclxuZXhwb3J0IGNvbnN0IHNvZmFyVmFyaWFibGVJRHMgPSB7XHJcbiAgW1NvZmFyTW9kZWxzLldhdmVdOiB7XHJcbiAgICBzaWduaWZpY2FudFdhdmVIZWlnaHQ6ICdzaWduaWZpY2FudFdhdmVIZWlnaHQnLFxyXG4gICAgbWVhbkRpcmVjdGlvbjogJ21lYW5EaXJlY3Rpb24nLFxyXG4gICAgbWVhbkRpcmVjdGlvbmFsU3ByZWFkOiAnbWVhbkRpcmVjdGlvbmFsU3ByZWFkJyxcclxuICAgIG1lYW5QZXJpb2Q6ICdtZWFuUGVyaW9kJyxcclxuICAgIHBlYWtGcmVxdWVuY3k6ICdwZWFrRnJlcXVlbmN5JyxcclxuICAgIHBlYWtEaXJlY3Rpb246ICdwZWFrRGlyZWN0aW9uJyxcclxuICAgIHNpZ25pZmljYW50V2F2ZUhlaWdodFdpbmRXYXZlczogJ3NpZ25pZmljYW50V2F2ZUhlaWdodFdpbmRXYXZlcycsXHJcbiAgICBtZWFuRGlyZWN0aW9uV2luZFdhdmVzOiAnbWVhbkRpcmVjdGlvbldpbmRXYXZlcycsXHJcbiAgICBtZWFuRGlyZWN0aW9uYWxTcHJlYWRXaW5kV2F2ZXM6ICdtZWFuRGlyZWN0aW9uYWxTcHJlYWRXaW5kV2F2ZXMnLFxyXG4gICAgcGVha1BlcmlvZFdpbmRXYXZlczogJ3BlYWtQZXJpb2RXaW5kV2F2ZXMnLFxyXG4gICAgc2lnbmlmaWNhbnRXYXZlSGVpZ2h0Rmlyc3RTd2VsbDogJ3NpZ25pZmljYW50V2F2ZUhlaWdodEZpcnN0U3dlbGwnLFxyXG4gICAgbWVhbkRpcmVjdGlvbkZpcnN0U3dlbGw6ICdtZWFuRGlyZWN0aW9uRmlyc3RTd2VsbCcsXHJcbiAgICBtZWFuRGlyZWN0aW9uYWxTcHJlYWRGaXJzdFN3ZWxsOiAnbWVhbkRpcmVjdGlvbmFsU3ByZWFkRmlyc3RTd2VsbCcsXHJcbiAgICBwZWFrUGVyaW9kRmlyc3RTd2VsbDogJ3BlYWtQZXJpb2RGaXJzdFN3ZWxsJyxcclxuICAgIHNpZ25pZmljYW50V2F2ZUhlaWdodFNlY29uZFN3ZWxsOiAnc2lnbmlmaWNhbnRXYXZlSGVpZ2h0U2Vjb25kU3dlbGwnLFxyXG4gICAgbWVhbkRpcmVjdGlvblNlY29uZFN3ZWxsOiAnbWVhbkRpcmVjdGlvblNlY29uZFN3ZWxsJyxcclxuICAgIG1lYW5EaXJlY3Rpb25hbFNwcmVhZFNlY29uZFN3ZWxsOiAnbWVhbkRpcmVjdGlvbmFsU3ByZWFkU2Vjb25kU3dlbGwnLFxyXG4gICAgcGVha1BlcmlvZFNlY29uZFN3ZWxsOiAncGVha1BlcmlvZFNlY29uZFN3ZWxsJyxcclxuICB9LFxyXG4gIFtTb2Zhck1vZGVscy5OT0FBQ29yYWxSZWVmV2F0Y2hdOiB7XHJcbiAgICBkZWdyZWVIZWF0aW5nV2VlazogJ2RlZ3JlZUhlYXRpbmdXZWVrJyxcclxuICAgIGFuYWx5c2VkU2VhU3VyZmFjZVRlbXBlcmF0dXJlOiAnYW5hbHlzZWRTZWFTdXJmYWNlVGVtcGVyYXR1cmUnLFxyXG4gIH0sXHJcbiAgW1NvZmFyTW9kZWxzLkF0bW9zcGhlcmVdOiB7XHJcbiAgICB3aW5kVmVsb2NpdHkxME1ldGVyRWFzdHdhcmQ6ICd3aW5kVmVsb2NpdHkxME1ldGVyRWFzdHdhcmQnLFxyXG4gICAgd2luZFZlbG9jaXR5MTBNZXRlck5vcnRod2FyZDogJ3dpbmRWZWxvY2l0eTEwTWV0ZXJOb3J0aHdhcmQnLFxyXG4gIH0sXHJcbn07XHJcblxyXG5leHBvcnQgY29uc3QgU1RPUk1fR0xBU1NfQkFTRV9VUkwgPSAnaHR0cHM6Ly9hcGkuc3Rvcm1nbGFzcy5pby92Mic7XHJcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7SUFZQTtJQUFBQSxjQUFBLFlBQUFBLENBQUE7TUFBQSxPQUFBQyxjQUFBO0lBQUE7RUFBQTtFQUFBLE9BQUFBLGNBQUE7QUFBQTtBQUFBRCxjQUFBO0FBQUFBLGNBQUEsR0FBQUUsQ0FBQTs7Ozs7OztBQVpBO0FBQUE7QUFBQUYsY0FBQSxHQUFBRSxDQUFBO0FBQ0EsSUFBSTtFQUFBO0VBQUFGLGNBQUEsR0FBQUUsQ0FBQTtFQUNGO0VBQ0FDLE9BQU8sQ0FBQyxRQUFRLENBQUMsQ0FBQ0MsTUFBTSxFQUFFO0NBQzNCLENBQUMsT0FBQUMsRUFBQSxFQUFNO0VBQ047QUFBQTtBQUNEO0FBQUFMLGNBQUEsR0FBQUUsQ0FBQTtBQUNZSSxPQUFBLENBQUFDLE9BQU87QUFBRztBQUFBLENBQUFQLGNBQUEsR0FBQVEsQ0FBQSxVQUFBQyxPQUFPLENBQUNDLEdBQUcsQ0FBQ0MsUUFBUTtBQUFBO0FBQUEsQ0FBQVgsY0FBQSxHQUFBUSxDQUFBLFVBQUksYUFBYTtBQUFDO0FBQUFSLGNBQUEsR0FBQUUsQ0FBQTtBQUNoREksT0FBQSxDQUFBTSxTQUFTLEdBQUdOLE9BQUEsQ0FBQUMsT0FBTyxLQUFLLE1BQU07QUFFM0M7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUFBO0FBQUFQLGNBQUEsR0FBQUUsQ0FBQTtBQUNhSSxPQUFBLENBQUFPLGdCQUFnQixHQUMzQixzREFBc0Q7QUFBQztBQUFBYixjQUFBLEdBQUFFLENBQUE7QUFDNUNJLE9BQUEsQ0FBQVEsbUJBQW1CLEdBQUcsMENBQTBDO0FBQUM7QUFBQWQsY0FBQSxHQUFBRSxDQUFBO0FBQ2pFSSxPQUFBLENBQUFTLHFCQUFxQixHQUNoQyw0Q0FBNEM7QUFBQztBQUFBZixjQUFBLEdBQUFFLENBQUE7QUFDbENJLE9BQUEsQ0FBQVUscUJBQXFCLEdBQ2hDLDRDQUE0QztBQUU5QyxJQUFZQyxXQUlYO0FBQUE7QUFBQWpCLGNBQUEsR0FBQUUsQ0FBQTtBQUpELFdBQVllLFdBQVc7RUFBQTtFQUFBakIsY0FBQSxHQUFBa0IsQ0FBQTtFQUFBbEIsY0FBQSxHQUFBRSxDQUFBO0VBQ3JCZSxXQUFBLDZDQUF5QztFQUFBO0VBQUFqQixjQUFBLEdBQUFFLENBQUE7RUFDekNlLFdBQUEsaUJBQWE7RUFBQTtFQUFBakIsY0FBQSxHQUFBRSxDQUFBO0VBQ2JlLFdBQUEsNkJBQXlCO0FBQzNCLENBQUMsRUFKV0EsV0FBVztBQUFYO0FBQUEsQ0FBQWpCLGNBQUEsR0FBQVEsQ0FBQSxVQUFBRixPQUFBLENBQUFXLFdBQVc7QUFBQTtBQUFBLENBQUFqQixjQUFBLEdBQUFRLENBQUEsVUFBWEYsT0FBQSxDQUFBVyxXQUFXO0FBTXZCO0FBQUE7QUFBQWpCLGNBQUEsR0FBQUUsQ0FBQTtBQUNhSSxPQUFBLENBQUFhLGdCQUFnQixHQUFHO0VBQzlCLENBQUNGLFdBQVcsQ0FBQ0csSUFBSSxHQUFHO0lBQ2xCQyxxQkFBcUIsRUFBRSx1QkFBdUI7SUFDOUNDLGFBQWEsRUFBRSxlQUFlO0lBQzlCQyxxQkFBcUIsRUFBRSx1QkFBdUI7SUFDOUNDLFVBQVUsRUFBRSxZQUFZO0lBQ3hCQyxhQUFhLEVBQUUsZUFBZTtJQUM5QkMsYUFBYSxFQUFFLGVBQWU7SUFDOUJDLDhCQUE4QixFQUFFLGdDQUFnQztJQUNoRUMsc0JBQXNCLEVBQUUsd0JBQXdCO0lBQ2hEQyw4QkFBOEIsRUFBRSxnQ0FBZ0M7SUFDaEVDLG1CQUFtQixFQUFFLHFCQUFxQjtJQUMxQ0MsK0JBQStCLEVBQUUsaUNBQWlDO0lBQ2xFQyx1QkFBdUIsRUFBRSx5QkFBeUI7SUFDbERDLCtCQUErQixFQUFFLGlDQUFpQztJQUNsRUMsb0JBQW9CLEVBQUUsc0JBQXNCO0lBQzVDQyxnQ0FBZ0MsRUFBRSxrQ0FBa0M7SUFDcEVDLHdCQUF3QixFQUFFLDBCQUEwQjtJQUNwREMsZ0NBQWdDLEVBQUUsa0NBQWtDO0lBQ3BFQyxxQkFBcUIsRUFBRTtHQUN4QjtFQUNELENBQUNyQixXQUFXLENBQUNzQixrQkFBa0IsR0FBRztJQUNoQ0MsaUJBQWlCLEVBQUUsbUJBQW1CO0lBQ3RDQyw2QkFBNkIsRUFBRTtHQUNoQztFQUNELENBQUN4QixXQUFXLENBQUN5QixVQUFVLEdBQUc7SUFDeEJDLDJCQUEyQixFQUFFLDZCQUE2QjtJQUMxREMsNEJBQTRCLEVBQUU7O0NBRWpDO0FBQUM7QUFBQTVDLGNBQUEsR0FBQUUsQ0FBQTtBQUVXSSxPQUFBLENBQUF1QyxvQkFBb0IsR0FBRyw4QkFBOEIifQ==

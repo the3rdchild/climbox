@@ -1,0 +1,393 @@
+8a27d716d99e1ab38c2c74ce17318449
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReefCheckSurvey = void 0;
+const typeorm_1 = require("typeorm");
+const swagger_1 = require("@nestjs/swagger");
+const sites_entity_1 = require("../sites/sites.entity");
+const reef_check_sites_entity_1 = require("../reef-check-sites/reef-check-sites.entity");
+const reef_check_organisms_entity_1 = require("../reef-check-organisms/reef-check-organisms.entity");
+const reef_check_substrates_entity_1 = require("../reef-check-substrates/reef-check-substrates.entity");
+let ReefCheckSurvey = class ReefCheckSurvey {
+};
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.PrimaryColumn)(),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "id", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], ReefCheckSurvey.prototype, "siteId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.ManyToOne)(() => sites_entity_1.Site, (site) => site.reefCheckSurveys),
+    (0, typeorm_1.JoinColumn)({ name: 'site_id' }),
+    (0, typeorm_1.Index)(),
+    __metadata("design:type", sites_entity_1.Site)
+], ReefCheckSurvey.prototype, "site", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "reefCheckSiteId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.ManyToOne)(() => reef_check_sites_entity_1.ReefCheckSite, (reefCheckSite) => reefCheckSite.surveys),
+    (0, typeorm_1.JoinColumn)({ name: 'reef_check_site_id' }),
+    (0, typeorm_1.Index)(),
+    __metadata("design:type", reef_check_sites_entity_1.ReefCheckSite)
+], ReefCheckSurvey.prototype, "reefCheckSite", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.OneToMany)(() => reef_check_organisms_entity_1.ReefCheckOrganism, (organism) => organism.survey),
+    __metadata("design:type", Array)
+], ReefCheckSurvey.prototype, "organisms", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.OneToMany)(() => reef_check_substrates_entity_1.ReefCheckSubstrate, (substrate) => substrate.survey),
+    __metadata("design:type", Array)
+], ReefCheckSurvey.prototype, "substrates", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", Date)
+], ReefCheckSurvey.prototype, "date", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "errors", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float', { nullable: true }),
+    __metadata("design:type", Number)
+], ReefCheckSurvey.prototype, "depth", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "timeOfDayWorkBegan", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "timeOfDayWorkEnded", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "methodUsedToDetermineLocation", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "riverMouthWidth", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "weather", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float'),
+    __metadata("design:type", Number)
+], ReefCheckSurvey.prototype, "airTemp", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float'),
+    __metadata("design:type", Number)
+], ReefCheckSurvey.prototype, "waterTempAtSurface", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float'),
+    __metadata("design:type", Number)
+], ReefCheckSurvey.prototype, "waterTempAt3M", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float'),
+    __metadata("design:type", Number)
+], ReefCheckSurvey.prototype, "waterTempAt10M", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float'),
+    __metadata("design:type", Number)
+], ReefCheckSurvey.prototype, "approxPopnSizeX1000", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float'),
+    __metadata("design:type", Number)
+], ReefCheckSurvey.prototype, "horizontalVisibilityInWater", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "bestReefArea", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "whyWasThisSiteSelected", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "shelteredOrExposed", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "anyMajorStormsInLastYears", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "whenStorms", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "overallAnthroImpact", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "whatKindOfImpacts", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "siltation", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "dynamiteFishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "poisonFishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "aquariumFishCollection", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "harvestOfInvertsForFood", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "harvestOfInvertsForCurio", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "touristDivingSnorkeling", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "sewagePollution", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "industrialPollution", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "commercialFishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "liveFoodFishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "artisinalRecreational", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "otherFormsOfFishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "otherFishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "yachts", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "levelOfOtherImpacts", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "otherImpacts", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "isSiteProtected", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "isProtectionEnforced", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "levelOfPoaching", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "spearfishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "bannedCommercialFishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "recreationalFishing", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "invertebrateShellCollection", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "anchoring", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "diving", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "otherSpecify", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "natureOfProtection", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "siteComments", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "substrateComments", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "fishComments", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "invertsComments", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "commentsFromOrganismSheet", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "grouperSize", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "percentBleaching", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "percentColoniesBleached", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "percentOfEachColony", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "suspectedDisease", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "rareAnimalsDetails", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "submittedBy", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "teamLeader", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "teamScientist", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.VirtualColumn)({
+        query: (survey) => `
+      SELECT satellite_temperature
+      FROM daily_data
+      WHERE DATE(daily_data.date) = DATE(${survey}.date)
+      AND daily_data.site_id = ${survey}.site_id
+      LIMIT 1
+    `,
+    }),
+    __metadata("design:type", String)
+], ReefCheckSurvey.prototype, "satelliteTemperature", void 0);
+ReefCheckSurvey = __decorate([
+    (0, typeorm_1.Entity)()
+], ReefCheckSurvey);
+exports.ReefCheckSurvey = ReefCheckSurvey;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvcmVlZi1jaGVjay1zdXJ2ZXlzL3JlZWYtY2hlY2stc3VydmV5cy5lbnRpdHkudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQUEscUNBU2lCO0FBQ2pCLDZDQUE4QztBQUM5Qyx3REFBNkM7QUFDN0MseUZBQTRFO0FBQzVFLHFHQUF3RjtBQUN4Rix3R0FBMkY7QUFHcEYsSUFBTSxlQUFlLEdBQXJCLE1BQU0sZUFBZTtDQXdTM0IsQ0FBQTtBQXZTQztJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsdUJBQWEsR0FBRTs7MkNBQ0w7QUFFWDtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sR0FBRTs7K0NBQ007QUFFZjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsbUJBQVMsRUFBQyxHQUFHLEVBQUUsQ0FBQyxtQkFBSSxFQUFFLENBQUMsSUFBSSxFQUFFLEVBQUUsQ0FBQyxJQUFJLENBQUMsZ0JBQWdCLENBQUM7SUFDdEQsSUFBQSxvQkFBVSxFQUFDLEVBQUUsSUFBSSxFQUFFLFNBQVMsRUFBRSxDQUFDO0lBQy9CLElBQUEsZUFBSyxHQUFFOzhCQUNGLG1CQUFJOzZDQUFDO0FBRVg7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEdBQUU7O3dEQUNlO0FBRXhCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxtQkFBUyxFQUFDLEdBQUcsRUFBRSxDQUFDLHVDQUFhLEVBQUUsQ0FBQyxhQUFhLEVBQUUsRUFBRSxDQUFDLGFBQWEsQ0FBQyxPQUFPLENBQUM7SUFDeEUsSUFBQSxvQkFBVSxFQUFDLEVBQUUsSUFBSSxFQUFFLG9CQUFvQixFQUFFLENBQUM7SUFDMUMsSUFBQSxlQUFLLEdBQUU7OEJBQ08sdUNBQWE7c0RBQUM7QUFFN0I7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLG1CQUFTLEVBQUMsR0FBRyxFQUFFLENBQUMsK0NBQWlCLEVBQUUsQ0FBQyxRQUFRLEVBQUUsRUFBRSxDQUFDLFFBQVEsQ0FBQyxNQUFNLENBQUM7O2tEQUNuQztBQUUvQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsbUJBQVMsRUFBQyxHQUFHLEVBQUUsQ0FBQyxpREFBa0IsRUFBRSxDQUFDLFNBQVMsRUFBRSxFQUFFLENBQUMsU0FBUyxDQUFDLE1BQU0sQ0FBQzs7bURBQ3BDO0FBRWpDO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzhCQUNyQixJQUFJOzZDQUFDO0FBRVg7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OytDQUNaO0FBRWY7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsT0FBTyxFQUFFLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzs4Q0FDdEI7QUFFZDtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7MkRBQ0E7QUFFM0I7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OzJEQUNBO0FBRTNCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztzRUFDVztBQUV0QztJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7d0RBQ0g7QUFFeEI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O2dEQUNYO0FBRWhCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLE9BQU8sQ0FBQzs7Z0RBQ0E7QUFFaEI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsT0FBTyxDQUFDOzsyREFDVztBQUUzQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxPQUFPLENBQUM7O3NEQUNNO0FBRXRCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLE9BQU8sQ0FBQzs7dURBQ087QUFFdkI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsT0FBTyxDQUFDOzs0REFDWTtBQUU1QjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxPQUFPLENBQUM7O29FQUNvQjtBQUVwQztJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7cURBQ047QUFFckI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OytEQUNJO0FBRS9CO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzsyREFDQTtBQUUzQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7a0VBQ087QUFFbEM7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O21EQUNSO0FBRW5CO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzs0REFDQztBQUU1QjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7MERBQ0Q7QUFFMUI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O2tEQUNUO0FBRWxCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzt3REFDSDtBQUV4QjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7c0RBQ0w7QUFFdEI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OytEQUNJO0FBRS9CO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztnRUFDSztBQUVoQztJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7aUVBQ007QUFFakM7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O2dFQUNLO0FBRWhDO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzt3REFDSDtBQUV4QjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7NERBQ0M7QUFFNUI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OzBEQUNEO0FBRTFCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzt3REFDSDtBQUV4QjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7OERBQ0c7QUFFOUI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OzREQUNDO0FBRTVCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztxREFDTjtBQUVyQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7K0NBQ1o7QUFFZjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7NERBQ0M7QUFFNUI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O3FEQUNOO0FBRXJCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzt3REFDSDtBQUV4QjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7NkRBQ0U7QUFFN0I7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O3dEQUNIO0FBRXhCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztxREFDTjtBQUVyQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7Z0VBQ0s7QUFFaEM7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OzREQUNDO0FBRTVCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztvRUFDUztBQUVwQztJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7a0RBQ1Q7QUFFbEI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OytDQUNaO0FBRWY7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O3FEQUNOO0FBRXJCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzsyREFDQTtBQUUzQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7cURBQ047QUFFckI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OzBEQUNEO0FBRTFCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztxREFDTjtBQUVyQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7d0RBQ0g7QUFFeEI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O2tFQUNPO0FBRWxDO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztvREFDUDtBQUVwQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7eURBQ0Y7QUFFekI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O2dFQUNLO0FBRWhDO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzs0REFDQztBQUU1QjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7eURBQ0Y7QUFFekI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OzJEQUNBO0FBRTNCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztvREFDUDtBQUVwQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7bURBQ1I7QUFFbkI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O3NEQUNMO0FBRXRCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSx1QkFBYSxFQUFDO1FBQ2IsS0FBSyxFQUFFLENBQUMsTUFBTSxFQUFFLEVBQUUsQ0FBQzs7OzJDQUdvQixNQUFNO2lDQUNoQixNQUFNOztLQUVsQztLQUNGLENBQUM7OzZEQUMyQjtBQXZTbEIsZUFBZTtJQUQzQixJQUFBLGdCQUFNLEdBQUU7R0FDSSxlQUFlLENBd1MzQjtBQXhTWSwwQ0FBZSIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS91c2VyL2NsaW1ib3gvcGFja2FnZXMvYXBpL3NyYy9yZWVmLWNoZWNrLXN1cnZleXMvcmVlZi1jaGVjay1zdXJ2ZXlzLmVudGl0eS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1xyXG4gIEVudGl0eSxcclxuICBDb2x1bW4sXHJcbiAgSW5kZXgsXHJcbiAgSm9pbkNvbHVtbixcclxuICBNYW55VG9PbmUsXHJcbiAgUHJpbWFyeUNvbHVtbixcclxuICBPbmVUb01hbnksXHJcbiAgVmlydHVhbENvbHVtbixcclxufSBmcm9tICd0eXBlb3JtJztcclxuaW1wb3J0IHsgQXBpUHJvcGVydHkgfSBmcm9tICdAbmVzdGpzL3N3YWdnZXInO1xyXG5pbXBvcnQgeyBTaXRlIH0gZnJvbSAnLi4vc2l0ZXMvc2l0ZXMuZW50aXR5JztcclxuaW1wb3J0IHsgUmVlZkNoZWNrU2l0ZSB9IGZyb20gJy4uL3JlZWYtY2hlY2stc2l0ZXMvcmVlZi1jaGVjay1zaXRlcy5lbnRpdHknO1xyXG5pbXBvcnQgeyBSZWVmQ2hlY2tPcmdhbmlzbSB9IGZyb20gJy4uL3JlZWYtY2hlY2stb3JnYW5pc21zL3JlZWYtY2hlY2stb3JnYW5pc21zLmVudGl0eSc7XHJcbmltcG9ydCB7IFJlZWZDaGVja1N1YnN0cmF0ZSB9IGZyb20gJy4uL3JlZWYtY2hlY2stc3Vic3RyYXRlcy9yZWVmLWNoZWNrLXN1YnN0cmF0ZXMuZW50aXR5JztcclxuXHJcbkBFbnRpdHkoKVxyXG5leHBvcnQgY2xhc3MgUmVlZkNoZWNrU3VydmV5IHtcclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBQcmltYXJ5Q29sdW1uKClcclxuICBpZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oKVxyXG4gIHNpdGVJZDogbnVtYmVyO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBNYW55VG9PbmUoKCkgPT4gU2l0ZSwgKHNpdGUpID0+IHNpdGUucmVlZkNoZWNrU3VydmV5cylcclxuICBASm9pbkNvbHVtbih7IG5hbWU6ICdzaXRlX2lkJyB9KVxyXG4gIEBJbmRleCgpXHJcbiAgc2l0ZTogU2l0ZTtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKClcclxuICByZWVmQ2hlY2tTaXRlSWQ6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBATWFueVRvT25lKCgpID0+IFJlZWZDaGVja1NpdGUsIChyZWVmQ2hlY2tTaXRlKSA9PiByZWVmQ2hlY2tTaXRlLnN1cnZleXMpXHJcbiAgQEpvaW5Db2x1bW4oeyBuYW1lOiAncmVlZl9jaGVja19zaXRlX2lkJyB9KVxyXG4gIEBJbmRleCgpXHJcbiAgcmVlZkNoZWNrU2l0ZTogUmVlZkNoZWNrU2l0ZTtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAT25lVG9NYW55KCgpID0+IFJlZWZDaGVja09yZ2FuaXNtLCAob3JnYW5pc20pID0+IG9yZ2FuaXNtLnN1cnZleSlcclxuICBvcmdhbmlzbXM6IFJlZWZDaGVja09yZ2FuaXNtW107XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQE9uZVRvTWFueSgoKSA9PiBSZWVmQ2hlY2tTdWJzdHJhdGUsIChzdWJzdHJhdGUpID0+IHN1YnN0cmF0ZS5zdXJ2ZXkpXHJcbiAgc3Vic3RyYXRlczogUmVlZkNoZWNrU3Vic3RyYXRlW107XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgZGF0ZTogRGF0ZTtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBlcnJvcnM6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKCdmbG9hdCcsIHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBkZXB0aDogbnVtYmVyO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHRpbWVPZkRheVdvcmtCZWdhbjogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHRpbWVPZkRheVdvcmtFbmRlZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIG1ldGhvZFVzZWRUb0RldGVybWluZUxvY2F0aW9uOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgcml2ZXJNb3V0aFdpZHRoOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgd2VhdGhlcjogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oJ2Zsb2F0JylcclxuICBhaXJUZW1wOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbignZmxvYXQnKVxyXG4gIHdhdGVyVGVtcEF0U3VyZmFjZTogbnVtYmVyO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oJ2Zsb2F0JylcclxuICB3YXRlclRlbXBBdDNNOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbignZmxvYXQnKVxyXG4gIHdhdGVyVGVtcEF0MTBNOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbignZmxvYXQnKVxyXG4gIGFwcHJveFBvcG5TaXplWDEwMDA6IG51bWJlcjtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKCdmbG9hdCcpXHJcbiAgaG9yaXpvbnRhbFZpc2liaWxpdHlJbldhdGVyOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgYmVzdFJlZWZBcmVhOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgd2h5V2FzVGhpc1NpdGVTZWxlY3RlZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHNoZWx0ZXJlZE9yRXhwb3NlZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGFueU1ham9yU3Rvcm1zSW5MYXN0WWVhcnM6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICB3aGVuU3Rvcm1zOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgb3ZlcmFsbEFudGhyb0ltcGFjdDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHdoYXRLaW5kT2ZJbXBhY3RzOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgc2lsdGF0aW9uOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgZHluYW1pdGVGaXNoaW5nOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgcG9pc29uRmlzaGluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGFxdWFyaXVtRmlzaENvbGxlY3Rpb246IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBoYXJ2ZXN0T2ZJbnZlcnRzRm9yRm9vZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGhhcnZlc3RPZkludmVydHNGb3JDdXJpbzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHRvdXJpc3REaXZpbmdTbm9ya2VsaW5nOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgc2V3YWdlUG9sbHV0aW9uOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgaW5kdXN0cmlhbFBvbGx1dGlvbjogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGNvbW1lcmNpYWxGaXNoaW5nOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgbGl2ZUZvb2RGaXNoaW5nOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgYXJ0aXNpbmFsUmVjcmVhdGlvbmFsOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgb3RoZXJGb3Jtc09mRmlzaGluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIG90aGVyRmlzaGluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHlhY2h0czogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGxldmVsT2ZPdGhlckltcGFjdHM6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBvdGhlckltcGFjdHM6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBpc1NpdGVQcm90ZWN0ZWQ6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBpc1Byb3RlY3Rpb25FbmZvcmNlZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGxldmVsT2ZQb2FjaGluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHNwZWFyZmlzaGluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGJhbm5lZENvbW1lcmNpYWxGaXNoaW5nOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgcmVjcmVhdGlvbmFsRmlzaGluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGludmVydGVicmF0ZVNoZWxsQ29sbGVjdGlvbjogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGFuY2hvcmluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGRpdmluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIG90aGVyU3BlY2lmeTogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIG5hdHVyZU9mUHJvdGVjdGlvbjogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHNpdGVDb21tZW50czogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHN1YnN0cmF0ZUNvbW1lbnRzOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgZmlzaENvbW1lbnRzOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgaW52ZXJ0c0NvbW1lbnRzOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgY29tbWVudHNGcm9tT3JnYW5pc21TaGVldDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGdyb3VwZXJTaXplOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgcGVyY2VudEJsZWFjaGluZzogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHBlcmNlbnRDb2xvbmllc0JsZWFjaGVkOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgcGVyY2VudE9mRWFjaENvbG9ueTogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHN1c3BlY3RlZERpc2Vhc2U6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICByYXJlQW5pbWFsc0RldGFpbHM6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBzdWJtaXR0ZWRCeTogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHRlYW1MZWFkZXI6IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICB0ZWFtU2NpZW50aXN0OiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQFZpcnR1YWxDb2x1bW4oe1xyXG4gICAgcXVlcnk6IChzdXJ2ZXkpID0+IGBcclxuICAgICAgU0VMRUNUIHNhdGVsbGl0ZV90ZW1wZXJhdHVyZVxyXG4gICAgICBGUk9NIGRhaWx5X2RhdGFcclxuICAgICAgV0hFUkUgREFURShkYWlseV9kYXRhLmRhdGUpID0gREFURSgke3N1cnZleX0uZGF0ZSlcclxuICAgICAgQU5EIGRhaWx5X2RhdGEuc2l0ZV9pZCA9ICR7c3VydmV5fS5zaXRlX2lkXHJcbiAgICAgIExJTUlUIDFcclxuICAgIGAsXHJcbiAgfSlcclxuICBzYXRlbGxpdGVUZW1wZXJhdHVyZTogc3RyaW5nO1xyXG59XHJcbiJdLCJ2ZXJzaW9uIjozfQ==

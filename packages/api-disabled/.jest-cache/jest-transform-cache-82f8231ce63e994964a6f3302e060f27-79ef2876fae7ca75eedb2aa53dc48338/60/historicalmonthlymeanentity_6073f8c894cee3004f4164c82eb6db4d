@@ -1,0 +1,52 @@
+04221c77f36a643023e5c80cab78dc29
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HistoricalMonthlyMean = void 0;
+const swagger_1 = require("@nestjs/swagger");
+const typeorm_1 = require("typeorm");
+const sites_entity_1 = require("./sites.entity");
+let HistoricalMonthlyMean = class HistoricalMonthlyMean {
+};
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1 }),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], HistoricalMonthlyMean.prototype, "id", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1, minimum: 1, maximum: 12 }),
+    (0, typeorm_1.Column)({ type: 'integer' }),
+    __metadata("design:type", Number)
+], HistoricalMonthlyMean.prototype, "month", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 24.21 }),
+    (0, typeorm_1.Column)({ type: 'float' }),
+    __metadata("design:type", Number)
+], HistoricalMonthlyMean.prototype, "temperature", void 0);
+__decorate([
+    (0, typeorm_1.RelationId)((historicalMonthlyMean) => historicalMonthlyMean.site),
+    __metadata("design:type", Number)
+], HistoricalMonthlyMean.prototype, "siteId", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => sites_entity_1.Site, { onDelete: 'CASCADE' }),
+    (0, typeorm_1.Index)(),
+    __metadata("design:type", sites_entity_1.Site)
+], HistoricalMonthlyMean.prototype, "site", void 0);
+__decorate([
+    (0, typeorm_1.UpdateDateColumn)(),
+    __metadata("design:type", Date)
+], HistoricalMonthlyMean.prototype, "updatedAt", void 0);
+HistoricalMonthlyMean = __decorate([
+    (0, typeorm_1.Entity)(),
+    (0, typeorm_1.Unique)('UQ_MONTHS', ['site', 'month'])
+], HistoricalMonthlyMean);
+exports.HistoricalMonthlyMean = HistoricalMonthlyMean;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvc2l0ZXMvaGlzdG9yaWNhbC1tb250aGx5LW1lYW4uZW50aXR5LnRzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUFBLDZDQUE4QztBQUM5QyxxQ0FTaUI7QUFDakIsaURBQXNDO0FBSS9CLElBQU0scUJBQXFCLEdBQTNCLE1BQU0scUJBQXFCO0NBeUJqQyxDQUFBO0FBeEJDO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsT0FBTyxFQUFFLENBQUMsRUFBRSxDQUFDO0lBQzNCLElBQUEsZ0NBQXNCLEdBQUU7O2lEQUNkO0FBRVg7SUFBQyxJQUFBLHFCQUFXLEVBQUMsRUFBRSxPQUFPLEVBQUUsQ0FBQyxFQUFFLE9BQU8sRUFBRSxDQUFDLEVBQUUsT0FBTyxFQUFFLEVBQUUsRUFBRSxDQUFDO0lBQ3BELElBQUEsZ0JBQU0sRUFBQyxFQUFFLElBQUksRUFBRSxTQUFTLEVBQUUsQ0FBQzs7b0RBQ2Q7QUFFZDtJQUFDLElBQUEscUJBQVcsRUFBQyxFQUFFLE9BQU8sRUFBRSxLQUFLLEVBQUUsQ0FBQztJQUMvQixJQUFBLGdCQUFNLEVBQUMsRUFBRSxJQUFJLEVBQUUsT0FBTyxFQUFFLENBQUM7OzBEQUNOO0FBRXBCO0lBQUMsSUFBQSxvQkFBVSxFQUNULENBQUMscUJBQTRDLEVBQUUsRUFBRSxDQUMvQyxxQkFBcUIsQ0FBQyxJQUFJLENBQzdCOztxREFDYztBQUVmO0lBQUMsSUFBQSxtQkFBUyxFQUFDLEdBQUcsRUFBRSxDQUFDLG1CQUFJLEVBQUUsRUFBRSxRQUFRLEVBQUUsU0FBUyxFQUFFLENBQUM7SUFDOUMsSUFBQSxlQUFLLEdBQUU7OEJBQ0YsbUJBQUk7bURBQUM7QUFFWDtJQUFDLElBQUEsMEJBQWdCLEdBQUU7OEJBQ1IsSUFBSTt3REFBQztBQXhCTCxxQkFBcUI7SUFGakMsSUFBQSxnQkFBTSxHQUFFO0lBQ1IsSUFBQSxnQkFBTSxFQUFDLFdBQVcsRUFBRSxDQUFDLE1BQU0sRUFBRSxPQUFPLENBQUMsQ0FBQztHQUMxQixxQkFBcUIsQ0F5QmpDO0FBekJZLHNEQUFxQiIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS91c2VyL2NsaW1ib3gvcGFja2FnZXMvYXBpL3NyYy9zaXRlcy9oaXN0b3JpY2FsLW1vbnRobHktbWVhbi5lbnRpdHkudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQXBpUHJvcGVydHkgfSBmcm9tICdAbmVzdGpzL3N3YWdnZXInO1xyXG5pbXBvcnQge1xyXG4gIEVudGl0eSxcclxuICBQcmltYXJ5R2VuZXJhdGVkQ29sdW1uLFxyXG4gIENvbHVtbixcclxuICBNYW55VG9PbmUsXHJcbiAgVXBkYXRlRGF0ZUNvbHVtbixcclxuICBVbmlxdWUsXHJcbiAgUmVsYXRpb25JZCxcclxuICBJbmRleCxcclxufSBmcm9tICd0eXBlb3JtJztcclxuaW1wb3J0IHsgU2l0ZSB9IGZyb20gJy4vc2l0ZXMuZW50aXR5JztcclxuXHJcbkBFbnRpdHkoKVxyXG5AVW5pcXVlKCdVUV9NT05USFMnLCBbJ3NpdGUnLCAnbW9udGgnXSlcclxuZXhwb3J0IGNsYXNzIEhpc3RvcmljYWxNb250aGx5TWVhbiB7XHJcbiAgQEFwaVByb3BlcnR5KHsgZXhhbXBsZTogMSB9KVxyXG4gIEBQcmltYXJ5R2VuZXJhdGVkQ29sdW1uKClcclxuICBpZDogbnVtYmVyO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAxLCBtaW5pbXVtOiAxLCBtYXhpbXVtOiAxMiB9KVxyXG4gIEBDb2x1bW4oeyB0eXBlOiAnaW50ZWdlcicgfSlcclxuICBtb250aDogbnVtYmVyO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAyNC4yMSB9KVxyXG4gIEBDb2x1bW4oeyB0eXBlOiAnZmxvYXQnIH0pXHJcbiAgdGVtcGVyYXR1cmU6IG51bWJlcjtcclxuXHJcbiAgQFJlbGF0aW9uSWQoXHJcbiAgICAoaGlzdG9yaWNhbE1vbnRobHlNZWFuOiBIaXN0b3JpY2FsTW9udGhseU1lYW4pID0+XHJcbiAgICAgIGhpc3RvcmljYWxNb250aGx5TWVhbi5zaXRlLFxyXG4gIClcclxuICBzaXRlSWQ6IG51bWJlcjtcclxuXHJcbiAgQE1hbnlUb09uZSgoKSA9PiBTaXRlLCB7IG9uRGVsZXRlOiAnQ0FTQ0FERScgfSlcclxuICBASW5kZXgoKVxyXG4gIHNpdGU6IFNpdGU7XHJcblxyXG4gIEBVcGRhdGVEYXRlQ29sdW1uKClcclxuICB1cGRhdGVkQXQ6IERhdGU7XHJcbn1cclxuIl0sInZlcnNpb24iOjN9

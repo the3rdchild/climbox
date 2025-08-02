@@ -1,0 +1,84 @@
+a183bd8e6f5c1d2ca11461a8bdd632d2
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReefCheckOrganism = void 0;
+const typeorm_1 = require("typeorm");
+const swagger_1 = require("@nestjs/swagger");
+const reef_check_surveys_entity_1 = require("../reef-check-surveys/reef-check-surveys.entity");
+let ReefCheckOrganism = class ReefCheckOrganism {
+};
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], ReefCheckOrganism.prototype, "id", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], ReefCheckOrganism.prototype, "surveyId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.ManyToOne)(() => reef_check_surveys_entity_1.ReefCheckSurvey, { nullable: false }),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", reef_check_surveys_entity_1.ReefCheckSurvey)
+], ReefCheckOrganism.prototype, "survey", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Date)
+], ReefCheckOrganism.prototype, "date", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], ReefCheckOrganism.prototype, "organism", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], ReefCheckOrganism.prototype, "type", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], ReefCheckOrganism.prototype, "s1", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], ReefCheckOrganism.prototype, "s2", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], ReefCheckOrganism.prototype, "s3", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], ReefCheckOrganism.prototype, "s4", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckOrganism.prototype, "recordedBy", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckOrganism.prototype, "errors", void 0);
+ReefCheckOrganism = __decorate([
+    (0, typeorm_1.Entity)()
+], ReefCheckOrganism);
+exports.ReefCheckOrganism = ReefCheckOrganism;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvcmVlZi1jaGVjay1vcmdhbmlzbXMvcmVlZi1jaGVjay1vcmdhbmlzbXMuZW50aXR5LnRzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUFBLHFDQU1pQjtBQUNqQiw2Q0FBOEM7QUFDOUMsK0ZBQWtGO0FBRzNFLElBQU0saUJBQWlCLEdBQXZCLE1BQU0saUJBQWlCO0NBaUQ3QixDQUFBO0FBaERDO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQ0FBc0IsR0FBRTs7NkNBQ2Q7QUFFWDtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sR0FBRTs7bURBQ1E7QUFFakI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLG1CQUFTLEVBQUMsR0FBRyxFQUFFLENBQUMsMkNBQWUsRUFBRSxFQUFFLFFBQVEsRUFBRSxLQUFLLEVBQUUsQ0FBQztJQUNyRCxJQUFBLG9CQUFVLEdBQUU7OEJBQ0wsMkNBQWU7aURBQUM7QUFFeEI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEdBQUU7OEJBQ0gsSUFBSTsrQ0FBQztBQUVYO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxHQUFFOzttREFDUTtBQUVqQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sR0FBRTs7K0NBQ0k7QUFFYjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sR0FBRTs7NkNBQ0U7QUFFWDtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sR0FBRTs7NkNBQ0U7QUFFWDtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sR0FBRTs7NkNBQ0U7QUFFWDtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sR0FBRTs7NkNBQ0U7QUFFWDtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7cURBQ1I7QUFFbkI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O2lEQUNaO0FBaERKLGlCQUFpQjtJQUQ3QixJQUFBLGdCQUFNLEdBQUU7R0FDSSxpQkFBaUIsQ0FpRDdCO0FBakRZLDhDQUFpQiIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS91c2VyL2NsaW1ib3gvcGFja2FnZXMvYXBpL3NyYy9yZWVmLWNoZWNrLW9yZ2FuaXNtcy9yZWVmLWNoZWNrLW9yZ2FuaXNtcy5lbnRpdHkudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtcclxuICBDb2x1bW4sXHJcbiAgRW50aXR5LFxyXG4gIEpvaW5Db2x1bW4sXHJcbiAgTWFueVRvT25lLFxyXG4gIFByaW1hcnlHZW5lcmF0ZWRDb2x1bW4sXHJcbn0gZnJvbSAndHlwZW9ybSc7XHJcbmltcG9ydCB7IEFwaVByb3BlcnR5IH0gZnJvbSAnQG5lc3Rqcy9zd2FnZ2VyJztcclxuaW1wb3J0IHsgUmVlZkNoZWNrU3VydmV5IH0gZnJvbSAnLi4vcmVlZi1jaGVjay1zdXJ2ZXlzL3JlZWYtY2hlY2stc3VydmV5cy5lbnRpdHknO1xyXG5cclxuQEVudGl0eSgpXHJcbmV4cG9ydCBjbGFzcyBSZWVmQ2hlY2tPcmdhbmlzbSB7XHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAUHJpbWFyeUdlbmVyYXRlZENvbHVtbigpXHJcbiAgaWQ6IG51bWJlcjtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKClcclxuICBzdXJ2ZXlJZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBNYW55VG9PbmUoKCkgPT4gUmVlZkNoZWNrU3VydmV5LCB7IG51bGxhYmxlOiBmYWxzZSB9KVxyXG4gIEBKb2luQ29sdW1uKClcclxuICBzdXJ2ZXk6IFJlZWZDaGVja1N1cnZleTtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKClcclxuICBkYXRlOiBEYXRlO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oKVxyXG4gIG9yZ2FuaXNtOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbigpXHJcbiAgdHlwZTogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oKVxyXG4gIHMxOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbigpXHJcbiAgczI6IG51bWJlcjtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKClcclxuICBzMzogbnVtYmVyO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oKVxyXG4gIHM0OiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgcmVjb3JkZWRCeTogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGVycm9yczogc3RyaW5nO1xyXG59XHJcbiJdLCJ2ZXJzaW9uIjozfQ==

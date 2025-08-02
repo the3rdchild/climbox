@@ -1,0 +1,91 @@
+156c5ac1c90cd313ef3c6bb2312c6fcd
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReefCheckSite = void 0;
+const typeorm_1 = require("typeorm");
+const swagger_1 = require("@nestjs/swagger");
+const reef_check_surveys_entity_1 = require("../reef-check-surveys/reef-check-surveys.entity");
+const sites_entity_1 = require("../sites/sites.entity");
+let ReefCheckSite = class ReefCheckSite {
+};
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.PrimaryColumn)(),
+    __metadata("design:type", String)
+], ReefCheckSite.prototype, "id", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], ReefCheckSite.prototype, "siteId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ type: () => sites_entity_1.Site }),
+    (0, typeorm_1.ManyToOne)(() => sites_entity_1.Site),
+    (0, typeorm_1.JoinColumn)({ name: 'site_id' }),
+    (0, typeorm_1.Index)(),
+    __metadata("design:type", sites_entity_1.Site)
+], ReefCheckSite.prototype, "site", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSite.prototype, "reefName", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSite.prototype, "orientation", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSite.prototype, "country", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSite.prototype, "stateProvinceIsland", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSite.prototype, "cityTown", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ReefCheckSite.prototype, "region", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float', { nullable: true }),
+    __metadata("design:type", Number)
+], ReefCheckSite.prototype, "distanceFromShore", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float', { nullable: true }),
+    __metadata("design:type", Number)
+], ReefCheckSite.prototype, "distanceFromNearestRiver", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)('float', { nullable: true }),
+    __metadata("design:type", Number)
+], ReefCheckSite.prototype, "distanceToNearestPopn", void 0);
+__decorate([
+    (0, swagger_1.ApiPropertyOptional)(),
+    (0, typeorm_1.OneToMany)(() => reef_check_surveys_entity_1.ReefCheckSurvey, (survey) => survey.site),
+    __metadata("design:type", Array)
+], ReefCheckSite.prototype, "surveys", void 0);
+ReefCheckSite = __decorate([
+    (0, typeorm_1.Entity)()
+], ReefCheckSite);
+exports.ReefCheckSite = ReefCheckSite;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvcmVlZi1jaGVjay1zaXRlcy9yZWVmLWNoZWNrLXNpdGVzLmVudGl0eS50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFBQSxxQ0FRaUI7QUFDakIsNkNBQW1FO0FBQ25FLCtGQUFrRjtBQUNsRix3REFBNkM7QUFHdEMsSUFBTSxhQUFhLEdBQW5CLE1BQU0sYUFBYTtDQXNEekIsQ0FBQTtBQXJEQztJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsdUJBQWEsR0FBRTs7eUNBQ0w7QUFFWDtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sR0FBRTs7NkNBQ007QUFFZjtJQUFDLElBQUEscUJBQVcsRUFBQyxFQUFFLElBQUksRUFBRSxHQUFHLEVBQUUsQ0FBQyxtQkFBSSxFQUFFLENBQUM7SUFDakMsSUFBQSxtQkFBUyxFQUFDLEdBQUcsRUFBRSxDQUFDLG1CQUFJLENBQUM7SUFDckIsSUFBQSxvQkFBVSxFQUFDLEVBQUUsSUFBSSxFQUFFLFNBQVMsRUFBRSxDQUFDO0lBQy9CLElBQUEsZUFBSyxHQUFFOzhCQUNGLG1CQUFJOzJDQUFDO0FBRVg7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OytDQUNWO0FBRWpCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOztrREFDUDtBQUVwQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7OENBQ1g7QUFFaEI7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7OzBEQUNDO0FBRTVCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzsrQ0FDVjtBQUVqQjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7NkNBQ1o7QUFFZjtJQUFDLElBQUEscUJBQVcsR0FBRTtJQUNiLElBQUEsZ0JBQU0sRUFBQyxPQUFPLEVBQUUsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLENBQUM7O3dEQUNWO0FBRTFCO0lBQUMsSUFBQSxxQkFBVyxHQUFFO0lBQ2IsSUFBQSxnQkFBTSxFQUFDLE9BQU8sRUFBRSxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7K0RBQ0g7QUFFakM7SUFBQyxJQUFBLHFCQUFXLEdBQUU7SUFDYixJQUFBLGdCQUFNLEVBQUMsT0FBTyxFQUFFLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxDQUFDOzs0REFDTjtBQUU5QjtJQUFDLElBQUEsNkJBQW1CLEdBQUU7SUFDckIsSUFBQSxtQkFBUyxFQUFDLEdBQUcsRUFBRSxDQUFDLDJDQUFlLEVBQUUsQ0FBQyxNQUFNLEVBQUUsRUFBRSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUM7OzhDQUMvQjtBQXJEaEIsYUFBYTtJQUR6QixJQUFBLGdCQUFNLEdBQUU7R0FDSSxhQUFhLENBc0R6QjtBQXREWSxzQ0FBYSIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS91c2VyL2NsaW1ib3gvcGFja2FnZXMvYXBpL3NyYy9yZWVmLWNoZWNrLXNpdGVzL3JlZWYtY2hlY2stc2l0ZXMuZW50aXR5LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XHJcbiAgRW50aXR5LFxyXG4gIENvbHVtbixcclxuICBJbmRleCxcclxuICBKb2luQ29sdW1uLFxyXG4gIFByaW1hcnlDb2x1bW4sXHJcbiAgT25lVG9NYW55LFxyXG4gIE1hbnlUb09uZSxcclxufSBmcm9tICd0eXBlb3JtJztcclxuaW1wb3J0IHsgQXBpUHJvcGVydHksIEFwaVByb3BlcnR5T3B0aW9uYWwgfSBmcm9tICdAbmVzdGpzL3N3YWdnZXInO1xyXG5pbXBvcnQgeyBSZWVmQ2hlY2tTdXJ2ZXkgfSBmcm9tICcuLi9yZWVmLWNoZWNrLXN1cnZleXMvcmVlZi1jaGVjay1zdXJ2ZXlzLmVudGl0eSc7XHJcbmltcG9ydCB7IFNpdGUgfSBmcm9tICcuLi9zaXRlcy9zaXRlcy5lbnRpdHknO1xyXG5cclxuQEVudGl0eSgpXHJcbmV4cG9ydCBjbGFzcyBSZWVmQ2hlY2tTaXRlIHtcclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBQcmltYXJ5Q29sdW1uKClcclxuICBpZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oKVxyXG4gIHNpdGVJZDogbnVtYmVyO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyB0eXBlOiAoKSA9PiBTaXRlIH0pXHJcbiAgQE1hbnlUb09uZSgoKSA9PiBTaXRlKVxyXG4gIEBKb2luQ29sdW1uKHsgbmFtZTogJ3NpdGVfaWQnIH0pXHJcbiAgQEluZGV4KClcclxuICBzaXRlOiBTaXRlO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIHJlZWZOYW1lOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgb3JpZW50YXRpb246IHN0cmluZztcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBjb3VudHJ5OiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgc3RhdGVQcm92aW5jZUlzbGFuZDogc3RyaW5nO1xyXG5cclxuICBAQXBpUHJvcGVydHkoKVxyXG4gIEBDb2x1bW4oeyBudWxsYWJsZTogdHJ1ZSB9KVxyXG4gIGNpdHlUb3duOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgcmVnaW9uOiBzdHJpbmc7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSgpXHJcbiAgQENvbHVtbignZmxvYXQnLCB7IG51bGxhYmxlOiB0cnVlIH0pXHJcbiAgZGlzdGFuY2VGcm9tU2hvcmU6IG51bWJlcjtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKCdmbG9hdCcsIHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBkaXN0YW5jZUZyb21OZWFyZXN0Uml2ZXI6IG51bWJlcjtcclxuXHJcbiAgQEFwaVByb3BlcnR5KClcclxuICBAQ29sdW1uKCdmbG9hdCcsIHsgbnVsbGFibGU6IHRydWUgfSlcclxuICBkaXN0YW5jZVRvTmVhcmVzdFBvcG46IG51bWJlcjtcclxuXHJcbiAgQEFwaVByb3BlcnR5T3B0aW9uYWwoKVxyXG4gIEBPbmVUb01hbnkoKCkgPT4gUmVlZkNoZWNrU3VydmV5LCAoc3VydmV5KSA9PiBzdXJ2ZXkuc2l0ZSlcclxuICBzdXJ2ZXlzOiBSZWVmQ2hlY2tTdXJ2ZXlbXTtcclxufVxyXG4iXSwidmVyc2lvbiI6M30=

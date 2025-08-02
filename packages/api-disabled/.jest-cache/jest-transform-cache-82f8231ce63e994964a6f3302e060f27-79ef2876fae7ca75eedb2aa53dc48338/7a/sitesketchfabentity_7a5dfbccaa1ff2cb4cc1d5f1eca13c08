@@ -1,0 +1,62 @@
+fd20075ddb4b8ff28efb97ba1c7fdd2a
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SketchFab = void 0;
+const typeorm_1 = require("typeorm");
+const swagger_1 = require("@nestjs/swagger");
+const sites_entity_1 = require("../sites/sites.entity");
+let SketchFab = class SketchFab {
+};
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1 }),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], SketchFab.prototype, "id", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => sites_entity_1.Site, { onDelete: 'CASCADE', nullable: false }),
+    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.Index)(),
+    __metadata("design:type", sites_entity_1.Site)
+], SketchFab.prototype, "site", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1 }),
+    (0, typeorm_1.RelationId)((surveyPoint) => surveyPoint.site),
+    __metadata("design:type", Number)
+], SketchFab.prototype, "siteId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'A 3D model of Keahole Reef in Hawai' }),
+    (0, typeorm_1.Column)({ nullable: true, type: 'character varying' }),
+    __metadata("design:type", Object)
+], SketchFab.prototype, "description", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1 }),
+    (0, typeorm_1.Column)({ default: 1 }),
+    __metadata("design:type", Number)
+], SketchFab.prototype, "scale", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: '0fd310d08bd6472db293f574da0e200b' }),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], SketchFab.prototype, "uuid", void 0);
+__decorate([
+    (0, typeorm_1.CreateDateColumn)(),
+    __metadata("design:type", Date)
+], SketchFab.prototype, "createdAt", void 0);
+__decorate([
+    (0, typeorm_1.UpdateDateColumn)(),
+    __metadata("design:type", Date)
+], SketchFab.prototype, "updatedAt", void 0);
+SketchFab = __decorate([
+    (0, typeorm_1.Entity)()
+], SketchFab);
+exports.SketchFab = SketchFab;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvc2l0ZS1za2V0Y2hmYWIvc2l0ZS1za2V0Y2hmYWIuZW50aXR5LnRzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUFBLHFDQVVpQjtBQUNqQiw2Q0FBOEM7QUFDOUMsd0RBQTZDO0FBR3RDLElBQU0sU0FBUyxHQUFmLE1BQU0sU0FBUztDQStCckIsQ0FBQTtBQTlCQztJQUFDLElBQUEscUJBQVcsRUFBQyxFQUFFLE9BQU8sRUFBRSxDQUFDLEVBQUUsQ0FBQztJQUMzQixJQUFBLGdDQUFzQixHQUFFOztxQ0FDZDtBQUVYO0lBQUMsSUFBQSxrQkFBUSxFQUFDLEdBQUcsRUFBRSxDQUFDLG1CQUFJLEVBQUUsRUFBRSxRQUFRLEVBQUUsU0FBUyxFQUFFLFFBQVEsRUFBRSxLQUFLLEVBQUUsQ0FBQztJQUM5RCxJQUFBLG9CQUFVLEdBQUU7SUFDWixJQUFBLGVBQUssR0FBRTs4QkFDRixtQkFBSTt1Q0FBQztBQUVYO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsT0FBTyxFQUFFLENBQUMsRUFBRSxDQUFDO0lBQzNCLElBQUEsb0JBQVUsRUFBQyxDQUFDLFdBQXNCLEVBQUUsRUFBRSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUM7O3lDQUMxQztBQUVmO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsT0FBTyxFQUFFLHFDQUFxQyxFQUFFLENBQUM7SUFDL0QsSUFBQSxnQkFBTSxFQUFDLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxJQUFJLEVBQUUsbUJBQW1CLEVBQUUsQ0FBQzs7OENBQzNCO0FBRTNCO0lBQUMsSUFBQSxxQkFBVyxFQUFDLEVBQUUsT0FBTyxFQUFFLENBQUMsRUFBRSxDQUFDO0lBQzNCLElBQUEsZ0JBQU0sRUFBQyxFQUFFLE9BQU8sRUFBRSxDQUFDLEVBQUUsQ0FBQzs7d0NBQ1Q7QUFFZDtJQUFDLElBQUEscUJBQVcsRUFBQyxFQUFFLE9BQU8sRUFBRSxrQ0FBa0MsRUFBRSxDQUFDO0lBQzVELElBQUEsZ0JBQU0sR0FBRTs7dUNBQ0k7QUFFYjtJQUFDLElBQUEsMEJBQWdCLEdBQUU7OEJBQ1IsSUFBSTs0Q0FBQztBQUVoQjtJQUFDLElBQUEsMEJBQWdCLEdBQUU7OEJBQ1IsSUFBSTs0Q0FBQztBQTlCTCxTQUFTO0lBRHJCLElBQUEsZ0JBQU0sR0FBRTtHQUNJLFNBQVMsQ0ErQnJCO0FBL0JZLDhCQUFTIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9ob21lL3VzZXIvY2xpbWJveC9wYWNrYWdlcy9hcGkvc3JjL3NpdGUtc2tldGNoZmFiL3NpdGUtc2tldGNoZmFiLmVudGl0eS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1xyXG4gIEVudGl0eSxcclxuICBQcmltYXJ5R2VuZXJhdGVkQ29sdW1uLFxyXG4gIENvbHVtbixcclxuICBDcmVhdGVEYXRlQ29sdW1uLFxyXG4gIFVwZGF0ZURhdGVDb2x1bW4sXHJcbiAgUmVsYXRpb25JZCxcclxuICBJbmRleCxcclxuICBPbmVUb09uZSxcclxuICBKb2luQ29sdW1uLFxyXG59IGZyb20gJ3R5cGVvcm0nO1xyXG5pbXBvcnQgeyBBcGlQcm9wZXJ0eSB9IGZyb20gJ0BuZXN0anMvc3dhZ2dlcic7XHJcbmltcG9ydCB7IFNpdGUgfSBmcm9tICcuLi9zaXRlcy9zaXRlcy5lbnRpdHknO1xyXG5cclxuQEVudGl0eSgpXHJcbmV4cG9ydCBjbGFzcyBTa2V0Y2hGYWIge1xyXG4gIEBBcGlQcm9wZXJ0eSh7IGV4YW1wbGU6IDEgfSlcclxuICBAUHJpbWFyeUdlbmVyYXRlZENvbHVtbigpXHJcbiAgaWQ6IG51bWJlcjtcclxuXHJcbiAgQE9uZVRvT25lKCgpID0+IFNpdGUsIHsgb25EZWxldGU6ICdDQVNDQURFJywgbnVsbGFibGU6IGZhbHNlIH0pXHJcbiAgQEpvaW5Db2x1bW4oKVxyXG4gIEBJbmRleCgpXHJcbiAgc2l0ZTogU2l0ZTtcclxuXHJcbiAgQEFwaVByb3BlcnR5KHsgZXhhbXBsZTogMSB9KVxyXG4gIEBSZWxhdGlvbklkKChzdXJ2ZXlQb2ludDogU2tldGNoRmFiKSA9PiBzdXJ2ZXlQb2ludC5zaXRlKVxyXG4gIHNpdGVJZDogbnVtYmVyO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAnQSAzRCBtb2RlbCBvZiBLZWFob2xlIFJlZWYgaW4gSGF3YWknIH0pXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiB0cnVlLCB0eXBlOiAnY2hhcmFjdGVyIHZhcnlpbmcnIH0pXHJcbiAgZGVzY3JpcHRpb246IHN0cmluZyB8IG51bGw7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSh7IGV4YW1wbGU6IDEgfSlcclxuICBAQ29sdW1uKHsgZGVmYXVsdDogMSB9KVxyXG4gIHNjYWxlOiBudW1iZXI7XHJcblxyXG4gIEBBcGlQcm9wZXJ0eSh7IGV4YW1wbGU6ICcwZmQzMTBkMDhiZDY0NzJkYjI5M2Y1NzRkYTBlMjAwYicgfSlcclxuICBAQ29sdW1uKClcclxuICB1dWlkOiBzdHJpbmc7XHJcblxyXG4gIEBDcmVhdGVEYXRlQ29sdW1uKClcclxuICBjcmVhdGVkQXQ6IERhdGU7XHJcblxyXG4gIEBVcGRhdGVEYXRlQ29sdW1uKClcclxuICB1cGRhdGVkQXQ6IERhdGU7XHJcbn1cclxuIl0sInZlcnNpb24iOjN9

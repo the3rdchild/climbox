@@ -1,0 +1,65 @@
+feec9ab339f0c56b68c15e3657da334e
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TimeSeries = void 0;
+const swagger_1 = require("@nestjs/swagger");
+const typeorm_1 = require("typeorm");
+const data_uploads_entity_1 = require("../data-uploads/data-uploads.entity");
+const sources_entity_1 = require("../sites/sources.entity");
+const metrics_enum_1 = require("./metrics.enum");
+let TimeSeries = class TimeSeries {
+};
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1 }),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], TimeSeries.prototype, "id", void 0);
+__decorate([
+    (0, typeorm_1.Index)(),
+    (0, typeorm_1.Column)({ nullable: false }),
+    __metadata("design:type", Date)
+], TimeSeries.prototype, "timestamp", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 11.05 }),
+    (0, typeorm_1.Column)({ type: 'float', nullable: false }),
+    __metadata("design:type", Number)
+], TimeSeries.prototype, "value", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'enum', enum: metrics_enum_1.Metric, nullable: false }),
+    __metadata("design:type", String)
+], TimeSeries.prototype, "metric", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => sources_entity_1.Sources, { onDelete: 'CASCADE', nullable: false }),
+    __metadata("design:type", Object)
+], TimeSeries.prototype, "source", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => data_uploads_entity_1.DataUploads, { onDelete: 'CASCADE', nullable: true }),
+    __metadata("design:type", Object)
+], TimeSeries.prototype, "dataUpload", void 0);
+__decorate([
+    (0, typeorm_1.CreateDateColumn)(),
+    __metadata("design:type", Date)
+], TimeSeries.prototype, "createdAt", void 0);
+__decorate([
+    (0, typeorm_1.UpdateDateColumn)(),
+    __metadata("design:type", Date)
+], TimeSeries.prototype, "updatedAt", void 0);
+TimeSeries = __decorate([
+    (0, typeorm_1.Entity)(),
+    (0, typeorm_1.Unique)('no_duplicate_data', ['metric', 'source', 'timestamp'])
+    // https://github.com/typeorm/typeorm/issues/3336
+    // CREATE INDEX "IDX_cb2f3e83c09f83e8ce007ffd6f" ON "time_series" ("metric", "source_id", "timestamp" DESC)
+    ,
+    (0, typeorm_1.Index)('IDX_time_series_metric_source_timestamp_DESC', { synchronize: false })
+], TimeSeries);
+exports.TimeSeries = TimeSeries;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvdGltZS1zZXJpZXMvdGltZS1zZXJpZXMuZW50aXR5LnRzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUFBLDZDQUE4QztBQUM5QyxxQ0FTaUI7QUFDakIsNkVBQWtFO0FBQ2xFLDREQUFrRDtBQUNsRCxpREFBd0M7QUFPakMsSUFBTSxVQUFVLEdBQWhCLE1BQU0sVUFBVTtDQTJCdEIsQ0FBQTtBQTFCQztJQUFDLElBQUEscUJBQVcsRUFBQyxFQUFFLE9BQU8sRUFBRSxDQUFDLEVBQUUsQ0FBQztJQUMzQixJQUFBLGdDQUFzQixHQUFFOztzQ0FDZDtBQUVYO0lBQUMsSUFBQSxlQUFLLEdBQUU7SUFDUCxJQUFBLGdCQUFNLEVBQUMsRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLENBQUM7OEJBQ2pCLElBQUk7NkNBQUM7QUFFaEI7SUFBQyxJQUFBLHFCQUFXLEVBQUMsRUFBRSxPQUFPLEVBQUUsS0FBSyxFQUFFLENBQUM7SUFDL0IsSUFBQSxnQkFBTSxFQUFDLEVBQUUsSUFBSSxFQUFFLE9BQU8sRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLENBQUM7O3lDQUM3QjtBQUVkO0lBQUMsSUFBQSxnQkFBTSxFQUFDLEVBQUUsSUFBSSxFQUFFLE1BQU0sRUFBRSxJQUFJLEVBQUUscUJBQU0sRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLENBQUM7OzBDQUN6QztBQUVmO0lBQUMsSUFBQSxtQkFBUyxFQUFDLEdBQUcsRUFBRSxDQUFDLHdCQUFPLEVBQUUsRUFBRSxRQUFRLEVBQUUsU0FBUyxFQUFFLFFBQVEsRUFBRSxLQUFLLEVBQUUsQ0FBQzs7MENBQzVDO0FBRXZCO0lBQUMsSUFBQSxtQkFBUyxFQUFDLEdBQUcsRUFBRSxDQUFDLGlDQUFXLEVBQUUsRUFBRSxRQUFRLEVBQUUsU0FBUyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQzs7OENBQ3ZDO0FBRS9CO0lBQUMsSUFBQSwwQkFBZ0IsR0FBRTs4QkFDUixJQUFJOzZDQUFDO0FBRWhCO0lBQUMsSUFBQSwwQkFBZ0IsR0FBRTs4QkFDUixJQUFJOzZDQUFDO0FBMUJMLFVBQVU7SUFMdEIsSUFBQSxnQkFBTSxHQUFFO0lBQ1IsSUFBQSxnQkFBTSxFQUFDLG1CQUFtQixFQUFFLENBQUMsUUFBUSxFQUFFLFFBQVEsRUFBRSxXQUFXLENBQUMsQ0FBQztJQUMvRCxpREFBaUQ7SUFDakQsMkdBQTJHOztJQUMxRyxJQUFBLGVBQUssRUFBQyw4Q0FBOEMsRUFBRSxFQUFFLFdBQVcsRUFBRSxLQUFLLEVBQUUsQ0FBQztHQUNqRSxVQUFVLENBMkJ0QjtBQTNCWSxnQ0FBVSIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS91c2VyL2NsaW1ib3gvcGFja2FnZXMvYXBpL3NyYy90aW1lLXNlcmllcy90aW1lLXNlcmllcy5lbnRpdHkudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQXBpUHJvcGVydHkgfSBmcm9tICdAbmVzdGpzL3N3YWdnZXInO1xyXG5pbXBvcnQge1xyXG4gIENvbHVtbixcclxuICBDcmVhdGVEYXRlQ29sdW1uLFxyXG4gIEVudGl0eSxcclxuICBJbmRleCxcclxuICBNYW55VG9PbmUsXHJcbiAgUHJpbWFyeUdlbmVyYXRlZENvbHVtbixcclxuICBVbmlxdWUsXHJcbiAgVXBkYXRlRGF0ZUNvbHVtbixcclxufSBmcm9tICd0eXBlb3JtJztcclxuaW1wb3J0IHsgRGF0YVVwbG9hZHMgfSBmcm9tICcuLi9kYXRhLXVwbG9hZHMvZGF0YS11cGxvYWRzLmVudGl0eSc7XHJcbmltcG9ydCB7IFNvdXJjZXMgfSBmcm9tICcuLi9zaXRlcy9zb3VyY2VzLmVudGl0eSc7XHJcbmltcG9ydCB7IE1ldHJpYyB9IGZyb20gJy4vbWV0cmljcy5lbnVtJztcclxuXHJcbkBFbnRpdHkoKVxyXG5AVW5pcXVlKCdub19kdXBsaWNhdGVfZGF0YScsIFsnbWV0cmljJywgJ3NvdXJjZScsICd0aW1lc3RhbXAnXSlcclxuLy8gaHR0cHM6Ly9naXRodWIuY29tL3R5cGVvcm0vdHlwZW9ybS9pc3N1ZXMvMzMzNlxyXG4vLyBDUkVBVEUgSU5ERVggXCJJRFhfY2IyZjNlODNjMDlmODNlOGNlMDA3ZmZkNmZcIiBPTiBcInRpbWVfc2VyaWVzXCIgKFwibWV0cmljXCIsIFwic291cmNlX2lkXCIsIFwidGltZXN0YW1wXCIgREVTQylcclxuQEluZGV4KCdJRFhfdGltZV9zZXJpZXNfbWV0cmljX3NvdXJjZV90aW1lc3RhbXBfREVTQycsIHsgc3luY2hyb25pemU6IGZhbHNlIH0pXHJcbmV4cG9ydCBjbGFzcyBUaW1lU2VyaWVzIHtcclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAxIH0pXHJcbiAgQFByaW1hcnlHZW5lcmF0ZWRDb2x1bW4oKVxyXG4gIGlkOiBudW1iZXI7XHJcblxyXG4gIEBJbmRleCgpXHJcbiAgQENvbHVtbih7IG51bGxhYmxlOiBmYWxzZSB9KVxyXG4gIHRpbWVzdGFtcDogRGF0ZTtcclxuXHJcbiAgQEFwaVByb3BlcnR5KHsgZXhhbXBsZTogMTEuMDUgfSlcclxuICBAQ29sdW1uKHsgdHlwZTogJ2Zsb2F0JywgbnVsbGFibGU6IGZhbHNlIH0pXHJcbiAgdmFsdWU6IG51bWJlcjtcclxuXHJcbiAgQENvbHVtbih7IHR5cGU6ICdlbnVtJywgZW51bTogTWV0cmljLCBudWxsYWJsZTogZmFsc2UgfSlcclxuICBtZXRyaWM6IE1ldHJpYztcclxuXHJcbiAgQE1hbnlUb09uZSgoKSA9PiBTb3VyY2VzLCB7IG9uRGVsZXRlOiAnQ0FTQ0FERScsIG51bGxhYmxlOiBmYWxzZSB9KVxyXG4gIHNvdXJjZTogU291cmNlcyB8IG51bGw7XHJcblxyXG4gIEBNYW55VG9PbmUoKCkgPT4gRGF0YVVwbG9hZHMsIHsgb25EZWxldGU6ICdDQVNDQURFJywgbnVsbGFibGU6IHRydWUgfSlcclxuICBkYXRhVXBsb2FkOiBEYXRhVXBsb2FkcyB8IG51bGw7XHJcblxyXG4gIEBDcmVhdGVEYXRlQ29sdW1uKClcclxuICBjcmVhdGVkQXQ6IERhdGU7XHJcblxyXG4gIEBVcGRhdGVEYXRlQ29sdW1uKClcclxuICB1cGRhdGVkQXQ6IERhdGU7XHJcbn1cclxuIl0sInZlcnNpb24iOjN9

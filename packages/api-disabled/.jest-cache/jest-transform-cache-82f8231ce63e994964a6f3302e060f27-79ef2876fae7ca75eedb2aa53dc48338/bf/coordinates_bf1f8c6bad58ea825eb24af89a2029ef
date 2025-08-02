@@ -1,0 +1,533 @@
+ab6268d1dc9bafe225f5b65c12142dff
+"use strict";
+
+/* istanbul ignore next */
+function cov_2ohivl22ru() {
+  var path = "/home/user/climbox/packages/api/src/utils/coordinates.ts";
+  var hash = "410f9ef3597b62686b2a29fb4968e0cd462d21a1";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/user/climbox/packages/api/src/utils/coordinates.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 75
+        }
+      },
+      "2": {
+        start: {
+          line: 5,
+          column: 47
+        },
+        end: {
+          line: 5,
+          column: 58
+        }
+      },
+      "3": {
+        start: {
+          line: 6,
+          column: 21
+        },
+        end: {
+          line: 6,
+          column: 48
+        }
+      },
+      "4": {
+        start: {
+          line: 7,
+          column: 22
+        },
+        end: {
+          line: 7,
+          column: 47
+        }
+      },
+      "5": {
+        start: {
+          line: 9,
+          column: 21
+        },
+        end: {
+          line: 11,
+          column: 36
+        }
+      },
+      "6": {
+        start: {
+          line: 12,
+          column: 20
+        },
+        end: {
+          line: 12,
+          column: 92
+        }
+      },
+      "7": {
+        start: {
+          line: 13,
+          column: 22
+        },
+        end: {
+          line: 13,
+          column: 83
+        }
+      },
+      "8": {
+        start: {
+          line: 14,
+          column: 21
+        },
+        end: {
+          line: 14,
+          column: 82
+        }
+      },
+      "9": {
+        start: {
+          line: 15,
+          column: 4
+        },
+        end: {
+          line: 15,
+          column: 35
+        }
+      },
+      "10": {
+        start: {
+          line: 17,
+          column: 0
+        },
+        end: {
+          line: 17,
+          column: 36
+        }
+      },
+      "11": {
+        start: {
+          line: 19,
+          column: 36
+        },
+        end: {
+          line: 19,
+          column: 87
+        }
+      },
+      "12": {
+        start: {
+          line: 21,
+          column: 19
+        },
+        end: {
+          line: 21,
+          column: 28
+        }
+      },
+      "13": {
+        start: {
+          line: 22,
+          column: 19
+        },
+        end: {
+          line: 22,
+          column: 36
+        }
+      },
+      "14": {
+        start: {
+          line: 23,
+          column: 4
+        },
+        end: {
+          line: 23,
+          column: 30
+        }
+      },
+      "15": {
+        start: {
+          line: 25,
+          column: 0
+        },
+        end: {
+          line: 25,
+          column: 36
+        }
+      },
+      "16": {
+        start: {
+          line: 26,
+          column: 20
+        },
+        end: {
+          line: 35,
+          column: 1
+        }
+      },
+      "17": {
+        start: {
+          line: 27,
+          column: 22
+        },
+        end: {
+          line: 27,
+          column: 52
+        }
+      },
+      "18": {
+        start: {
+          line: 28,
+          column: 4
+        },
+        end: {
+          line: 34,
+          column: 6
+        }
+      },
+      "19": {
+        start: {
+          line: 36,
+          column: 0
+        },
+        end: {
+          line: 36,
+          column: 34
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "pointToIndex",
+        decl: {
+          start: {
+            line: 4,
+            column: 9
+          },
+          end: {
+            line: 4,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 4,
+            column: 61
+          },
+          end: {
+            line: 16,
+            column: 1
+          }
+        },
+        line: 4
+      },
+      "1": {
+        name: "pointToPixel",
+        decl: {
+          start: {
+            line: 18,
+            column: 9
+          },
+          end: {
+            line: 18,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 18,
+            column: 61
+          },
+          end: {
+            line: 24,
+            column: 1
+          }
+        },
+        line: 18
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 26,
+            column: 20
+          },
+          end: {
+            line: 26,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 26,
+            column: 67
+          },
+          end: {
+            line: 35,
+            column: 1
+          }
+        },
+        line: 26
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 9,
+            column: 21
+          },
+          end: {
+            line: 11,
+            column: 36
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 10,
+            column: 10
+          },
+          end: {
+            line: 10,
+            column: 44
+          }
+        }, {
+          start: {
+            line: 11,
+            column: 10
+          },
+          end: {
+            line: 11,
+            column: 36
+          }
+        }],
+        line: 9
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 12,
+            column: 20
+          },
+          end: {
+            line: 12,
+            column: 92
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 12,
+            column: 34
+          },
+          end: {
+            line: 12,
+            column: 66
+          }
+        }, {
+          start: {
+            line: 12,
+            column: 69
+          },
+          end: {
+            line: 12,
+            column: 92
+          }
+        }],
+        line: 12
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 26,
+            column: 42
+          },
+          end: {
+            line: 26,
+            column: 62
+          }
+        },
+        type: "default-arg",
+        locations: [{
+          start: {
+            line: 26,
+            column: 61
+          },
+          end: {
+            line: 26,
+            column: 62
+          }
+        }],
+        line: 26
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0]
+    },
+    inputSourceMap: {
+      file: "/home/user/climbox/packages/api/src/utils/coordinates.ts",
+      mappings: ";;;AAIA,SAAgB,YAAY,CAC1B,IAAY,EACZ,GAAW,EACX,WAAmB,EACnB,KAAa,EACb,MAAc;IAEd,MAAM,CAAC,OAAO,EAAE,MAAM,EAAE,OAAO,EAAE,MAAM,CAAC,GAAG,WAAW,CAAC;IAEvD,MAAM,QAAQ,GAAG,IAAI,CAAC,GAAG,CAAC,OAAO,GAAG,OAAO,CAAC,CAAC;IAC7C,MAAM,SAAS,GAAG,IAAI,CAAC,GAAG,CAAC,MAAM,GAAG,MAAM,CAAC,CAAC;IAE5C,2EAA2E;IAC3E,MAAM,QAAQ,GACZ,OAAO,IAAI,CAAC;QACV,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,GAAG,GAAG,CAAC,GAAG,GAAG,CAAC,GAAG,GAAG,CAAC,GAAG,GAAG;QACpC,CAAC,CAAC,CAAC,CAAC,IAAI,GAAG,GAAG,CAAC,GAAG,GAAG,CAAC,GAAG,GAAG,CAAC;IAEjC,MAAM,OAAO,GACX,MAAM,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,GAAG,GAAG,CAAC,GAAG,GAAG,CAAC,GAAG,GAAG,CAAC,GAAG,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,GAAG,EAAE,CAAC,GAAG,GAAG,CAAC,GAAG,EAAE,CAAC;IAE3E,MAAM,SAAS,GAAG,IAAI,CAAC,KAAK,CAC1B,CAAC,IAAI,CAAC,GAAG,CAAC,QAAQ,GAAG,OAAO,CAAC,GAAG,QAAQ,CAAC,GAAG,KAAK,CAClD,CAAC;IACF,MAAM,QAAQ,GAAG,IAAI,CAAC,KAAK,CACzB,CAAC,IAAI,CAAC,GAAG,CAAC,OAAO,GAAG,MAAM,CAAC,GAAG,SAAS,CAAC,GAAG,MAAM,CAClD,CAAC;IAEF,OAAO,EAAE,SAAS,EAAE,QAAQ,EAAE,CAAC;AACjC,CAAC;AA7BD,oCA6BC;AAED,SAAgB,YAAY,CAC1B,IAAY,EACZ,GAAW,EACX,WAAmB,EACnB,KAAa,EACb,MAAc;IAEd,MAAM,EAAE,SAAS,EAAE,QAAQ,EAAE,GAAG,YAAY,CAC1C,IAAI,EACJ,GAAG,EACH,WAAW,EACX,KAAK,EACL,MAAM,CACP,CAAC;IAEF,uCAAuC;IACvC,MAAM,MAAM,GAAG,SAAS,CAAC;IACzB,MAAM,MAAM,GAAG,MAAM,GAAG,QAAQ,CAAC;IAEjC,OAAO,EAAE,MAAM,EAAE,MAAM,EAAE,CAAC;AAC5B,CAAC;AApBD,oCAoBC;AAEM,MAAM,WAAW,GAAG,CACzB,SAAiB,EACjB,QAAgB,EAChB,mBAA2B,CAAC,EACrB,EAAE;IACT,MAAM,SAAS,GAAG,SAAA,EAAE,EAAI,gBAAgB,CAAA,CAAC;IACzC,OAAO;QACL,IAAI,EAAE,OAAO;QACb,WAAW,EAAE;YACX,IAAI,CAAC,KAAK,CAAC,CAAC,SAAS,GAAG,MAAM,CAAC,OAAO,CAAC,GAAG,SAAS,CAAC,GAAG,SAAS;YAChE,IAAI,CAAC,KAAK,CAAC,CAAC,QAAQ,GAAG,MAAM,CAAC,OAAO,CAAC,GAAG,SAAS,CAAC,GAAG,SAAS;SAChE;KACF,CAAC;AACJ,CAAC,CAAC;AAbW,QAAA,WAAW,eAatB",
+      names: [],
+      sources: ["/home/user/climbox/packages/api/src/utils/coordinates.ts"],
+      sourcesContent: ["import { Point } from 'geojson';\r\n\r\nexport type Extent = [number, number, number, number];\r\n\r\nexport function pointToIndex(\r\n  long: number,\r\n  lat: number,\r\n  boundingBox: Extent,\r\n  width: number,\r\n  height: number,\r\n) {\r\n  const [minLong, minLat, maxLong, maxLat] = boundingBox;\r\n\r\n  const geoWidth = Math.abs(maxLong - minLong);\r\n  const geoHeight = Math.abs(maxLat - minLat);\r\n\r\n  // Normalize longitude and latitude depending on the boundingBox convention\r\n  const tempLong =\r\n    minLong >= 0\r\n      ? (((long % 360) + 540) % 360) - 180\r\n      : ((long + 180) % 360) - 180;\r\n\r\n  const tempLat =\r\n    minLat >= 0 ? (((lat % 180) + 270) % 180) - 90 : ((lat + 90) % 180) - 90;\r\n\r\n  const indexLong = Math.round(\r\n    (Math.abs(tempLong - minLong) / geoWidth) * width,\r\n  );\r\n  const indexLat = Math.round(\r\n    (Math.abs(tempLat - minLat) / geoHeight) * height,\r\n  );\r\n\r\n  return { indexLong, indexLat };\r\n}\r\n\r\nexport function pointToPixel(\r\n  long: number,\r\n  lat: number,\r\n  boundingBox: Extent,\r\n  width: number,\r\n  height: number,\r\n) {\r\n  const { indexLong, indexLat } = pointToIndex(\r\n    long,\r\n    lat,\r\n    boundingBox,\r\n    width,\r\n    height,\r\n  );\r\n\r\n  // Pixel (0, 0) is the top left corner.\r\n  const pixelX = indexLong;\r\n  const pixelY = height - indexLat;\r\n\r\n  return { pixelX, pixelY };\r\n}\r\n\r\nexport const createPoint = (\r\n  longitude: number,\r\n  latitude: number,\r\n  numberOfDecimals: number = 5,\r\n): Point => {\r\n  const precision = 10 ** numberOfDecimals;\r\n  return {\r\n    type: 'Point',\r\n    coordinates: [\r\n      Math.round((longitude + Number.EPSILON) * precision) / precision,\r\n      Math.round((latitude + Number.EPSILON) * precision) / precision,\r\n    ],\r\n  };\r\n};\r\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "410f9ef3597b62686b2a29fb4968e0cd462d21a1"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2ohivl22ru = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_2ohivl22ru();
+cov_2ohivl22ru().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_2ohivl22ru().s[1]++;
+exports.createPoint = exports.pointToPixel = exports.pointToIndex = void 0;
+function pointToIndex(long, lat, boundingBox, width, height) {
+  /* istanbul ignore next */
+  cov_2ohivl22ru().f[0]++;
+  const [minLong, minLat, maxLong, maxLat] =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[2]++, boundingBox);
+  const geoWidth =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[3]++, Math.abs(maxLong - minLong));
+  const geoHeight =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[4]++, Math.abs(maxLat - minLat));
+  // Normalize longitude and latitude depending on the boundingBox convention
+  const tempLong =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[5]++, minLong >= 0 ?
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().b[0][0]++, (long % 360 + 540) % 360 - 180) :
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().b[0][1]++, (long + 180) % 360 - 180));
+  const tempLat =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[6]++, minLat >= 0 ?
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().b[1][0]++, (lat % 180 + 270) % 180 - 90) :
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().b[1][1]++, (lat + 90) % 180 - 90));
+  const indexLong =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[7]++, Math.round(Math.abs(tempLong - minLong) / geoWidth * width));
+  const indexLat =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[8]++, Math.round(Math.abs(tempLat - minLat) / geoHeight * height));
+  /* istanbul ignore next */
+  cov_2ohivl22ru().s[9]++;
+  return {
+    indexLong,
+    indexLat
+  };
+}
+/* istanbul ignore next */
+cov_2ohivl22ru().s[10]++;
+exports.pointToIndex = pointToIndex;
+function pointToPixel(long, lat, boundingBox, width, height) {
+  /* istanbul ignore next */
+  cov_2ohivl22ru().f[1]++;
+  const {
+    indexLong,
+    indexLat
+  } =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[11]++, pointToIndex(long, lat, boundingBox, width, height));
+  // Pixel (0, 0) is the top left corner.
+  const pixelX =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[12]++, indexLong);
+  const pixelY =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[13]++, height - indexLat);
+  /* istanbul ignore next */
+  cov_2ohivl22ru().s[14]++;
+  return {
+    pixelX,
+    pixelY
+  };
+}
+/* istanbul ignore next */
+cov_2ohivl22ru().s[15]++;
+exports.pointToPixel = pointToPixel;
+/* istanbul ignore next */
+cov_2ohivl22ru().s[16]++;
+const createPoint = (longitude, latitude, numberOfDecimals =
+/* istanbul ignore next */
+(cov_2ohivl22ru().b[2][0]++, 5)) => {
+  /* istanbul ignore next */
+  cov_2ohivl22ru().f[2]++;
+  const precision =
+  /* istanbul ignore next */
+  (cov_2ohivl22ru().s[17]++, Math.pow(10, numberOfDecimals));
+  /* istanbul ignore next */
+  cov_2ohivl22ru().s[18]++;
+  return {
+    type: 'Point',
+    coordinates: [Math.round((longitude + Number.EPSILON) * precision) / precision, Math.round((latitude + Number.EPSILON) * precision) / precision]
+  };
+};
+/* istanbul ignore next */
+cov_2ohivl22ru().s[19]++;
+exports.createPoint = createPoint;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMm9oaXZsMjJydSIsImFjdHVhbENvdmVyYWdlIiwicyIsInBvaW50VG9JbmRleCIsImxvbmciLCJsYXQiLCJib3VuZGluZ0JveCIsIndpZHRoIiwiaGVpZ2h0IiwiZiIsIm1pbkxvbmciLCJtaW5MYXQiLCJtYXhMb25nIiwibWF4TGF0IiwiZ2VvV2lkdGgiLCJNYXRoIiwiYWJzIiwiZ2VvSGVpZ2h0IiwidGVtcExvbmciLCJiIiwidGVtcExhdCIsImluZGV4TG9uZyIsInJvdW5kIiwiaW5kZXhMYXQiLCJleHBvcnRzIiwicG9pbnRUb1BpeGVsIiwicGl4ZWxYIiwicGl4ZWxZIiwiY3JlYXRlUG9pbnQiLCJsb25naXR1ZGUiLCJsYXRpdHVkZSIsIm51bWJlck9mRGVjaW1hbHMiLCJwcmVjaXNpb24iLCJwb3ciLCJ0eXBlIiwiY29vcmRpbmF0ZXMiLCJOdW1iZXIiLCJFUFNJTE9OIl0sInNvdXJjZXMiOlsiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvdXRpbHMvY29vcmRpbmF0ZXMudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUG9pbnQgfSBmcm9tICdnZW9qc29uJztcclxuXHJcbmV4cG9ydCB0eXBlIEV4dGVudCA9IFtudW1iZXIsIG51bWJlciwgbnVtYmVyLCBudW1iZXJdO1xyXG5cclxuZXhwb3J0IGZ1bmN0aW9uIHBvaW50VG9JbmRleChcclxuICBsb25nOiBudW1iZXIsXHJcbiAgbGF0OiBudW1iZXIsXHJcbiAgYm91bmRpbmdCb3g6IEV4dGVudCxcclxuICB3aWR0aDogbnVtYmVyLFxyXG4gIGhlaWdodDogbnVtYmVyLFxyXG4pIHtcclxuICBjb25zdCBbbWluTG9uZywgbWluTGF0LCBtYXhMb25nLCBtYXhMYXRdID0gYm91bmRpbmdCb3g7XHJcblxyXG4gIGNvbnN0IGdlb1dpZHRoID0gTWF0aC5hYnMobWF4TG9uZyAtIG1pbkxvbmcpO1xyXG4gIGNvbnN0IGdlb0hlaWdodCA9IE1hdGguYWJzKG1heExhdCAtIG1pbkxhdCk7XHJcblxyXG4gIC8vIE5vcm1hbGl6ZSBsb25naXR1ZGUgYW5kIGxhdGl0dWRlIGRlcGVuZGluZyBvbiB0aGUgYm91bmRpbmdCb3ggY29udmVudGlvblxyXG4gIGNvbnN0IHRlbXBMb25nID1cclxuICAgIG1pbkxvbmcgPj0gMFxyXG4gICAgICA/ICgoKGxvbmcgJSAzNjApICsgNTQwKSAlIDM2MCkgLSAxODBcclxuICAgICAgOiAoKGxvbmcgKyAxODApICUgMzYwKSAtIDE4MDtcclxuXHJcbiAgY29uc3QgdGVtcExhdCA9XHJcbiAgICBtaW5MYXQgPj0gMCA/ICgoKGxhdCAlIDE4MCkgKyAyNzApICUgMTgwKSAtIDkwIDogKChsYXQgKyA5MCkgJSAxODApIC0gOTA7XHJcblxyXG4gIGNvbnN0IGluZGV4TG9uZyA9IE1hdGgucm91bmQoXHJcbiAgICAoTWF0aC5hYnModGVtcExvbmcgLSBtaW5Mb25nKSAvIGdlb1dpZHRoKSAqIHdpZHRoLFxyXG4gICk7XHJcbiAgY29uc3QgaW5kZXhMYXQgPSBNYXRoLnJvdW5kKFxyXG4gICAgKE1hdGguYWJzKHRlbXBMYXQgLSBtaW5MYXQpIC8gZ2VvSGVpZ2h0KSAqIGhlaWdodCxcclxuICApO1xyXG5cclxuICByZXR1cm4geyBpbmRleExvbmcsIGluZGV4TGF0IH07XHJcbn1cclxuXHJcbmV4cG9ydCBmdW5jdGlvbiBwb2ludFRvUGl4ZWwoXHJcbiAgbG9uZzogbnVtYmVyLFxyXG4gIGxhdDogbnVtYmVyLFxyXG4gIGJvdW5kaW5nQm94OiBFeHRlbnQsXHJcbiAgd2lkdGg6IG51bWJlcixcclxuICBoZWlnaHQ6IG51bWJlcixcclxuKSB7XHJcbiAgY29uc3QgeyBpbmRleExvbmcsIGluZGV4TGF0IH0gPSBwb2ludFRvSW5kZXgoXHJcbiAgICBsb25nLFxyXG4gICAgbGF0LFxyXG4gICAgYm91bmRpbmdCb3gsXHJcbiAgICB3aWR0aCxcclxuICAgIGhlaWdodCxcclxuICApO1xyXG5cclxuICAvLyBQaXhlbCAoMCwgMCkgaXMgdGhlIHRvcCBsZWZ0IGNvcm5lci5cclxuICBjb25zdCBwaXhlbFggPSBpbmRleExvbmc7XHJcbiAgY29uc3QgcGl4ZWxZID0gaGVpZ2h0IC0gaW5kZXhMYXQ7XHJcblxyXG4gIHJldHVybiB7IHBpeGVsWCwgcGl4ZWxZIH07XHJcbn1cclxuXHJcbmV4cG9ydCBjb25zdCBjcmVhdGVQb2ludCA9IChcclxuICBsb25naXR1ZGU6IG51bWJlcixcclxuICBsYXRpdHVkZTogbnVtYmVyLFxyXG4gIG51bWJlck9mRGVjaW1hbHM6IG51bWJlciA9IDUsXHJcbik6IFBvaW50ID0+IHtcclxuICBjb25zdCBwcmVjaXNpb24gPSAxMCAqKiBudW1iZXJPZkRlY2ltYWxzO1xyXG4gIHJldHVybiB7XHJcbiAgICB0eXBlOiAnUG9pbnQnLFxyXG4gICAgY29vcmRpbmF0ZXM6IFtcclxuICAgICAgTWF0aC5yb3VuZCgobG9uZ2l0dWRlICsgTnVtYmVyLkVQU0lMT04pICogcHJlY2lzaW9uKSAvIHByZWNpc2lvbixcclxuICAgICAgTWF0aC5yb3VuZCgobGF0aXR1ZGUgKyBOdW1iZXIuRVBTSUxPTikgKiBwcmVjaXNpb24pIC8gcHJlY2lzaW9uLFxyXG4gICAgXSxcclxuICB9O1xyXG59O1xyXG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7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

@@ -1,0 +1,22 @@
+caa6c904b9822563df0b24dc33b27838
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TimeSeriesPoint = void 0;
+const swagger_1 = require("@nestjs/swagger");
+class TimeSeriesPoint {
+}
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 24 }),
+    __metadata("design:type", Number)
+], TimeSeriesPoint.prototype, "value", void 0);
+exports.TimeSeriesPoint = TimeSeriesPoint;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvdGltZS1zZXJpZXMvZHRvL3RpbWUtc2VyaWVzLXBvaW50LmR0by50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFBQSw2Q0FBOEM7QUFFOUMsTUFBYSxlQUFlO0NBSzNCO0FBRkM7SUFBQyxJQUFBLHFCQUFXLEVBQUMsRUFBRSxPQUFPLEVBQUUsRUFBRSxFQUFFLENBQUM7OzhDQUNmO0FBSmhCLDBDQUtDIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9ob21lL3VzZXIvY2xpbWJveC9wYWNrYWdlcy9hcGkvc3JjL3RpbWUtc2VyaWVzL2R0by90aW1lLXNlcmllcy1wb2ludC5kdG8udHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQXBpUHJvcGVydHkgfSBmcm9tICdAbmVzdGpzL3N3YWdnZXInO1xyXG5cclxuZXhwb3J0IGNsYXNzIFRpbWVTZXJpZXNQb2ludCB7XHJcbiAgdGltZXN0YW1wOiBEYXRlO1xyXG5cclxuICBAQXBpUHJvcGVydHkoeyBleGFtcGxlOiAyNCB9KVxyXG4gIHZhbHVlOiBudW1iZXI7XHJcbn1cclxuIl0sInZlcnNpb24iOjN9

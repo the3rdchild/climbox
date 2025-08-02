@@ -1,0 +1,61 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const temperature_1 = require("./temperature");
+// Mock functions
+function getSeaSurfaceTemperatures(siteID) {
+    return Array.from(Array(siteID), (_, index) => index);
+}
+function getMaximumMonthlyMean(siteID) {
+    return 27.5 + siteID;
+}
+test('Not enough SST.', () => {
+    const seaSurfaceTemperatures = getSeaSurfaceTemperatures(1);
+    const maximumMonthlyMean = getMaximumMonthlyMean(1);
+    return expect(() => {
+        (0, temperature_1.calculateDegreeHeatingDays)(seaSurfaceTemperatures, maximumMonthlyMean);
+    }).toThrow(Error);
+});
+test('Undefined maximumMonthlyMean', () => {
+    const seaSurfaceTemperatures = getSeaSurfaceTemperatures(84);
+    return expect(() => {
+        (0, temperature_1.calculateDegreeHeatingDays)(seaSurfaceTemperatures, null);
+    }).toThrow(Error);
+});
+test('Calculates data as expected.', () => {
+    const seaSurfaceTemperatures = getSeaSurfaceTemperatures(84);
+    const maximumMonthlyMean = getMaximumMonthlyMean(1);
+    const DHD = (0, temperature_1.calculateDegreeHeatingDays)(seaSurfaceTemperatures, maximumMonthlyMean);
+    expect(DHD).toBe(1512);
+});
+test('Get MMM as expected.', () => __awaiter(void 0, void 0, void 0, function* () {
+    jest.setTimeout(60000);
+    yield (0, temperature_1.getMMM)(0, 0).then((data) => expect(data).toEqual(28.95));
+    yield (0, temperature_1.getMMM)(-89.9, -10).then((data) => expect(data).toEqual(26.55));
+    yield (0, temperature_1.getMMM)(-108.0, -53.1).then((data) => expect(data).toEqual(7.94));
+}));
+test('Get HistoricalMonthlyMeans as expected.', () => __awaiter(void 0, void 0, void 0, function* () {
+    jest.setTimeout(60000);
+    yield (0, temperature_1.getHistoricalMonthlyMeans)(0, 0).then((data) => expect(data).toEqual([
+        { month: 1, temperature: 27.65 },
+        { month: 2, temperature: 28.24 },
+        { month: 3, temperature: 28.68 },
+        { month: 4, temperature: 28.95 },
+        { month: 5, temperature: 28.06 },
+        { month: 6, temperature: 25.83 },
+        { month: 7, temperature: 25.06 },
+        { month: 8, temperature: 24.82 },
+        { month: 9, temperature: 25.44 },
+        { month: 10, temperature: 26.25 },
+        { month: 11, temperature: 26.7 },
+        { month: 12, temperature: 27.03 },
+    ]));
+}));

@@ -1,0 +1,26 @@
+441a4bbad7b609d18c9d2807b9e87918
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReefCheckSurveysModule = void 0;
+const typeorm_1 = require("@nestjs/typeorm");
+const common_1 = require("@nestjs/common");
+const reef_check_surveys_controller_1 = require("./reef-check-surveys.controller");
+const reef_check_surveys_entity_1 = require("./reef-check-surveys.entity");
+const reef_check_surveys_service_1 = require("./reef-check-surveys.service");
+let ReefCheckSurveysModule = class ReefCheckSurveysModule {
+};
+ReefCheckSurveysModule = __decorate([
+    (0, common_1.Module)({
+        imports: [typeorm_1.TypeOrmModule.forFeature([reef_check_surveys_entity_1.ReefCheckSurvey])],
+        providers: [reef_check_surveys_service_1.ReefCheckSurveysService],
+        controllers: [reef_check_surveys_controller_1.ReefCheckSurveysController],
+    })
+], ReefCheckSurveysModule);
+exports.ReefCheckSurveysModule = ReefCheckSurveysModule;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvcmVlZi1jaGVjay1zdXJ2ZXlzL3JlZWYtY2hlY2stc3VydmV5cy5tb2R1bGUudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUEsNkNBQWdEO0FBQ2hELDJDQUF3QztBQUN4QyxtRkFBNkU7QUFDN0UsMkVBQThEO0FBQzlELDZFQUF1RTtBQU9oRSxJQUFNLHNCQUFzQixHQUE1QixNQUFNLHNCQUFzQjtDQUFHLENBQUE7QUFBekIsc0JBQXNCO0lBTGxDLElBQUEsZUFBTSxFQUFDO1FBQ04sT0FBTyxFQUFFLENBQUMsdUJBQWEsQ0FBQyxVQUFVLENBQUMsQ0FBQywyQ0FBZSxDQUFDLENBQUMsQ0FBQztRQUN0RCxTQUFTLEVBQUUsQ0FBQyxvREFBdUIsQ0FBQztRQUNwQyxXQUFXLEVBQUUsQ0FBQywwREFBMEIsQ0FBQztLQUMxQyxDQUFDO0dBQ1csc0JBQXNCLENBQUc7QUFBekIsd0RBQXNCIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9ob21lL3VzZXIvY2xpbWJveC9wYWNrYWdlcy9hcGkvc3JjL3JlZWYtY2hlY2stc3VydmV5cy9yZWVmLWNoZWNrLXN1cnZleXMubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFR5cGVPcm1Nb2R1bGUgfSBmcm9tICdAbmVzdGpzL3R5cGVvcm0nO1xyXG5pbXBvcnQgeyBNb2R1bGUgfSBmcm9tICdAbmVzdGpzL2NvbW1vbic7XHJcbmltcG9ydCB7IFJlZWZDaGVja1N1cnZleXNDb250cm9sbGVyIH0gZnJvbSAnLi9yZWVmLWNoZWNrLXN1cnZleXMuY29udHJvbGxlcic7XHJcbmltcG9ydCB7IFJlZWZDaGVja1N1cnZleSB9IGZyb20gJy4vcmVlZi1jaGVjay1zdXJ2ZXlzLmVudGl0eSc7XHJcbmltcG9ydCB7IFJlZWZDaGVja1N1cnZleXNTZXJ2aWNlIH0gZnJvbSAnLi9yZWVmLWNoZWNrLXN1cnZleXMuc2VydmljZSc7XHJcblxyXG5ATW9kdWxlKHtcclxuICBpbXBvcnRzOiBbVHlwZU9ybU1vZHVsZS5mb3JGZWF0dXJlKFtSZWVmQ2hlY2tTdXJ2ZXldKV0sXHJcbiAgcHJvdmlkZXJzOiBbUmVlZkNoZWNrU3VydmV5c1NlcnZpY2VdLFxyXG4gIGNvbnRyb2xsZXJzOiBbUmVlZkNoZWNrU3VydmV5c0NvbnRyb2xsZXJdLFxyXG59KVxyXG5leHBvcnQgY2xhc3MgUmVlZkNoZWNrU3VydmV5c01vZHVsZSB7fVxyXG4iXSwidmVyc2lvbiI6M30=

@@ -1,0 +1,187 @@
+4c741a1bbae628a5dc2f58ced7bcbe72
+"use strict";
+
+/* istanbul ignore next */
+function cov_1hb0kr50w() {
+  var path = "/home/user/climbox/packages/api/src/auth/auth.decorator.ts";
+  var hash = "29a57d2acbe3aab88d7a6e910306b5044416ba8b";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/user/climbox/packages/api/src/auth/auth.decorator.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 22
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 17
+        },
+        end: {
+          line: 4,
+          column: 42
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 30
+        },
+        end: {
+          line: 5,
+          column: 62
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 23
+        },
+        end: {
+          line: 6,
+          column: 48
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 13
+        },
+        end: {
+          line: 9,
+          column: 1
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 4
+        },
+        end: {
+          line: 8,
+          column: 180
+        }
+      },
+      "7": {
+        start: {
+          line: 10,
+          column: 0
+        },
+        end: {
+          line: 10,
+          column: 20
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 7,
+            column: 13
+          },
+          end: {
+            line: 7,
+            column: 14
+          }
+        },
+        loc: {
+          start: {
+            line: 7,
+            column: 28
+          },
+          end: {
+            line: 9,
+            column: 1
+          }
+        },
+        line: 7
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/home/user/climbox/packages/api/src/auth/auth.decorator.ts",
+      mappings: ";;;AAAA,2CAAyE;AAEzE,+DAA0D;AAC1D,iDAA6C;AAEtC,MAAM,IAAI,GAAG,CAAC,GAAG,MAAoB,EAAE,EAAE;IAC9C,OAAO,IAAA,wBAAe,EACpB,IAAA,oBAAW,EAAC,QAAQ,EAAE,MAAM,CAAC,EAC7B,IAAA,kBAAS,EAAC,uCAAiB,EAAE,0BAAW,CAAC,CAC1C,CAAC;AACJ,CAAC,CAAC;AALW,QAAA,IAAI,QAKf",
+      names: [],
+      sources: ["/home/user/climbox/packages/api/src/auth/auth.decorator.ts"],
+      sourcesContent: ["import { applyDecorators, SetMetadata, UseGuards } from '@nestjs/common';\r\nimport { AdminLevel } from '../users/users.entity';\r\nimport { FirebaseAuthGuard } from './firebase-auth.guard';\r\nimport { LevelsGuard } from './levels.guard';\r\n\r\nexport const Auth = (...levels: AdminLevel[]) => {\r\n  return applyDecorators(\r\n    SetMetadata('levels', levels),\r\n    UseGuards(FirebaseAuthGuard, LevelsGuard),\r\n  );\r\n};\r\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "29a57d2acbe3aab88d7a6e910306b5044416ba8b"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1hb0kr50w = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_1hb0kr50w();
+cov_1hb0kr50w().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_1hb0kr50w().s[1]++;
+exports.Auth = void 0;
+const common_1 =
+/* istanbul ignore next */
+(cov_1hb0kr50w().s[2]++, require("@nestjs/common"));
+const firebase_auth_guard_1 =
+/* istanbul ignore next */
+(cov_1hb0kr50w().s[3]++, require("./firebase-auth.guard"));
+const levels_guard_1 =
+/* istanbul ignore next */
+(cov_1hb0kr50w().s[4]++, require("./levels.guard"));
+/* istanbul ignore next */
+cov_1hb0kr50w().s[5]++;
+const Auth = (...levels) => {
+  /* istanbul ignore next */
+  cov_1hb0kr50w().f[0]++;
+  cov_1hb0kr50w().s[6]++;
+  return (0, common_1.applyDecorators)((0, common_1.SetMetadata)('levels', levels), (0, common_1.UseGuards)(firebase_auth_guard_1.FirebaseAuthGuard, levels_guard_1.LevelsGuard));
+};
+/* istanbul ignore next */
+cov_1hb0kr50w().s[7]++;
+exports.Auth = Auth;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb21tb25fMSIsImNvdl8xaGIwa3I1MHciLCJzIiwicmVxdWlyZSIsImZpcmViYXNlX2F1dGhfZ3VhcmRfMSIsImxldmVsc19ndWFyZF8xIiwiQXV0aCIsImxldmVscyIsImYiLCJhcHBseURlY29yYXRvcnMiLCJTZXRNZXRhZGF0YSIsIlVzZUd1YXJkcyIsIkZpcmViYXNlQXV0aEd1YXJkIiwiTGV2ZWxzR3VhcmQiLCJleHBvcnRzIl0sInNvdXJjZXMiOlsiL2hvbWUvdXNlci9jbGltYm94L3BhY2thZ2VzL2FwaS9zcmMvYXV0aC9hdXRoLmRlY29yYXRvci50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBhcHBseURlY29yYXRvcnMsIFNldE1ldGFkYXRhLCBVc2VHdWFyZHMgfSBmcm9tICdAbmVzdGpzL2NvbW1vbic7XHJcbmltcG9ydCB7IEFkbWluTGV2ZWwgfSBmcm9tICcuLi91c2Vycy91c2Vycy5lbnRpdHknO1xyXG5pbXBvcnQgeyBGaXJlYmFzZUF1dGhHdWFyZCB9IGZyb20gJy4vZmlyZWJhc2UtYXV0aC5ndWFyZCc7XHJcbmltcG9ydCB7IExldmVsc0d1YXJkIH0gZnJvbSAnLi9sZXZlbHMuZ3VhcmQnO1xyXG5cclxuZXhwb3J0IGNvbnN0IEF1dGggPSAoLi4ubGV2ZWxzOiBBZG1pbkxldmVsW10pID0+IHtcclxuICByZXR1cm4gYXBwbHlEZWNvcmF0b3JzKFxyXG4gICAgU2V0TWV0YWRhdGEoJ2xldmVscycsIGxldmVscyksXHJcbiAgICBVc2VHdWFyZHMoRmlyZWJhc2VBdXRoR3VhcmQsIExldmVsc0d1YXJkKSxcclxuICApO1xyXG59O1xyXG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLE1BQUFBLFFBQUE7QUFBQTtBQUFBLENBQUFDLGFBQUEsR0FBQUMsQ0FBQSxPQUFBQyxPQUFBO0FBRUEsTUFBQUMscUJBQUE7QUFBQTtBQUFBLENBQUFILGFBQUEsR0FBQUMsQ0FBQSxPQUFBQyxPQUFBO0FBQ0EsTUFBQUUsY0FBQTtBQUFBO0FBQUEsQ0FBQUosYUFBQSxHQUFBQyxDQUFBLE9BQUFDLE9BQUE7QUFBNkM7QUFBQUYsYUFBQSxHQUFBQyxDQUFBO0FBRXRDLE1BQU1JLElBQUksR0FBR0EsQ0FBQyxHQUFHQyxNQUFvQixLQUFJO0VBQUE7RUFBQU4sYUFBQSxHQUFBTyxDQUFBO0VBQUFQLGFBQUEsR0FBQUMsQ0FBQTtFQUM5QyxPQUFPLElBQUFGLFFBQUEsQ0FBQVMsZUFBZSxFQUNwQixJQUFBVCxRQUFBLENBQUFVLFdBQVcsRUFBQyxRQUFRLEVBQUVILE1BQU0sQ0FBQyxFQUM3QixJQUFBUCxRQUFBLENBQUFXLFNBQVMsRUFBQ1AscUJBQUEsQ0FBQVEsaUJBQWlCLEVBQUVQLGNBQUEsQ0FBQVEsV0FBVyxDQUFDLENBQzFDO0FBQ0gsQ0FBQztBQUFDO0FBQUFaLGFBQUEsR0FBQUMsQ0FBQTtBQUxXWSxPQUFBLENBQUFSLElBQUksR0FBQUEsSUFBQSJ9
