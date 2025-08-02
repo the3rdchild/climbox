@@ -1,13 +1,19 @@
 {
   "extends": "../../tsconfig.json",
-  "include": [
-    "src"
-  ],
   "files": [
     "src/custom.d.ts"
   ],
+   "include": [
+       "src",
+       "src/env.d.ts",      // tambahkan ini
+       "src/custom.d.ts"
+     ],
   "compilerOptions": {
-    "types": ["vitest/globals"],
+    "types": [
+      "vite/client",
+      "vitest/globals"
+
+    ],
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src"
   }
