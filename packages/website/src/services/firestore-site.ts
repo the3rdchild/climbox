@@ -8,6 +8,8 @@ import {
     updateDoc,
     deleteDoc,
     addDoc,
+    query,
+    where,
   } from "firebase/firestore";
   import { db } from "./firestore";
   
@@ -55,9 +57,18 @@ import {
       return { data: snap.docs.map((d) => ({ id: d.id, ...d.data() })) };
     },
   
-    getSiteSurveyPoints: async (id: string) => {
-      const snap = await getDocs(collection(db, `sites/${id}/surveyPoints`));
-      return { data: snap.docs.map((d) => ({ id: d.id, ...d.data() })) };
+    getSiteSurveyPoints: async (siteId: string) => {
+      const q = query(collection(db, 'surveyPoints'), where('siteId', '==', Number(siteId)));
+      const snap = await getDocs(q);
+      return {
+        data: snap.docs.map((doc) => {
+          const d = doc.data();
+          return {
+            id: Number(doc.id),
+            name: d.name,
+          };
+        }),
+      };
     },
   
     deleteSiteSurveyPoint: async (siteId: string, pointId: string) => {

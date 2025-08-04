@@ -20,6 +20,6 @@ export { siteService }       from "./firestore-site";
 export { surveyService }     from "./firestore-survey";
 export { uploadService }     from "./firestore-upload";
 export { userService }       from "./firestore-user";
-export { reefCheckService }  from "./firestore-reef-check";
 export { mapService }        from "./firestore-map";
 export * from './firestore-monitoring';
+export * from './firestore-reef-check';

@@ -62,7 +62,7 @@ const NewSurveyPointDialog = ({
         siteId.toString(),
       );
       const resultingPoints = newPoints.map(({ id, name }) => ({
-        id,
+        id: Number(id), // ✔️ fix type mismatch
         name,
         polygon: null,
       }));

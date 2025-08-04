@@ -46,9 +46,8 @@ const EditNameForm = ({
     if (signedInUser?.token && collectionId) {
       collectionService
         .updateCollection({
-          id: collectionId,
+          id: String(collectionId),
           name: collectionName.value,
-          token: signedInUser.token,
         })
         .then(() => dispatch(setName(collectionName.value)))
         .catch(console.error)

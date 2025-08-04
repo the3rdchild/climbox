@@ -28,8 +28,8 @@ import { Site } from 'store/Sites/types';
 import { useBodyLength } from 'hooks/useBodyLength';
 import { isAdmin } from 'helpers/user';
 import { getAxiosErrorMessage } from 'helpers/errors';
-import siteServices from 'services/firestore';
-import surveyServices from 'services/firestore';
+import { siteService } from 'services/firestore';
+import { surveyService } from 'services/firestore';
 import PointSelector from './PointSelector';
 import Timeline from './Timeline';
 import DeleteSurveyPointDialog, { Action } from '../../Dialog';
@@ -98,11 +98,7 @@ const Surveys = ({ site }: SurveysProps) => {
     if (site && typeof surveyPointToDelete === 'number') {
       setIsDeletePointLoading(true);
       try {
-        await siteServices.deleteSiteSurveyPoint(
-          surveyPointToDelete,
-          user?.token,
-        );
-
+        await siteService.deleteSiteSurveyPoint(String(surveyPointToDelete), user?.token);
         dispatch(
           setSiteSurveyPoints(
             pointOptions.filter((option) => option.id !== surveyPointToDelete),
@@ -135,8 +131,8 @@ const Surveys = ({ site }: SurveysProps) => {
     const newName = editSurveyPointNameDraft;
     if (newName && user?.token) {
       seteditSurveyPointNameLoading(true);
-      surveyServices
-        .updatePoi(key, { name: newName }, user.token)
+      surveyService
+        .updatePoi(String(key), { name: newName }, user.token)
         .then(() => {
           // Update point name for featured image card
           dispatch(updateSurveyPointName({ id: key, name: newName }));

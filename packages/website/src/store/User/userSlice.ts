@@ -84,7 +84,7 @@ export const signInUser = createAsyncThunk<
       const { user } = (await userService.signInUser(email, password)) || {};
       const token = await user?.getIdToken();
       const { data: userData } = await userService.getSelf(token);
-      const { data: collections } = await collectionService.getCollections();
+      const { data: collections } = await collectionService.getCollection(token);
 
       return constructUserObject(userData, collections, token);
     } catch (err) {
@@ -162,7 +162,10 @@ export const createCollectionRequest = createAsyncThunk<
         ? null
         : {
             ...userInfo,
-            collection: { id: data.id, siteIds: data.siteIds },
+            collection: {
+              id: data.id,
+              siteIds: data.siteIds.map(String), // Convert to string[]
+            },
           };
     } catch (err) {
       return rejectWithValue(getAxiosErrorMessage(err));
@@ -227,7 +230,10 @@ const userSlice = createSlice({
         ? {
             ...state.userInfo,
             collection: state.userInfo.collection
-              ? { ...state.userInfo.collection, siteIds: action.payload }
+              ? {
+                  ...state.userInfo.collection,
+                  siteIds: action.payload.map(String), // convert to string[]
+                }
               : state.userInfo.collection,
           }
         : state.userInfo,
