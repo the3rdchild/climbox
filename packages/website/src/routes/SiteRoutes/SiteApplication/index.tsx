@@ -32,7 +32,7 @@ import SignInDialog from 'common/SignInDialog';
 import RegisterDialog from 'common/RegisterDialog';
 import NavBar from 'common/NavBar';
 import Footer from 'common/Footer';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 import { AgreementsChecked } from './types';
 import Obligations from './Obligations';
 import Agreements from './Agreements';

@@ -3,7 +3,7 @@ import { uniqBy } from 'lodash';
 import { getAxiosErrorMessage } from 'helpers/errors';
 import uploadServices, {
   UploadTimeSeriesResult,
-} from 'services/uploadServices';
+} from 'services/firestore';
 import { Sources } from 'store/Sites/types';
 import type { CreateAsyncThunkTypes, RootState } from '../configure';
 import { UploadsSliceState } from './types';

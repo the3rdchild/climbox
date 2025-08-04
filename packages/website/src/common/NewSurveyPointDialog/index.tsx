@@ -21,8 +21,8 @@ import { userInfoSelector } from 'store/User/userSlice';
 import { setSiteSurveyPoints } from 'store/Sites/selectedSiteSlice';
 import { SurveyPoints } from 'store/Sites/types';
 import { getAxiosErrorMessage } from 'helpers/errors';
-import siteServices from 'services/siteServices';
-import surveyServices from 'services/surveyServices';
+import { siteService } from 'services/firestore';
+import { surveyService } from 'services/firestore';
 
 const NewSurveyPointDialog = ({
   open,
@@ -57,8 +57,8 @@ const NewSurveyPointDialog = ({
     setNewPointError(undefined);
     setNewPointLoading(true);
     try {
-      await surveyServices.addNewPoi(siteId, pointName, user?.token);
-      const { data: newPoints } = await siteServices.getSiteSurveyPoints(
+      await surveyService.addNewPoi(siteId, pointName, user?.token);
+      const { data: newPoints } = await siteService.getSiteSurveyPoints(
         siteId.toString(),
       );
       const resultingPoints = newPoints.map(({ id, name }) => ({

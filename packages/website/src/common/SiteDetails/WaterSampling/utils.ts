@@ -1,7 +1,7 @@
 import { formatNumber } from 'helpers/numberUtils';
 import { Metrics, MetricsKeys, Sources } from 'store/Sites/types';
 import { GridProps } from '@mui/material';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 import { timeSeriesRequest } from 'store/Sites/helpers';
 import { getSondeConfig } from 'constants/chartConfigs/sondeConfig';
 

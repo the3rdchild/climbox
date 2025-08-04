@@ -3,18 +3,17 @@ import type { Site } from '../Sites/types';
 export type AdminLevel = 'default' | 'site_manager' | 'super_admin';
 
 export interface User {
-  email?: string | null;
-  fullName?: string | null;
-  adminLevel?: AdminLevel;
-  firebaseUid?: string | null;
-  organization?: string | null;
-  administeredSites?: Site[];
+  id: string; // Changed from number
+  email: string;
+  fullName: string;
+  adminLevel: 'user' | 'manager' | 'admin';
+  firebaseUid: string;
+  organization: string;
   collection?: {
-    id: number;
-    siteIds: number[];
+    id: string;
+    siteIds: string[];
   };
-  token?: string | null;
-  id: number;
+  token?: string;
 }
 
 export interface UserState {
@@ -42,7 +41,7 @@ export interface PasswordResetParams {
 
 export interface CreateUserCollectionRequestParams {
   name: string;
-  siteIds: number[];
+  siteIds: string[];
   token?: string;
   isPublic?: boolean;
 }

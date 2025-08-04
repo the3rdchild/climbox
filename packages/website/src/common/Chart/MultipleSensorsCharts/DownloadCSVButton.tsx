@@ -6,7 +6,7 @@ import { useSnackbar } from 'notistack';
 import { MetricsKeys } from 'store/Sites/types';
 import { downloadBlob } from 'utils/utils';
 import { constructTimeSeriesDataCsvRequestUrl } from 'helpers/siteUtils';
-import monitoringServices from 'services/monitoringServices';
+import { monitoringService } from 'services/firestore';
 import { userInfoSelector } from 'store/User/userSlice';
 import { MonitoringMetric } from 'utils/types';
 import { CSVColumnData } from './types';
@@ -73,7 +73,7 @@ function DownloadCSVButton({
     }
 
     if (user?.token)
-      monitoringServices.postMonitoringMetric({
+      monitoringService.postMonitoringMetric({
         token: user.token,
         siteId: Number(siteId),
         metric: MonitoringMetric.CSVDownload,

@@ -13,7 +13,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { userInfoSelector } from 'store/User/userSlice';
 import { SurveyPoints } from 'store/Sites/types';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 import { CollapsibleTableRow, TableCellWrap } from './utils';
 
 interface SiteSurveyPoints {

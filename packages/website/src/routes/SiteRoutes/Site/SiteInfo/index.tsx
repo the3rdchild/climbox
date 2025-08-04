@@ -33,7 +33,7 @@ import {
 } from 'store/User/userSlice';
 import { sitesListSelector, setSiteName } from 'store/Sites/sitesListSlice';
 import { displayTimeInLocalTimezone } from 'helpers/dates';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 import EditForm from './EditForm';
 import ExclusionDatesDialog from './ExclusionDatesDialog';
 import CollectionButton from './CollectionButton';

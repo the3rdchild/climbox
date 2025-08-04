@@ -13,7 +13,7 @@ import {
 } from 'store/Sites/selectedSiteSlice';
 import { setTimeZone } from 'helpers/dates';
 import Dialog, { Action } from 'common/Dialog';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 import {
   DatePicker,
   LocalizationProvider,

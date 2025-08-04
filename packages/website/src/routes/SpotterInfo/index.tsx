@@ -11,7 +11,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { userInfoSelector } from 'store/User/userSlice';
 import requests from 'helpers/requests';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 import { useSnackbar } from 'notistack';
 import LoadingBackdrop from 'common/LoadingBackdrop';
 

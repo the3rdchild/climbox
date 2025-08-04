@@ -1,5 +1,5 @@
 import { isManager } from 'helpers/user';
-import userServices from 'services/userServices';
+import { userService } from 'services/firestore';
 import { AdminLevel, User } from './types';
 import { CollectionSummary } from '../Collection/types';
 
@@ -8,7 +8,7 @@ export const constructUserObject = async (
   collections: CollectionSummary[],
   token?: string,
 ): Promise<User> => {
-  const { data: administeredSites } = await userServices.getAdministeredSites(
+  const { data: administeredSites } = await userService.getAdministeredSites(
     token,
   );
 

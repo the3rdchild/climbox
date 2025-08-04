@@ -42,7 +42,7 @@ import {
 } from 'constants/chartConfigs/metlogConfig';
 import { DateTime } from 'luxon-extensions';
 import { userInfoSelector } from 'store/User/userSlice';
-import monitoringServices from 'services/monitoringServices';
+import { monitoringService } from 'services/firestore';
 import {
   constructOceanSenseDatasets,
   findChartWidth,
@@ -227,7 +227,7 @@ const MultipleSensorsCharts = ({
   // post monitoring metric
   useEffect(() => {
     if (user?.token) {
-      monitoringServices.postMonitoringMetric({
+      monitoringService.postMonitoringMetric({
         token: user.token,
         siteId: site.id,
         metric: MonitoringMetric.TimeSeriesRequest,

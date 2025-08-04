@@ -5,9 +5,9 @@ import MonitoringTable, {
 } from 'common/MonitoringTable';
 import { DateTime } from 'luxon';
 import React from 'react';
-import monitoringServices, {
-  GetSurveysReportResponse,
-} from 'services/monitoringServices';
+import { monitoringService } from 'services/firestore';
+import { GetSurveysReportResponse } from 'services/firestore';
+
 import { ArrayElement } from 'utils/types';
 import MonitoringPageWrapper from '../MonitoringPageWrapper';
 
@@ -42,7 +42,7 @@ const bodyCells: BodyCell<TableData>[] = [
 ];
 
 async function getResult(token: string): Promise<TableData[]> {
-  const { data } = await monitoringServices.getSurveysReport({
+  const { data } = await monitoringService.getSurveysReport({
     token,
   });
   return data;

@@ -20,7 +20,7 @@ import { Site } from 'store/Sites/types';
 import { userInfoSelector } from 'store/User/userSlice';
 import { setSiteSurveyPoints } from 'store/Sites/selectedSiteSlice';
 import { useFormField } from 'hooks/useFormField';
-import surveyServices from 'services/surveyServices';
+import surveyServices from 'services/firestore';
 import EditForm from './EditForm';
 import Info from './Info';
 import Map from './Map';

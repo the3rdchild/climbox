@@ -13,7 +13,7 @@ import {
   uploadsTargetSelector,
 } from 'store/uploads/uploadsSlice';
 import StatusSnackbar from 'common/StatusSnackbar';
-import { UploadTimeSeriesResult } from 'services/uploadServices';
+import { UploadTimeSeriesResult } from 'services/firestore';
 import UploadWarnings from 'common/FileUploads/UploadWarnings';
 import Site from './Site';
 import SiteApplication from './SiteApplication';

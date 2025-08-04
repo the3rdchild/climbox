@@ -22,8 +22,8 @@ import { userInfoSelector } from 'store/User/userSlice';
 import { surveyDetailsSelector } from 'store/Survey/surveySlice';
 import { SurveyMediaData } from 'store/Survey/types';
 import { SurveyPoints } from 'store/Sites/types';
-import surveyServices from 'services/surveyServices';
-import uploadServices from 'services/uploadServices';
+import surveyServices from 'services/firestore';
+import uploadServices from 'services/firestore';
 import MediaCard from './MediaCard';
 
 const maxUploadSize = 40 * 1000 * 1000; // 40mb

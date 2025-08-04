@@ -4,10 +4,11 @@ import makeStyles from '@mui/styles/makeStyles';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { DateTime } from 'luxon';
-import monitoringServices, {
+import { monitoringService } from 'services/firestore';
+import type {
   GetMonitoringMetricsResponse,
-  MonitoringData,
-} from 'services/monitoringServices';
+  MonitoringData
+} from 'services/firestore';
 import ChartWithTooltip, {
   ChartWithTooltipProps,
 } from 'common/Chart/ChartWithTooltip';
@@ -150,17 +151,17 @@ function SiteMetrics() {
   }, [spotterId]);
 
   const getResult = React.useCallback(
-    async (token: string) =>
-      (
-        await monitoringServices.getMonitoringStats({
-          token,
-          ...(siteId && { siteIds: [siteId] }),
-          ...(spotterId && { spotterId }),
-          monthly,
-          start: startDate.toISOString(),
-          end: endDate.toISOString(),
-        })
-      ).data,
+    async (token: string) => {
+      const { data } = await monitoringService.getMonitoringStats({
+        token,
+        ...(siteId && { siteId }),
+        ...(spotterId && { spotterId }),
+        monthly,
+        start: startDate.toISOString(),
+        end: endDate.toISOString(),
+      });
+      return data;
+    },
     [endDate, monthly, siteId, spotterId, startDate],
   );
 
@@ -266,9 +267,9 @@ function SiteMetrics() {
       filters={filters}
       fetchOnEnter
       csvDownload={(token) =>
-        monitoringServices.getMonitoringStatsCSV({
+        monitoringService.getMonitoringStatsCSV({
           token,
-          ...(siteId && { siteIds: [siteId] }),
+          ...(siteId && { siteId }),
           ...(spotterId && { spotterId }),
           monthly,
           start: startDate?.toISOString(),

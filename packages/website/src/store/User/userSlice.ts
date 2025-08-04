@@ -9,8 +9,8 @@ import {
 import { isManager } from 'helpers/user';
 import { setSiteNameFromList } from 'helpers/siteUtils';
 import { getAxiosErrorMessage, getFirebaseErrorMessage } from 'helpers/errors';
-import userServices from 'services/userServices';
-import collectionServices from 'services/collectionServices';
+import { userService } from 'services/firestore';
+import { collectionService } from 'services/firestore';
 import type {
   PasswordResetParams,
   User,
@@ -43,10 +43,10 @@ export const createUser = createAsyncThunk<
     let user;
     try {
       // eslint-disable-next-line fp/no-mutation
-      user = (await userServices.createUser(email, password))?.user;
+      user = (await userService.createUser(email, password))?.user;
       const token = await user?.getIdToken();
 
-      const { data } = await userServices.storeUser(
+      const { data } = await userService.storeUser(
         fullName,
         email,
         organization,
@@ -61,7 +61,7 @@ export const createUser = createAsyncThunk<
         adminLevel: data.adminLevel,
         firebaseUid: data.firebaseUid,
         administeredSites: isManager(data)
-          ? (await userServices.getAdministeredSites(token)).data
+          ? (await userService.getAdministeredSites(token)).data
           : [],
         token: await user?.getIdToken(),
       };
@@ -81,12 +81,11 @@ export const signInUser = createAsyncThunk<
   'user/signIn',
   async ({ email, password }: UserSignInParams, { rejectWithValue }) => {
     try {
-      const { user } = (await userServices.signInUser(email, password)) || {};
+      const { user } = (await userService.signInUser(email, password)) || {};
       const token = await user?.getIdToken();
-      const { data: userData } = await userServices.getSelf(token);
-      const { data: collections } = await collectionServices.getCollections(
-        token,
-      );
+      const { data: userData } = await userService.getSelf(token);
+      const { data: collections } = await collectionService.getCollections();
+
       return constructUserObject(userData, collections, token);
     } catch (err) {
       return rejectWithValue(getAxiosErrorMessage(err));
@@ -100,7 +99,7 @@ export const resetPassword = createAsyncThunk<
   CreateAsyncThunkTypes
 >('user/reset', async ({ email }: PasswordResetParams, { rejectWithValue }) => {
   try {
-    await userServices.resetPassword(email);
+    await userService.resetPassword(email);
     return { email };
   } catch (err) {
     return rejectWithValue(getAxiosErrorMessage(err));
@@ -111,8 +110,8 @@ export const getSelf = createAsyncThunk<User, string, CreateAsyncThunkTypes>(
   'user/getSelf',
   async (token: string, { rejectWithValue }) => {
     try {
-      const { data: userData } = await userServices.getSelf(token);
-      const { data: collections } = await collectionServices.getCollections(
+      const { data: userData } = await userService.getSelf(token);
+      const { data: collections } = await collectionService.getCollection(
         token,
       );
       return constructUserObject(userData, collections, token);
@@ -137,7 +136,7 @@ export const signOutUser = createAsyncThunk<
   CreateAsyncThunkTypes
 >('user/signOut', async () => {
   try {
-    await userServices.signOutUser();
+    await userService.signOutUser();
     return null;
   } catch (err) {
     return Promise.reject(getFirebaseErrorMessage(err));
@@ -154,11 +153,10 @@ export const createCollectionRequest = createAsyncThunk<
     const state = getState();
     const { userInfo } = state.user;
     try {
-      const { data } = await collectionServices.createCollection(
+      const { data } = await collectionService.createCollection(
         name,
         isPublic || false,
-        siteIds,
-        token,
+        siteIds
       );
       return userInfo === null
         ? null

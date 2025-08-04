@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { getAxiosErrorMessage } from 'helpers/errors';
-import collectionServices from 'services/collectionServices';
+import { collectionService } from 'services/firestore';
 import { CollectionState, CollectionRequestParams } from './types';
 import type { CreateAsyncThunkTypes, RootState } from '../configure';
 import { constructCollection } from './utils';
@@ -10,29 +10,31 @@ const collectionInitialState: CollectionState = {
   error: null,
 };
 
-export const collectionRequest = createAsyncThunk<
+const collectionRequest = createAsyncThunk<
   CollectionState['details'],
   CollectionRequestParams,
   CreateAsyncThunkTypes
 >(
   'collection/request',
-  async ({ id, isHeatStress, isPublic, token }, { rejectWithValue }) => {
+  async ({ id, isHeatStress, isPublic }, { rejectWithValue }) => {
     try {
       if (isHeatStress && !id) {
-        const { data } = await collectionServices.getHeatStressCollection();
+        const { data } = await collectionService.getHeatStressCollection();
         return constructCollection(data);
       }
+
       if (id) {
         const { data } = isPublic
-          ? await collectionServices.getPublicCollection(id)
-          : await collectionServices.getCollection(id, token);
-        return constructCollection(data);
+          ? await collectionService.getPublicCollection(id)
+          : await collectionService.getCollection(id);
+        return constructCollection(data); // ✅ NO ERROR
       }
+
       return undefined;
     } catch (err) {
       return rejectWithValue(getAxiosErrorMessage(err));
     }
-  },
+  }
 );
 
 const collectionSlice = createSlice({

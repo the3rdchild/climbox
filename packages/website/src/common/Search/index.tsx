@@ -18,7 +18,7 @@ import {
   unsetSpotterPosition,
   unsetSelectedSite,
 } from 'store/Sites/selectedSiteSlice';
-import mapServices from 'services/mapServices';
+import mapServices from 'services/firestore';
 
 const siteAugmentedName = (site: Site) => {
   const { name, region } = getSiteNameAndRegion(site);

@@ -10,7 +10,7 @@ import {
 } from 'lodash';
 import { isBefore } from 'helpers/dates';
 import { longDHW } from 'helpers/siteUtils';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 
 import { ArrayElement } from 'utils/types';
 import type { TableRow } from '../Homepage/types';

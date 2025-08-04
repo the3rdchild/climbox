@@ -12,8 +12,8 @@
     "clean:artifacts": "yarn workspaces foreach --all run clean",
     "clean:packages": "yarn workspaces foreach --all --verbose rimraf node_modules",
     "clean:root": "rimraf node_modules",
-    "start": "yarn workspaces foreach --all --parallel run start",
-    "build": "yarn workspaces foreach --all --verbose run build",
+    "start": "yarn workspace website dev",
+    "build": "yarn workspace website build",
     "test": "yarn workspaces foreach --all --verbose run test",
     "test:quick": "yarn workspaces foreach run --all --verbose test:quick",
     "test:coverage": "yarn workspaces foreach --all --parallel run test:coverage",
@@ -56,22 +56,5 @@
       "yarn run lint"
     ]
   },
-  "description": "This is the main repository for the Aqualink Coral Monitoring Application.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aqualinkorg/aqualink-app.git"
-  },
-  "keywords": [
-    "Climate Change",
-    "Corals",
-    "Marine",
-    "Ocean"
-  ],
-  "author": "Ovio.org",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/aqualinkorg/aqualink-app/issues"
-  },
-  "homepage": "https://aqualink.org",
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

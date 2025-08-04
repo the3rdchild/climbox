@@ -2,7 +2,7 @@ import { sortBy } from 'lodash';
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 
 import { getAxiosErrorMessage } from 'helpers/errors';
-import surveyServices from 'services/surveyServices';
+import surveyServices from 'services/firestore';
 import { SurveyListState } from './types';
 
 import type { RootState, CreateAsyncThunkTypes } from '../configure';

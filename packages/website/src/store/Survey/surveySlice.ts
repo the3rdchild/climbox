@@ -5,7 +5,7 @@ import {
   combineReducers,
 } from '@reduxjs/toolkit';
 import { getAxiosErrorMessage } from 'helpers/errors';
-import surveyServices from 'services/surveyServices';
+import surveyServices from 'services/firestore';
 import {
   SelectedSurveyState,
   SurveyState,

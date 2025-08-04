@@ -2,20 +2,20 @@ import { Site, SiteResponse } from '../Sites/types';
 import { User } from '../User/types';
 
 export interface CollectionSummary {
-  id: number;
+  id: string; // was: number
   name: string;
   isPublic: boolean;
-  userId: number;
-  siteIds: number[];
+  userId: string; // was: number
+  siteIds: string[]; // was: number[]
 }
 
 export interface CollectionDetails {
-  id: number;
+  id: string;
   name: string;
   isPublic: boolean;
   sites: Site[];
   user?: User;
-  siteIds: number[];
+  siteIds: string[];
 }
 
 export interface CollectionDetailsResponse extends CollectionDetails {
@@ -23,17 +23,17 @@ export interface CollectionDetailsResponse extends CollectionDetails {
 }
 
 export interface CollectionRequestParams {
-  id?: number;
+  id?: string; // was: number
   isHeatStress?: boolean;
   isPublic?: boolean;
   token?: string;
 }
 
 export interface CollectionUpdateParams {
-  id: number;
+  id: string;
   name?: string;
-  addSiteIds?: number[];
-  removeSiteIds?: number[];
+  addSiteIds?: string[];
+  removeSiteIds?: string[];
 }
 
 export interface CollectionState {

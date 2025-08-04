@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getAxiosErrorMessage } from 'helpers/errors';
-import { getReefCheckSurvey } from 'services/reefCheckService';
+import { getReefCheckSurvey } from 'services/firestore/';
 import type { CreateAsyncThunkTypes, RootState } from 'store/configure';
 import { ReefCheckSurvey, ReefCheckSurveyState } from './types';
 

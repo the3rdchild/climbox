@@ -25,7 +25,7 @@ import {
   uploadsResponseSelector,
 } from 'store/uploads/uploadsSlice';
 import StatusSnackbar from 'common/StatusSnackbar';
-import { UploadTimeSeriesResult } from 'services/uploadServices';
+import { UploadTimeSeriesResult } from 'services/firestore';
 import UploadWarnings from 'common/FileUploads/UploadWarnings';
 import { useNavigate } from 'react-router-dom';
 import { Sources } from 'store/Sites/types';

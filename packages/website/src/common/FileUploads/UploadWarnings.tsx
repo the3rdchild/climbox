@@ -17,7 +17,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import WarningIcon from '@mui/icons-material/Warning';
 import { yellow } from '@mui/material/colors';
 
-import { UploadTimeSeriesResult } from 'services/uploadServices';
+import { UploadTimeSeriesResult } from 'services/firestore';
 
 const YELLOW = yellow[600];
 

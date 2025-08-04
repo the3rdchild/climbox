@@ -14,7 +14,7 @@ import { SurveyListItem } from 'store/Survey/types';
 import { userInfoSelector } from 'store/User/userSlice';
 import { surveysRequest } from 'store/Survey/surveyListSlice';
 import { formatNumber } from 'helpers/numberUtils';
-import surveyServices from 'services/surveyServices';
+import surveyServices from 'services/firestore';
 import { DateTime } from 'luxon-extensions';
 import incomingStyles from '../styles';
 import CustomLink from '../../../Link';

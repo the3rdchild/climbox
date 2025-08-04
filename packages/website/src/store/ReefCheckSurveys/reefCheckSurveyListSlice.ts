@@ -2,7 +2,7 @@ import { sortBy } from 'lodash';
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 
 import { getAxiosErrorMessage } from 'helpers/errors';
-import { getReefCheckSurveys } from 'services/reefCheckService';
+import { getReefCheckSurveys } from 'services/firestore';
 import { ReefCheckSurveyListState } from './types';
 
 import type { RootState, CreateAsyncThunkTypes } from '../configure';

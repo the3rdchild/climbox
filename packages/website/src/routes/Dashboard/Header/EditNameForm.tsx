@@ -17,7 +17,7 @@ import { User } from 'store/User/types';
 import { setName } from 'store/Collection/collectionSlice';
 import { useFormField } from 'hooks/useFormField';
 import TextField from 'common/Forms/TextField';
-import collectionServices from 'services/collectionServices';
+import { collectionService } from 'services/firestore';
 
 import { red, green } from '@mui/material/colors';
 
@@ -44,11 +44,12 @@ const EditNameForm = ({
 
   const onSubmit = () => {
     if (signedInUser?.token && collectionId) {
-      collectionServices
-        .updateCollection(
-          { id: collectionId, name: collectionName.value },
-          signedInUser.token,
-        )
+      collectionService
+        .updateCollection({
+          id: collectionId,
+          name: collectionName.value,
+          token: signedInUser.token,
+        })
         .then(() => dispatch(setName(collectionName.value)))
         .catch(console.error)
         .finally(() => onClose());

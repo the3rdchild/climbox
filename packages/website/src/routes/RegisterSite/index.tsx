@@ -27,7 +27,7 @@ import NavBar from 'common/NavBar';
 import Footer from 'common/Footer';
 import RegisterDialog from 'common/RegisterDialog';
 import SignInDialog from 'common/SignInDialog';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 import LocationMap from './LocationMap';
 
 interface FormElement {

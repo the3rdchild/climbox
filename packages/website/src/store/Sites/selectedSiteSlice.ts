@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { sortBy } from 'lodash';
 import { getAxiosErrorMessage } from 'helpers/errors';
-import siteServices from 'services/siteServices';
+import siteServices from 'services/firestore';
 import type {
   OceanSenseData,
   OceanSenseDataRequestParams,

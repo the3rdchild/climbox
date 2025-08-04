@@ -1,5 +1,5 @@
 import React from 'react';
-import monitoringServices from 'services/monitoringServices';
+import { monitoringService } from 'services/firestore';
 import MonitoringTable, {
   BodyCell,
   HeadCell,
@@ -72,7 +72,7 @@ const getUniqueValues = (arr: Array<string | null>) => {
 };
 
 const getResult = async (token: string) => {
-  const { data } = await monitoringServices.getSitesOverview({ token });
+  const { data } = await monitoringService.getSitesOverview({ token });
 
   return data.map((x) => {
     return {

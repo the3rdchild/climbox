@@ -13,7 +13,7 @@ import {
   userInfoSelector,
 } from 'store/User/userSlice';
 import { belongsToCollection } from 'helpers/siteUtils';
-import collectionServices from 'services/collectionServices';
+import { collectionService } from 'services/firestore';
 import { ReactComponent as WatchIcon } from 'assets/watch.svg';
 import { ReactComponent as UnWatchIcon } from 'assets/unwatch.svg';
 
@@ -55,14 +55,12 @@ const CollectionButton = ({
       );
     } else if (user?.token && user?.collection && !siteBelongsToCollection) {
       setCollectionActionLoading(true);
-      collectionServices
-        .updateCollection(
-          {
-            id: user.collection.id,
-            addSiteIds: [siteId],
-          },
-          user.token,
-        )
+      collectionService
+        .updateCollection({
+          id: user.collection.id,
+          removeSiteIds: [siteId],
+          token: user.token,
+        })
         .then(() => {
           if (user?.collection) {
             dispatch(setCollectionSites([...user.collection.siteIds, siteId]));
@@ -76,14 +74,12 @@ const CollectionButton = ({
   const onRemoveSiteFromCollection = () => {
     if (user?.token && user?.collection && siteBelongsToCollection) {
       setCollectionActionLoading(true);
-      collectionServices
-        .updateCollection(
-          {
-            id: user.collection.id,
-            removeSiteIds: [siteId],
-          },
-          user.token,
-        )
+      collectionService
+        .updateCollection({
+          id: user.collection.id,
+          removeSiteIds: [siteId],
+          token: user.token,
+        })
         .then(() => {
           if (user?.collection) {
             dispatch(

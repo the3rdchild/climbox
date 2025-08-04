@@ -1,8 +1,9 @@
 import React from 'react';
-import monitoringServices, {
+import { monitoringService } from 'services/firestore';
+import type {
   GetMonitoringMetricsResponse,
   MonitoringData,
-} from 'services/monitoringServices';
+} from 'services/firestore';
 import MonitoringTable, {
   BodyCell,
   HeadCell,
@@ -52,7 +53,7 @@ const bodyCells: BodyCell<TableData>[] = [
 ];
 
 async function getResult(token: string): Promise<TableData[]> {
-  const { data } = await monitoringServices.getMonitoringLastMonth({
+  const { data } = await monitoringService.getMonitoringLastMonth({
     token,
   });
 

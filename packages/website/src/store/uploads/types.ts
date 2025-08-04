@@ -1,4 +1,4 @@
-import { UploadTimeSeriesResult } from 'services/uploadServices';
+import { UploadTimeSeriesResult } from 'services/firestore';
 import { Sources } from '../Sites/types';
 
 export interface UploadsSliceState {
